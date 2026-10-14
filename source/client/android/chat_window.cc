@@ -51,6 +51,7 @@
 #include "common/android/app_bar.h"
 #include "common/android/icon_button.h"
 #include "common/android/message_dialog.h"
+#include "common/android/keyboard_util.h"
 #include "proto/chat.h"
 #include "proto/peer.h"
 #include "proto/router_client.h"
@@ -332,10 +333,10 @@ void ChatWindow::updateKeyboardInset()
     if (input_method->isVisible())
     {
         // How far the window extends past the top of the keyboard (0 when Android already resized
-        // the window to sit above it). The window rect is in logical pixels while the keyboard
-        // rectangle is in physical pixels, so scale the latter down.
+        // the window to sit above it). Both are in logical pixels (keyboardTop() converts the
+        // physical pixels Android reports).
         const QRect window_rect(mapToGlobal(QPoint(0, 0)), size());
-        const int keyboard_top = qRound(input_method->keyboardRectangle().top() / devicePixelRatioF());
+        const int keyboard_top = qRound(keyboardTop(this));
         inset = qMax(0, window_rect.bottom() - keyboard_top);
     }
 

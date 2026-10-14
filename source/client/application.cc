@@ -44,6 +44,7 @@
 
 #if defined(Q_OS_IOS)
 #include <QDesktopServices>
+#include <QInputMethodQueryEvent>
 #endif // defined(Q_OS_IOS)
 
 #if defined(Q_OS_ANDROID)
@@ -55,6 +56,35 @@ namespace {
 
 const char kActivateWindow[] = "activate_window";
 const char kOpenUrl[] = "open_url:";
+
+#if defined(Q_OS_IOS)
+//--------------------------------------------------------------------------------------------------
+// When the keyboard opens, the iOS plugin of Qt shifts the whole screen up until the text cursor is
+// above the keyboard. The touch interface makes room for the keyboard itself (KeyboardInset and the
+// like), so both together push the content off the screen. Qt shifts only when it knows where the
+// cursor is, so the cursor rectangle is withheld from it.
+class KeyboardScrollBlocker final : public QObject
+{
+public:
+    using QObject::QObject;
+
+protected:
+    bool eventFilter(QObject* watched, QEvent* event) final
+    {
+        if (event->type() != QEvent::InputMethodQuery)
+            return false;
+
+        QInputMethodQueryEvent* query = static_cast<QInputMethodQueryEvent*>(event);
+        if (!(query->queries() & Qt::ImCursorRectangle))
+            return false;
+
+        // The receiver answers first, then the cursor rectangle is replaced with an empty one.
+        watched->event(event);
+        query->setValue(Qt::ImCursorRectangle, QRectF());
+        return true;
+    }
+};
+#endif // defined(Q_OS_IOS)
 
 #if defined(Q_OS_ANDROID)
 //--------------------------------------------------------------------------------------------------
@@ -127,6 +157,8 @@ Application::Application(int& argc, char* argv[])
     // iOS hands the links of the schemes listed in Info.plist (CFBundleURLTypes) to the handler,
     // both the one the application is started with and those that come while it runs.
     QDesktopServices::setUrlHandler("aspia", this, "onSystemUrlOpened");
+
+    installEventFilter(new KeyboardScrollBlocker(this));
 #endif // defined(Q_OS_IOS)
 
 #if defined(Q_OS_ANDROID)

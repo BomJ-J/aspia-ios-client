@@ -31,6 +31,7 @@
 #include "base/desktop/frame.h"
 #include "base/desktop/mouse_cursor.h"
 #include "common/keycode_converter.h"
+#include "common/android/keyboard_util.h"
 #include "proto/desktop_input.h"
 
 namespace {
@@ -376,11 +377,9 @@ void DesktopView::onKeyboardRectangleChanged()
     int inset = 0;
     if (input_method->isVisible())
     {
-        // On Android the keyboard rectangle comes in physical pixels while widget geometry is in
-        // logical pixels, so scale it down by the device pixel ratio before measuring the overlap
-        // with the bottom of the view.
-        const qreal dpr = devicePixelRatioF();
-        const qreal keyboard_top = input_method->keyboardRectangle().top() / dpr;
+        // The overlap of the keyboard with the bottom of the view, in logical pixels
+        // (keyboardTop() converts the physical pixels Android reports).
+        const qreal keyboard_top = keyboardTop(this);
         const qreal view_bottom = mapToGlobal(QPoint(0, height())).y();
         inset = qBound(0, qRound(view_bottom - keyboard_top), height());
     }

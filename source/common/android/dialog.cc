@@ -26,6 +26,7 @@
 #include <QVBoxLayout>
 
 #include "common/android/label.h"
+#include "common/android/keyboard_util.h"
 
 namespace {
 
@@ -266,11 +267,10 @@ void Dialog::onKeyboardChanged()
     const QInputMethod* input = QGuiApplication::inputMethod();
     const QRect keyboard = input->keyboardRectangle().toRect();
 
-    // On Android the keyboard rectangle arrives in native pixels (the plugin passes the raw window
-    // insets through), while the widget geometry is in logical ones.
+    // keyboardTop() converts the native pixels Android reports to the logical ones of the widgets.
     int inset = 0;
     if (input->isVisible() && !keyboard.isEmpty())
-        inset = qMax(0, height() - qRound(keyboard.top() / devicePixelRatio()));
+        inset = qMax(0, height() - qRound(keyboardTop(this)));
 
     layout()->setContentsMargins(kScreenMargin, kScreenMargin, kScreenMargin,
                                  kScreenMargin + inset);

@@ -17,6 +17,7 @@
 //
 
 #include "common/android/keyboard_inset.h"
+#include "common/android/keyboard_util.h"
 
 #include <QApplication>
 #include <QDialog>
@@ -74,9 +75,7 @@ void KeyboardInset::onUpdate()
     int inset = 0;
     if (active)
     {
-        // The keyboard rectangle is in physical pixels.
-        const int keyboard_top =
-            qRound(input_method->keyboardRectangle().top() / window_->devicePixelRatioF());
+        const int keyboard_top = qRound(keyboardTop(window_));
         const int window_bottom = window_->mapToGlobal(QPoint(0, window_->height())).y();
         inset = qMax(0, window_bottom - keyboard_top);
     }
