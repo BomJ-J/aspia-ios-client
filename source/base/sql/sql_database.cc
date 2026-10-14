@@ -22,7 +22,7 @@
 
 #if defined(Q_OS_WINDOWS)
 #include <qt_windows.h>
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
 #include <QString>
 #else
 #include <unicode/uchar.h>
@@ -84,7 +84,7 @@ void caseFold(sqlite3_context* context, int argc, sqlite3_value** argv)
         sqlite3_result_value(context, argv[0]);
         return;
     }
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     // The NDK exposes u_strFoldCase only since API 31, so Qt's own Unicode case folding is used.
     const QString folded_string = QString::fromRawData(
         reinterpret_cast<const QChar*>(source), source_length).toCaseFolded();

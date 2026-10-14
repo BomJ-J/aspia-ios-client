@@ -1,0 +1,163 @@
+name: ios
+
+on:
+  push:
+    branches:
+      - ios-client
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'installer/ios/README*.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  QT_VERSION: '6.11.1'
+  VCPKG_BINARY_SOURCES: 'clear;files,${{ github.workspace }}/vcpkg-cache,readwrite'
+
+jobs:
+  build-ios:
+    name: ios-arm64-release
+    runs-on: macos-15
+    timeout-minutes: 340
+
+    steps:
+      # Step 1
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      # Step 2
+      - name: Show toolchain
+        run: |
+          sw_vers
+          xcodebuild -version
+          cmake --version
+          mkdir -p "$RUNNER_TEMP/logs"
+
+      # Step 3
+      # Qt for iOS together with the host Qt for macOS, whose tools (moc, rcc, lupdate) run during
+      # the build.
+      - name: Install Qt
+        run: |
+          python3 -m pip install --break-system-packages --quiet aqtinstall
+          python3 -m aqt install-qt mac ios "$QT_VERSION" ios --autodesktop -O "$RUNNER_TEMP/Qt"
+          echo "QT_IOS_PATH=$RUNNER_TEMP/Qt/$QT_VERSION/ios" >> "$GITHUB_ENV"
+          echo "QT_HOST_PATH=$RUNNER_TEMP/Qt/$QT_VERSION/macos" >> "$GITHUB_ENV"
+          ls "$RUNNER_TEMP/Qt/$QT_VERSION"
+
+      # Step 4
+      - name: Restore vcpkg cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ github.workspace }}/vcpkg-cache
+          key: vcpkg-ios-${{ hashFiles('vcpkg.json', 'source/cmake/triplets/*', '.gitmodules') }}-${{ github.run_id }}
+          restore-keys: |
+            vcpkg-ios-${{ hashFiles('vcpkg.json', 'source/cmake/triplets/*', '.gitmodules') }}-
+            vcpkg-ios-
+
+      # Step 5
+      - name: Bootstrap vcpkg
+        run: |
+          mkdir -p "${{ github.workspace }}/vcpkg-cache"
+          ./vcpkg4aspia/bootstrap-vcpkg.sh -disableMetrics
+
+      # Step 6
+      # Builds the vcpkg dependencies (arm64-ios-aspia target, arm64-osx host) and generates the
+      # Xcode project.
+      - name: Configure
+        run: |
+          set -o pipefail
+          cmake --preset ci-ios 2>&1 | tee "$RUNNER_TEMP/logs/configure.log"
+
+      # Step 7
+      - name: Save vcpkg cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ github.workspace }}/vcpkg-cache
+          key: vcpkg-ios-${{ hashFiles('vcpkg.json', 'source/cmake/triplets/*', '.gitmodules') }}-${{ github.run_id }}
+
+      # Step 8
+      # The application is built without a signature. It is signed with the Apple ID of whoever
+      # installs it (Xcode, Sideloadly, AltStore).
+      - name: Build
+        run: |
+          set +e
+          cmake --build --preset ci-ios-app -- -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            > "$RUNNER_TEMP/logs/build.log" 2>&1
+          rc=$?
+          grep -E "error:|\*\* BUILD" "$RUNNER_TEMP/logs/build.log" | head -n 200
+          tail -n 50 "$RUNNER_TEMP/logs/build.log"
+          exit $rc
+
+      # Step 9
+      - name: Package IPA
+        run: |
+          APP=$(find builds/ci-ios -type d -name "Aspia.app" -not -path "*.dSYM*" -not -path "*/build/*" | head -n 1)
+          if [ -z "$APP" ]; then
+            echo "Aspia.app not found"
+            exit 1
+          fi
+          echo "Application bundle: $APP"
+          mkdir -p ipa/Payload
+          cp -R "$APP" ipa/Payload/
+          (cd ipa && zip -qry ../Aspia-unsigned.ipa Payload)
+          ls -la Aspia-unsigned.ipa
+          /usr/libexec/PlistBuddy -c Print "ipa/Payload/Aspia.app/Info.plist" | head -40
+
+      # Step 10
+      - name: Upload IPA
+        uses: actions/upload-artifact@v7
+        with:
+          name: aspia-ios-unsigned
+          path: Aspia-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 14
+
+      # Step 11
+      # The logs go to a branch of their own as well, where they can be read without signing in.
+      - name: Publish logs
+        if: always()
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          LOGS="$RUNNER_TEMP/logs"
+          mkdir -p "$LOGS/vcpkg"
+          if [ -d vcpkg4aspia/buildtrees ]; then
+            find vcpkg4aspia/buildtrees -name "*.log" -newer CMakePresets.json -size -2M \
+              -exec cp {} "$LOGS/vcpkg/" \; 2>/dev/null || true
+          fi
+          if [ -f "$LOGS/build.log" ]; then
+            grep -nE "error:|fatal error|Undefined symbols|ld: |\*\* BUILD" "$LOGS/build.log" \
+              | head -400 > "$LOGS/errors.txt" || true
+            tail -n 400 "$LOGS/build.log" > "$LOGS/build-tail.log"
+            gzip -kf "$LOGS/build.log"
+            rm -f "$LOGS/build.log"
+          fi
+          if [ -f "$LOGS/configure.log" ]; then
+            tail -n 400 "$LOGS/configure.log" > "$LOGS/configure-tail.log"
+          fi
+          echo "${{ github.sha }} ${{ job.status }}" > "$LOGS/status.txt"
+          if [ -f Aspia-unsigned.ipa ]; then
+            cp Aspia-unsigned.ipa "$LOGS/"
+          fi
+
+          cd "$LOGS"
+          git init -q
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q -b ci-logs-ios
+          git add -A
+          git commit -qm "Logs of run ${{ github.run_id }} (${{ github.sha }})"
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}" ci-logs-ios

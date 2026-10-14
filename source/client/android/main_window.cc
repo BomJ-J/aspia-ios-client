@@ -21,7 +21,9 @@
 #include <QCoreApplication>
 #include <QDialog>
 #include <QEvent>
+#if defined(Q_OS_ANDROID)
 #include <QJniObject>
+#endif // defined(Q_OS_ANDROID)
 #include <QKeyEvent>
 #include <QStackedWidget>
 #include <QVBoxLayout>
@@ -86,6 +88,7 @@ enum Section
 // of being letterboxed below it.
 void setDrawIntoCutout(bool enable)
 {
+#if defined(Q_OS_ANDROID)
     const int mode = enable ? kCutoutModeShortEdges : kCutoutModeDefault;
 
     QNativeInterface::QAndroidApplication::runOnAndroidMainThread([mode]() -> QVariant
@@ -108,6 +111,11 @@ void setDrawIntoCutout(bool enable)
                                 params.object());
         return QVariant();
     });
+#else
+    // On iOS a window always covers the whole screen; the safe area is handled by the contents
+    // margins alone.
+    Q_UNUSED(enable)
+#endif // defined(Q_OS_ANDROID)
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -115,6 +123,7 @@ void setDrawIntoCutout(bool enable)
 // screen re-delivers the original intent - it must not restart the connection.
 QString startUrlFromIntent()
 {
+#if defined(Q_OS_ANDROID)
     QJniObject activity = QNativeInterface::QAndroidApplication::context();
     if (!activity.isValid())
         return QString();
@@ -132,6 +141,10 @@ QString startUrlFromIntent()
 
     QString url = data.toString();
     return HostUrl::isHostUrl(url) ? url : QString();
+#else
+    // On iOS a link that starts the application arrives through Application::sig_urlOpened.
+    return QString();
+#endif // defined(Q_OS_ANDROID)
 }
 
 } // namespace

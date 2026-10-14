@@ -19,6 +19,8 @@
 #ifndef CLIENT_APPLICATION_H
 #define CLIENT_APPLICATION_H
 
+#include <QUrl>
+
 #include "base/gui_application.h"
 
 class Application final : public GuiApplication
@@ -34,6 +36,10 @@ public:
 public slots:
     void activateWindow();
     void openUrl(const QString& url);
+
+    // Receives the aspia:// links the system hands to the application (QDesktopServices handler,
+    // used on iOS).
+    void onSystemUrlOpened(const QUrl& url);
 
 signals:
     void sig_windowActivated();

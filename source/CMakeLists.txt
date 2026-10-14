@@ -58,7 +58,7 @@ set(QT_COMMON_LIBS
     Qt6::Svg
     Qt6::Xml)
 
-if (NOT ANDROID)
+if (NOT MOBILE)
     list(APPEND QT_COMMON_LIBS
         Qt6::DeviceDiscoverySupportPrivate
         Qt6::FbSupportPrivate
@@ -77,7 +77,7 @@ if (LINUX)
         Qt6::DBus)
 endif()
 
-if (APPLE)
+if (MACOS)
     set(QT_PLATFORM_LIBS
         Qt6::OpenGL
         Qt6::QMacStylePlugin)
@@ -99,7 +99,7 @@ set(THIRD_PARTY_LIBS
     vterm
     yuv)
 
-if (LINUX OR APPLE)
+if (LINUX OR MACOS)
     list(APPEND THIRD_PARTY_LIBS ICU::uc)
 endif()
 
@@ -232,7 +232,7 @@ if (NOT ASPIA_HOST_ONLY)
     add_subdirectory(client)
 endif()
 
-if (NOT ANDROID)
+if (NOT MOBILE)
     add_subdirectory(drivers)
 
     if (NOT ASPIA_HOST_ONLY)
@@ -241,6 +241,7 @@ if (NOT ANDROID)
     endif()
 endif()
 
-if (WIN32 OR LINUX OR APPLE OR ANDROID)
+# iOS gives no application control over the screen and input, so there is no host for it.
+if (WIN32 OR LINUX OR MACOS OR ANDROID)
     add_subdirectory(host)
 endif()

@@ -32,10 +32,10 @@
 #include <unistd.h>
 #endif // defined(Q_OS_LINUX)
 
-#if defined(Q_OS_MACOS)
+#if defined(Q_OS_DARWIN)
 #include <mach-o/dyld.h>
 #include <sys/syslimits.h>
-#endif // defined(Q_OS_MACOS)
+#endif // defined(Q_OS_DARWIN)
 
 #include "base/logging.h"
 
@@ -54,7 +54,7 @@ QString BasePaths::genericConfigDir()
     }
 
     return QDir::fromNativeSeparators(QString::fromWCharArray(buffer));
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     // Android also defines Q_OS_LINUX, so this branch must come first.
     return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
 #elif defined(Q_OS_LINUX)
@@ -81,7 +81,7 @@ QString BasePaths::genericUserConfigDir()
     }
 
     return QDir::fromNativeSeparators(QString::fromWCharArray(buffer));
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     // Android also defines Q_OS_LINUX, so this branch must come first.
     return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
 #elif defined(Q_OS_LINUX)
@@ -124,7 +124,7 @@ QString BasePaths::genericDataDir()
 {
 #if defined(Q_OS_WINDOWS)
     return genericConfigDir();
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     // Android also defines Q_OS_LINUX, so this branch must come first.
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 #elif defined(Q_OS_LINUX)
@@ -143,7 +143,7 @@ QString BasePaths::genericUserDataDir()
 {
 #if defined(Q_OS_WINDOWS)
     return genericUserConfigDir();
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     // Android also defines Q_OS_LINUX, so this branch must come first.
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 #elif defined(Q_OS_LINUX)
@@ -221,7 +221,7 @@ QString BasePaths::currentApp()
         return QString();
 
     return QString::fromLocal8Bit(buffer);
-#elif defined(Q_OS_MACOS)
+#elif defined(Q_OS_DARWIN)
     char buffer[PATH_MAX] = { 0 };
     uint32_t buffer_size = std::size(buffer);
     if (_NSGetExecutablePath(buffer, &buffer_size) != 0)

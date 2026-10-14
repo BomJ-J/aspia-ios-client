@@ -257,7 +257,10 @@ void SettingsWidget::buildSettings()
     buildSecuritySection(layout);
     buildUdpSection(layout);
     buildDesktopSection(layout);
+#if !defined(Q_OS_IOS)
+    // iOS installs applications only from the App Store or through Xcode.
     buildUpdateSection(layout);
+#endif // !defined(Q_OS_IOS)
     layout->addStretch();
 
     // setWidget() deletes the previously set content widget.

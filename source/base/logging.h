@@ -100,7 +100,7 @@ enum LoggingDestination
 
     LOG_TO_ALL    = LOG_TO_FILE | LOG_TO_STDOUT,
 
-#if defined(Q_OS_ANDROID)
+#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     LOG_DEFAULT = LOG_TO_STDOUT
 #elif defined(NDEBUG)
     LOG_DEFAULT = LOG_TO_FILE

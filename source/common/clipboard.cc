@@ -29,7 +29,7 @@
 #include "common/clipboard_x11.h"
 #elif defined(Q_OS_MACOS)
 #include "common/clipboard_mac.h"
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
 #include "common/clipboard_android.h"
 #endif
 
@@ -51,7 +51,7 @@ const std::string_view kSupportedMimeTypes[] =
     Clipboard::kMimeTypeTextCsv,
     Clipboard::kMimeTypeImagePng,
     Clipboard::kMimeTypeImageSvg,
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     Clipboard::kMimeTypeTextHtml,
 #endif
 #if defined(Q_OS_WINDOWS) || defined(Q_OS_MACOS)
@@ -163,7 +163,7 @@ Clipboard* Clipboard::create(QObject* parent)
     return new ClipboardX11(parent);
 #elif defined(Q_OS_MACOS)
     return new ClipboardMac(parent);
-#elif defined(Q_OS_ANDROID)
+#elif defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     return new ClipboardAndroid(parent);
 #else
     LOG(ERROR) << "No clipboard implementation for this platform";

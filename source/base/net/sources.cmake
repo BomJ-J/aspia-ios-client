@@ -60,12 +60,14 @@ if (LINUX)
         net_utils_linux.cc)
 endif()
 
-if (APPLE)
+if (MACOS)
     collect_sources(SOURCE_BASE_NET
         net_utils_mac.cc)
 endif()
 
-if (ANDROID)
+if (MOBILE)
+    # The client on a phone needs none of the network inventory the host reports; the Android
+    # implementation is plain Qt and serves iOS as well.
     collect_sources(SOURCE_BASE_NET
         net_utils_android.cc)
 endif()

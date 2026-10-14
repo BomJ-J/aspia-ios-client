@@ -122,6 +122,33 @@ void addAndroidDrives(proto::file_transfer::DriveList* drive_list)
     }
 }
 
+#elif defined(Q_OS_IOS)
+
+//--------------------------------------------------------------------------------------------------
+// iOS keeps every application in a sandbox. The only place the user can reach from the outside
+// (the Files app, AirDrop, iTunes) is the Documents folder of the application, so that is the only
+// drive offered. A Downloads folder inside it collects what is received from the remote side.
+void addIosDrives(proto::file_transfer::DriveList* drive_list)
+{
+    const QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    if (documents.isEmpty())
+        return;
+
+    QDir().mkpath(documents);
+
+    proto::file_transfer::DriveList::Item* item = drive_list->add_item();
+    item->set_type(proto::file_transfer::DriveList::Item::TYPE_DOCUMENTS_FOLDER);
+    item->set_path(documents.toStdString());
+
+    const QString downloads = documents + "/Downloads";
+    if (QDir().mkpath(downloads))
+    {
+        item = drive_list->add_item();
+        item->set_type(proto::file_transfer::DriveList::Item::TYPE_DOWNLOAD_FOLDER);
+        item->set_path(downloads.toStdString());
+    }
+}
+
 #else // defined(Q_OS_ANDROID)
 
 #if defined(Q_OS_LINUX)
@@ -321,6 +348,8 @@ void FileRequestHandler::doDriveListRequest(proto::file_transfer::Reply* reply)
 
 #if defined(Q_OS_ANDROID)
     addAndroidDrives(drive_list);
+#elif defined(Q_OS_IOS)
+    addIosDrives(drive_list);
 #else
     addDesktopDrives(drive_list);
 #endif

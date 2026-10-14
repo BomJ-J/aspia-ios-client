@@ -232,7 +232,7 @@ GuiApplication::GuiApplication(int& argc, char* argv[])
 
     setStyle(new CustomStyle(nullptr, small_icon_size_));
 
-#if defined(Q_OS_ANDROID)
+#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     // Pin the default font now, before any theme is applied. Switching the base style / color scheme
     // (setTheme()) otherwise makes Qt re-derive a different base size from the style; widgets created
     // afterwards capture that inflated size and scale it again (Controls::scaledFont), so on restart

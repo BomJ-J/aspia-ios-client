@@ -248,6 +248,9 @@ bool UpdateInstaller::canInstall()
     }
 
     return package_manager.callMethod<jboolean>("canRequestPackageInstalls", "()Z");
+#elif defined(Q_OS_IOS)
+    // iOS installs applications only from the App Store or through Xcode.
+    return false;
 #else
     return true;
 #endif // defined(Q_OS_ANDROID)
@@ -289,7 +292,7 @@ void UpdateInstaller::removeLeftovers()
     // What the installer of the system was given is removed at the next start of the system, so
     // nothing waits here to be found.
 #else
-#if defined(Q_OS_ANDROID)
+#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     QDir directory(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
 #else
     QDir directory(QString::fromLatin1(kPackageDirectory));

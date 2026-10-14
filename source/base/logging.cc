@@ -38,10 +38,10 @@
 #include <unistd.h>
 #endif // defined(Q_OS_LINUX)
 
-#if defined(Q_OS_MACOS)
+#if defined(Q_OS_DARWIN)
 #include <mach-o/dyld.h>
 #include <sys/syslimits.h>
-#endif // defined(Q_OS_MACOS)
+#endif // defined(Q_OS_DARWIN)
 
 #if defined(Q_OS_ANDROID)
 #include <android/log.h>
@@ -294,7 +294,7 @@ QString applicationFilePath()
     if (length <= 0)
         return QString();
     file_path = QString::fromUtf8(buffer, static_cast<int>(length));
-#elif defined(Q_OS_MACOS)
+#elif defined(Q_OS_DARWIN)
     char buffer[PATH_MAX] = { 0 };
     quint32 buffer_size = std::size(buffer);
     if (_NSGetExecutablePath(buffer, &buffer_size) != 0)

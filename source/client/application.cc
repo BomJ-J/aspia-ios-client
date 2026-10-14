@@ -42,6 +42,10 @@
 #include <QFileOpenEvent>
 #endif // defined(Q_OS_MACOS)
 
+#if defined(Q_OS_IOS)
+#include <QDesktopServices>
+#endif // defined(Q_OS_IOS)
+
 #if defined(Q_OS_ANDROID)
 #include <QJniEnvironment>
 #include <QJniObject>
@@ -119,6 +123,12 @@ Application::Application(int& argc, char* argv[])
     registerUrlHandler();
 #endif // defined(Q_OS_WINDOWS)
 
+#if defined(Q_OS_IOS)
+    // iOS hands the links of the schemes listed in Info.plist (CFBundleURLTypes) to the handler,
+    // both the one the application is started with and those that come while it runs.
+    QDesktopServices::setUrlHandler("aspia", this, "onSystemUrlOpened");
+#endif // defined(Q_OS_IOS)
+
 #if defined(Q_OS_ANDROID)
     QJniEnvironment jni;
     const JNINativeMethod methods[] = {
@@ -132,6 +142,13 @@ Application::Application(int& argc, char* argv[])
 Application::~Application()
 {
     LOG(INFO) << "Dtor";
+}
+
+//--------------------------------------------------------------------------------------------------
+void Application::onSystemUrlOpened(const QUrl& url)
+{
+    LOG(INFO) << "URL opened by the system";
+    emit sig_urlOpened(url.toString());
 }
 
 //--------------------------------------------------------------------------------------------------

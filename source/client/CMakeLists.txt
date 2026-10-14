@@ -125,7 +125,7 @@ if (LINUX)
         audio_output_pulse.h)
 endif()
 
-if (APPLE)
+if (MACOS)
     list(APPEND SOURCE_CLIENT_CORE
         audio_output_mac.cc
         audio_output_mac.h
@@ -139,9 +139,28 @@ if (ANDROID)
         audio_output_android.h)
 endif()
 
+if (IOS)
+    list(APPEND SOURCE_CLIENT_CORE
+        audio_output_ios.h
+        audio_output_ios.mm
+        session_keeper_ios.h
+        session_keeper_ios.mm)
+endif()
+
 include(android/sources.cmake)
 include(mcp/sources.cmake)
 include(mcp/tools/sources.cmake)
+
+if (IOS)
+    # The touch interface is shared with Android; only the parts that talk to the system through
+    # JNI are replaced.
+    list(REMOVE_ITEM SOURCE_CLIENT_ANDROID
+        ${CMAKE_CURRENT_SOURCE_DIR}/android/biometric_gate.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/android/session_keeper_android.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/android/session_keeper_android.h)
+    include(ios/sources.cmake)
+    list(APPEND SOURCE_CLIENT_ANDROID ${SOURCE_CLIENT_IOS})
+endif()
 include(online_checker/sources.cmake)
 include(desktop/sources.cmake)
 include(desktop/desktop/sources.cmake)
@@ -184,7 +203,13 @@ if (LINUX)
     set(CLIENT_PLATFORM_LIBS stdc++fs)
 endif()
 
-if (APPLE)
+if (IOS)
+    set(CLIENT_PLATFORM_LIBS
+        ${FOUNDATION_LIB} ${UIKIT_LIB} ${AVFOUNDATION_LIB} ${AUDIOTOOLBOX_LIB} ${SECURITY_LIB}
+        ${LOCALAUTHENTICATION_LIB})
+endif()
+
+if (MACOS)
     set(CLIENT_PLATFORM_LIBS ${COREAUDIO_LIB} ${AUDIOTOOLBOX_LIB} portaudio)
     set(aspia_client_ICON ${PROJECT_SOURCE_DIR}/source/common/resources/aspia.icns)
     configure_file(${PROJECT_SOURCE_DIR}/source/client/Info.plist.in
@@ -194,7 +219,7 @@ if (APPLE)
     set_source_files_properties(${aspia_client_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 endif()
 
-if (ANDROID)
+if (MOBILE)
     add_library(aspia_client_core STATIC
         ${SOURCE_CLIENT_CORE}
         ${SOURCE_CLIENT_ANDROID}
@@ -234,6 +259,9 @@ add_ui_headers(aspia_client_core)
 
 if (ANDROID)
     qt_add_executable(aspia_client ${SOURCE_CLIENT})
+elseif (IOS)
+    # An application bundle. Qt adds the platform plugin of the static build and the launch screen.
+    qt_add_executable(aspia_client MACOSX_BUNDLE ${SOURCE_CLIENT} ${CLIENT_IOS_BUNDLE_FILES})
 else()
     add_executable(aspia_client MACOSX_BUNDLE
         ${aspia_client_ICON}
@@ -262,7 +290,7 @@ if (WIN32)
     set_target_properties(aspia_client PROPERTIES LINK_FLAGS "/MANIFEST:NO")
 endif()
 
-if (NOT ANDROID)
+if (NOT MOBILE)
     add_executable(aspia_client_tests ${SOURCE_CLIENT_TESTS})
 
     # The widget tests draw into memory, so the run needs the offscreen platform plugin. In a static
@@ -282,7 +310,11 @@ if (NOT ANDROID)
     add_test(NAME aspia_client_tests COMMAND aspia_client_tests)
 endif()
 
-if (APPLE)
+if (IOS)
+    include(ios/bundle.cmake)
+endif()
+
+if (MACOS)
     set_target_properties(aspia_client PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${aspia_client_PLIST})
 
     # Localized bundle display name.

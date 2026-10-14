@@ -54,14 +54,15 @@ if (LINUX)
         file_platform_util_linux.cc)
 endif()
 
-if (ANDROID)
+if (MOBILE)
+    # Plain Qt implementations, shared by Android and iOS.
     list(APPEND SOURCE_COMMON
         clipboard_android.cc
         clipboard_android.h
         file_platform_util_android.cc)
 endif()
 
-if (APPLE)
+if (MACOS)
     list(APPEND SOURCE_COMMON
         clipboard_mac.mm
         clipboard_mac.h
@@ -77,7 +78,7 @@ list(APPEND SOURCE_COMMON_TESTS
 
 include(desktop/sources.cmake)
 
-if (NOT ANDROID)
+if (NOT MOBILE)
     include(sys_info/sources.cmake)
 endif()
 
@@ -85,8 +86,14 @@ if (WIN32)
     include(win/sources.cmake)
 endif()
 
-if (ANDROID)
+if (MOBILE)
     include(android/sources.cmake)
+endif()
+
+if (IOS)
+    # The touch controls are shared with Android; only the log archive talks to the system.
+    list(REMOVE_ITEM SOURCE_COMMON_ANDROID ${CMAKE_CURRENT_SOURCE_DIR}/android/log_archiver.cc)
+    list(APPEND SOURCE_COMMON_ANDROID ${CMAKE_CURRENT_SOURCE_DIR}/ios/log_archiver_ios.cc)
 endif()
 
 list(APPEND SOURCE_COMMON_RESOURCES resources/common.qrc)
@@ -100,11 +107,11 @@ if (WIN32)
     source_group(win FILES ${SOURCE_COMMON_WIN})
 endif()
 
-if (APPLE)
+if (MACOS)
     source_group(mac FILES ${SOURCE_COMMON_MAC})
 endif()
 
-if (ANDROID)
+if (MOBILE)
     source_group(android FILES ${SOURCE_COMMON_ANDROID})
 endif()
 
@@ -135,8 +142,13 @@ if (LINUX)
     set(COMMON_TESTS_PLATFORM_LIBS stdc++fs)
 endif()
 
-if (APPLE)
+if (MACOS)
     set(COMMON_TESTS_PLATFORM_LIBS ${FOUNDATION_LIB})
+endif()
+
+if (IOS)
+    # Unit tests are run on the desktop systems; an iOS executable has to be an application bundle.
+    return()
 endif()
 
 add_executable(aspia_common_tests ${SOURCE_COMMON_TESTS})

@@ -24,7 +24,7 @@ collect_sources(SOURCE_BASE_FILES
     file_util.cc
     file_util.h)
 
-if (APPLE)
+if (MACOS)
     collect_sources(SOURCE_BASE_FILES
         base_paths_mac.mm)
 endif()

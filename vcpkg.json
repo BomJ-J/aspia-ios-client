@@ -37,7 +37,7 @@
     "zstd",
     {
       "name": "qtbase",
-      "platform": "!android",
+      "platform": "!android & !ios",
       "default-features": false,
       "features": [
         "zstd",
@@ -109,11 +109,11 @@
     },
     {
       "name": "qtsvg",
-      "platform": "!android"
+      "platform": "!android & !ios"
     },
     {
       "name": "qttools",
-      "platform": "!android"
+      "platform": "!android & !ios"
     },
     {
       "name": "dbus",

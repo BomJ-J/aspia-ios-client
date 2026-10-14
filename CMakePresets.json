@@ -223,6 +223,53 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       }
+    },
+    {
+      "name": "ios-base",
+      "hidden": true,
+      "inherits": [
+        "base"
+      ],
+      "generator": "Xcode",
+      "cacheVariables": {
+        "VCPKG_TARGET_TRIPLET": "arm64-ios-aspia",
+        "VCPKG_HOST_TRIPLET": "arm64-osx",
+        "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/source/cmake/triplets",
+        "QT_USE_VCPKG": "OFF",
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED": "NO",
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED": "NO",
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY": ""
+      },
+      "environment": {
+        "VCPKG_TRIPLET": "arm64-ios-aspia",
+        "VCPKG_DEFAULT_HOST_TRIPLET": "arm64-osx"
+      }
+    },
+    {
+      "name": "ci-ios",
+      "inherits": [
+        "ios-base"
+      ],
+      "cacheVariables": {
+        "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": {
+          "type": "FILEPATH",
+          "value": "$penv{QT_IOS_PATH}/lib/cmake/Qt6/qt.toolchain.cmake"
+        },
+        "QT_HOST_PATH": "$penv{QT_HOST_PATH}"
+      }
+    },
+    {
+      "name": "local-ios",
+      "inherits": [
+        "ci-ios"
+      ],
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": [
+            "macOS"
+          ]
+        }
+      }
     }
   ],
   "buildPresets": [
@@ -249,16 +296,32 @@
       "targets": [
         "apk"
       ]
+    },
+    {
+      "name": "ci-ios-app",
+      "configurePreset": "ci-ios",
+      "configuration": "Release",
+      "targets": [
+        "aspia_client"
+      ]
+    },
+    {
+      "name": "local-ios-app",
+      "configurePreset": "local-ios",
+      "configuration": "Release",
+      "targets": [
+        "aspia_client"
+      ]
     }
   ],
   "testPresets": [
     {
-      "name": "ci-release", 
+      "name": "ci-release",
       "configurePreset": "ci",
       "configuration": "Release"
     },
     {
-      "name": "ci-debug", 
+      "name": "ci-debug",
       "configurePreset": "ci",
       "configuration": "Debug"
     }

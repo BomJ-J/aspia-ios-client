@@ -154,6 +154,8 @@ void UpdateChecker::check()
     os = "linux";
 #elif defined(Q_OS_MACOS)
     os = "macosx";
+#elif defined(Q_OS_IOS)
+    os = "ios";
 #else
 #error Unknown OS
 #endif

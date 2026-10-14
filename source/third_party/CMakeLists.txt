@@ -16,7 +16,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 #
 
-if (APPLE)
+if (MACOS)
     add_subdirectory(portaudio)
 endif()
 

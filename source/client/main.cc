@@ -30,7 +30,9 @@
 #if defined(Q_OS_ANDROID)
 #include <QCoreApplication>
 #include <QJniObject>
+#endif // defined(Q_OS_ANDROID)
 
+#if defined(ASPIA_MOBILE)
 #include "client/android/main_window.h"
 #else
 #include <QCommandLineParser>
@@ -51,9 +53,9 @@
 #include "common/desktop/credentials_dialog.h"
 #include "common/desktop/msg_box.h"
 #include "common/desktop/update_dialog.h"
-#endif // defined(Q_OS_ANDROID)
+#endif // defined(ASPIA_MOBILE)
 
-#if !defined(Q_OS_ANDROID)
+#if !defined(ASPIA_MOBILE)
 namespace {
 
 //--------------------------------------------------------------------------------------------------
@@ -90,7 +92,7 @@ void backupOnStartup()
 }
 
 } // namespace
-#endif // !defined(Q_OS_ANDROID)
+#endif // !defined(ASPIA_MOBILE)
 
 //--------------------------------------------------------------------------------------------------
 int main(int argc, char* argv[])
@@ -114,6 +116,9 @@ int main(int argc, char* argv[])
     // Its QOpenGLContext::makeCurrent aborts with a qFatal (SIGABRT) when the surface is momentarily
     // invalid - e.g. while the on-screen keyboard is shown during a repaint. Raster avoids OpenGL
     // entirely and removes that crash.
+    qputenv("QT_WIDGETS_RHI", "0");
+#elif defined(Q_OS_IOS)
+    // The same raster backing store is used on iOS: the interface has no OpenGL or Metal widgets.
     qputenv("QT_WIDGETS_RHI", "0");
 #endif // defined(Q_OS_ANDROID)
 
@@ -139,6 +144,10 @@ int main(int argc, char* argv[])
                 files_dir.callObjectMethod<jstring>("getAbsolutePath").toString() + "/log";
         }
     }
+#elif defined(Q_OS_IOS)
+    // Write a log file as well. It stays in the sandbox of the application and is attached to the
+    // log archive from the settings.
+    logging_settings.destination = LOG_TO_ALL;
 #endif // defined(Q_OS_ANDROID)
 
     ScopedLogging scoped_logging(logging_settings);
@@ -151,7 +160,7 @@ int main(int argc, char* argv[])
     ProcessUtil::restartAsRoot(argv);
 #endif // defined(Q_OS_MACOS)
 
-#if !defined(Q_OS_ANDROID)
+#if !defined(ASPIA_MOBILE)
     if (argc == 2 && qstrcmp(argv[1], "--mcp") == 0)
     {
         QCoreApplication application(argc, argv);
@@ -209,7 +218,7 @@ int main(int argc, char* argv[])
                 UpdateDialog::kInstalledExitCode : UpdateDialog::kClosedExitCode;
         }
     }
-#endif // !defined(Q_OS_ANDROID)
+#endif // !defined(ASPIA_MOBILE)
 
     Application application(argc, argv);
 
@@ -224,7 +233,7 @@ int main(int argc, char* argv[])
     LOG(INFO) << "Qt version:" << QT_VERSION_STR;
     LOG(INFO) << "Command line:" << application.arguments();
 
-#if defined(Q_OS_ANDROID)
+#if defined(ASPIA_MOBILE)
     AndroidMainWindow main_window;
     main_window.show();
 
@@ -392,5 +401,5 @@ int main(int argc, char* argv[])
 
     create_main_window();
     return application.exec();
-#endif // defined(Q_OS_ANDROID)
+#endif // defined(ASPIA_MOBILE)
 }

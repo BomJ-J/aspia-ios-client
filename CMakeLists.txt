@@ -50,6 +50,26 @@ add_definitions(-DASPIA_VERSION_MAJOR=${ASPIA_VERSION_MAJOR}
                 -DASPIA_VERSION_MINOR=${ASPIA_VERSION_MINOR}
                 -DASPIA_VERSION_PATCH=${ASPIA_VERSION_PATCH})
 
+# CMake sets IOS for the iOS toolchain since 3.14; set it here as well for older toolchain files.
+if (CMAKE_SYSTEM_NAME STREQUAL "iOS")
+    set(IOS TRUE)
+endif()
+
+# APPLE is set for both macOS and iOS. MACOS marks the desktop system only.
+if (APPLE AND NOT IOS)
+    set(MACOS TRUE)
+endif()
+
+# Android and iOS share the touch interface of the client (source/client/android).
+if (ANDROID OR IOS)
+    set(MOBILE TRUE)
+    add_definitions(-DASPIA_MOBILE)
+endif()
+
+if (IOS)
+    message(STATUS "iOS detected")
+endif()
+
 if (ANDROID)
     message(STATUS "Android detected")
 
@@ -61,8 +81,11 @@ elseif (UNIX AND NOT APPLE)
     set(LINUX TRUE)
 endif()
 
-if (APPLE)
+if (MACOS)
     message(STATUS "MacOSX detected")
+endif()
+
+if (APPLE)
     enable_language(OBJC)
     enable_language(OBJCXX)
 endif()
@@ -73,9 +96,14 @@ endif()
 
 set(CMAKE_SKIP_BUILD_RPATH ON)
 
-find_package(Qt6 CONFIG REQUIRED Core Gui Network PrintSupport Test Widgets Xml LinguistTools Svg)
-find_package(Qt6DeviceDiscoverySupportPrivate CONFIG REQUIRED)
-find_package(Qt6FbSupportPrivate CONFIG REQUIRED)
+find_package(Qt6 CONFIG REQUIRED Core Gui Network Test Widgets Xml LinguistTools Svg)
+
+if (NOT IOS)
+    # Qt for iOS has neither printing nor the Linux framebuffer support modules.
+    find_package(Qt6 CONFIG REQUIRED PrintSupport)
+    find_package(Qt6DeviceDiscoverySupportPrivate CONFIG REQUIRED)
+    find_package(Qt6FbSupportPrivate CONFIG REQUIRED)
+endif()
 
 find_package(asio CONFIG REQUIRED)
 find_package(CURL CONFIG REQUIRED)
@@ -119,7 +147,7 @@ if (LINUX)
     find_package(ICU REQUIRED COMPONENTS uc)
 endif()
 
-if (APPLE)
+if (MACOS)
     if (${VCPKG_TARGET_TRIPLET} STREQUAL "arm64-osx")
         set(CMAKE_OSX_ARCHITECTURES "arm64")
     else()
@@ -153,6 +181,21 @@ if (APPLE)
     find_program(CODESIGN_BIN NAMES codesign)
 endif()
 
+if (IOS)
+    message(STATUS "CMAKE_OSX_DEPLOYMENT_TARGET: ${CMAKE_OSX_DEPLOYMENT_TARGET}")
+
+    find_library(FOUNDATION_LIB Foundation)
+    find_library(UIKIT_LIB UIKit)
+    find_library(AVFOUNDATION_LIB AVFoundation)
+    find_library(AUDIOTOOLBOX_LIB AudioToolbox)
+    find_library(COREMEDIA_LIB CoreMedia)
+    find_library(COREVIDEO_LIB CoreVideo)
+    find_library(VIDEOTOOLBOX_LIB VideoToolbox)
+    find_library(SECURITY_LIB Security)
+    find_library(LOCALAUTHENTICATION_LIB LocalAuthentication)
+    find_library(SYSTEMCONFIGURATION_LIB SystemConfiguration)
+endif()
+
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
@@ -183,6 +226,24 @@ add_custom_target(update_translations
 
 qt_add_translation(QM_FILES_LIST ${TS_FILES_LIST})
 qt_add_resources(aspia_common "common_translations" PREFIX "tr" BASE "${CMAKE_CURRENT_BINARY_DIR}" FILES "${QM_FILES_LIST}")
+
+if (CMAKE_GENERATOR STREQUAL "Xcode")
+    # The new build system of Xcode refuses a custom command attached to several targets unless one
+    # of them comes before all the others. The .qm files are made by a target of their own that the
+    # targets embedding or listing them depend on. The listing target is created at the end of the
+    # directory, so the dependencies are added then.
+    add_custom_target(aspia_translations DEPENDS ${QM_FILES_LIST})
+
+    function(aspia_order_translations)
+        foreach(target aspia_common aspia_common_common_translations aspia_common_other_files)
+            if (TARGET ${target})
+                add_dependencies(${target} aspia_translations)
+            endif()
+        endforeach()
+    endfunction()
+
+    cmake_language(DEFER CALL aspia_order_translations)
+endif()
 
 message(STATUS "Source files: ${SOURCE_FILES_DIR}")
 message(STATUS "TS files: ${TS_FILES_LIST}")

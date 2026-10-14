@@ -37,11 +37,43 @@ if (CMAKE_CROSSCOMPILING)
         -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE=${QTPROTOC_BINARY_DIR}
         -DCMAKE_PREFIX_PATH=${VCPKG_INSTALLED_DIR}/${VCPKG_HOST_TRIPLET})
 
+    set(QTPROTOC_HOST_ENV)
+
+    if (IOS)
+        # Xcode runs the steps of the external project with the settings of the iOS target in the
+        # environment (SDKROOT and the like), and the host build would pick them up and compile the
+        # plugin for the phone. They are dropped, and the host SDK is named explicitly.
+        set(QTPROTOC_HOST_ENV ${CMAKE_COMMAND} -E env
+            --unset=SDKROOT
+            --unset=SDK_NAME
+            --unset=PLATFORM_NAME
+            --unset=EFFECTIVE_PLATFORM_NAME
+            --unset=IPHONEOS_DEPLOYMENT_TARGET
+            --unset=MACOSX_DEPLOYMENT_TARGET
+            --unset=TARGETED_DEVICE_FAMILY
+            --unset=ARCHS
+            --unset=NATIVE_ARCH
+            --unset=CONFIGURATION
+            --unset=CONFIGURATION_BUILD_DIR
+            --unset=BUILT_PRODUCTS_DIR
+            --unset=CC
+            --unset=CXX
+            --unset=LD
+            --unset=LDPLUSPLUS)
+
+        list(APPEND QTPROTOC_CMAKE_ARGS
+            -G "Unix Makefiles"
+            -DCMAKE_OSX_SYSROOT=macosx
+            -DCMAKE_OSX_ARCHITECTURES=${CMAKE_HOST_SYSTEM_PROCESSOR}
+            -DCMAKE_C_COMPILER=/usr/bin/clang
+            -DCMAKE_CXX_COMPILER=/usr/bin/clang++)
+    endif()
+
     ExternalProject_Add(qtprotoc_host
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/qtprotoc
         BINARY_DIR ${QTPROTOC_BINARY_DIR}
-        CONFIGURE_COMMAND ${CMAKE_COMMAND} -S <SOURCE_DIR> -B <BINARY_DIR> ${QTPROTOC_CMAKE_ARGS}
-        BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release
+        CONFIGURE_COMMAND ${QTPROTOC_HOST_ENV} ${CMAKE_COMMAND} -S <SOURCE_DIR> -B <BINARY_DIR> ${QTPROTOC_CMAKE_ARGS}
+        BUILD_COMMAND ${QTPROTOC_HOST_ENV} ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release
         INSTALL_COMMAND ""
         BUILD_BYPRODUCTS ${QTPROTOC_EXECUTABLE})
 else()
@@ -52,6 +84,6 @@ if (WIN32)
     add_subdirectory(sha256)
 endif()
 
-if (NOT ANDROID AND NOT ASPIA_HOST_ONLY)
+if (NOT MOBILE AND NOT ASPIA_HOST_ONLY)
     add_subdirectory(signer)
 endif()

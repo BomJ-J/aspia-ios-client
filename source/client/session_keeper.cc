@@ -22,6 +22,8 @@
 #include "client/android/session_keeper_android.h"
 #elif defined(Q_OS_MACOS)
 #include "client/session_keeper_mac.h"
+#elif defined(Q_OS_IOS)
+#include "client/session_keeper_ios.h"
 #endif
 
 //--------------------------------------------------------------------------------------------------
@@ -39,6 +41,8 @@ SessionKeeper* SessionKeeper::create(QObject* parent)
     return new SessionKeeperAndroid(parent);
 #elif defined(Q_OS_MACOS)
     return new SessionKeeperMac(parent);
+#elif defined(Q_OS_IOS)
+    return new SessionKeeperIos(parent);
 #else
     Q_UNUSED(parent)
     return nullptr;

@@ -20,10 +20,13 @@
 
 #include <QEvent>
 #include <QFontMetrics>
+#if defined(Q_OS_ANDROID)
 #include <QJniObject>
+#endif // defined(Q_OS_ANDROID)
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPixmap>
+#include <QWindow>
 
 #include "base/gui_application.h"
 #include "common/android/animation.h"
@@ -410,6 +413,12 @@ void BottomSheet::updateBottomInset()
 {
     bottom_inset_ = 0;
 
+#if defined(Q_OS_IOS)
+    // The home indicator takes the bottom of the screen on the devices without a home button.
+    QWindow* window = this->window() ? this->window()->windowHandle() : nullptr;
+    if (window)
+        bottom_inset_ = window->safeAreaMargins().bottom();
+#elif defined(Q_OS_ANDROID)
     QJniObject activity = QNativeInterface::QAndroidApplication::context();
     if (!activity.isValid())
         return;
@@ -434,6 +443,7 @@ void BottomSheet::updateBottomInset()
         return;
 
     bottom_inset_ = qRound(bars.getField<jint>("bottom") / devicePixelRatioF());
+#endif // defined(Q_OS_ANDROID)
 }
 
 //--------------------------------------------------------------------------------------------------

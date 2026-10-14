@@ -40,6 +40,13 @@ UpdateWorker::~UpdateWorker()
 //--------------------------------------------------------------------------------------------------
 void UpdateWorker::onPrepare()
 {
+#if defined(Q_OS_IOS)
+    // iOS installs applications only from the App Store or through Xcode, so there is nothing to
+    // check for.
+    LOG(INFO) << "Update check is not available on iOS";
+    return;
+#endif // defined(Q_OS_IOS)
+
     Database& db = Database::instance();
 
     if (!db.isCheckUpdatesEnabled())
