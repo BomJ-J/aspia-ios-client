@@ -1,3 +1,5 @@
+> **iOS:** в этой ветке есть неофициальная сборка клиента для iPhone и iPad — инструкция на русском: [installer/ios/README.ru.md](installer/ios/README.ru.md).
+
 Aspia
 =====
 Remote desktop, file transfer and system information tool.
