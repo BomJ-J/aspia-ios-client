@@ -26,6 +26,7 @@
 #include "common/android/button.h"
 #include "common/android/controls.h"
 #include "common/android/scroll_area.h"
+#include "common/android/touch_scroller.h"
 
 namespace {
 
@@ -38,6 +39,7 @@ const quint32 kUsbLeftCtrl  = 0x0700e0;
 const quint32 kUsbLeftShift = 0x0700e1;
 const quint32 kUsbLeftAlt   = 0x0700e2;
 const quint32 kUsbLeftMeta  = 0x0700e3;
+const quint32 kUsbEnter     = 0x070028;
 const quint32 kUsbEscape    = 0x070029;
 const quint32 kUsbTab       = 0x07002b;
 const quint32 kUsbDelete    = 0x07004c;
@@ -67,6 +69,10 @@ KeyBar::KeyBar(QWidget* parent)
     scroll->setFocusPolicy(Qt::NoFocus);
     scroll->setWidgetResizable(true);
 
+    // The keys do not fit the width of a phone, so the row is dragged sideways.
+    if (TouchScroller* scroller = scroll->findChild<TouchScroller*>())
+        scroller->setOrientation(Qt::Horizontal);
+
     QWidget* content = new QWidget(scroll);
     content->setFocusPolicy(Qt::NoFocus);
 
@@ -77,6 +83,7 @@ KeyBar::KeyBar(QWidget* parent)
 
     addSpecialKey(row, "Esc", kUsbEscape);
     addSpecialKey(row, "Tab", kUsbTab);
+    addSpecialKey(row, "Enter", kUsbEnter);
     addModifier(row, "Ctrl", kUsbLeftCtrl);
     addModifier(row, "Alt", kUsbLeftAlt);
     addModifier(row, "Shift", kUsbLeftShift);

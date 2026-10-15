@@ -26,6 +26,7 @@
 #include <QPointF>
 
 class QAbstractScrollArea;
+class QScrollBar;
 class QTimer;
 class QWidget;
 class Animation;
@@ -40,6 +41,9 @@ class TouchScroller final : public QObject
 public:
     explicit TouchScroller(QAbstractScrollArea* area);
     ~TouchScroller() final;
+
+    // The direction a drag scrolls the area in. Vertical by default.
+    void setOrientation(Qt::Orientation orientation);
 
     // QObject implementation.
     bool eventFilter(QObject* object, QEvent* event) final;
@@ -80,6 +84,13 @@ private:
     void cancelPress();
 
     void sendMouseEvent(QEvent::Type type, const QPointF& global_pos);
+
+    // The coordinate of |pos| along the scroll direction and the scroll bar of that direction.
+    double along(const QPointF& pos) const;
+    double across(const QPointF& pos) const;
+    QScrollBar* scrollBar() const;
+
+    Qt::Orientation orientation_ = Qt::Vertical;
 
     QAbstractScrollArea* area_;
     QTimer* press_timer_;

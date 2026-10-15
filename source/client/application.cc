@@ -44,7 +44,11 @@
 
 #if defined(Q_OS_IOS)
 #include <QDesktopServices>
+#include <QInputMethod>
 #include <QInputMethodQueryEvent>
+#include <QTimer>
+
+#include "client/ios/keyboard_gesture.h"
 #endif // defined(Q_OS_IOS)
 
 #if defined(Q_OS_ANDROID)
@@ -159,6 +163,17 @@ Application::Application(int& argc, char* argv[])
     QDesktopServices::setUrlHandler("aspia", this, "onSystemUrlOpened");
 
     installEventFilter(new KeyboardScrollBlocker(this));
+
+    // Qt attaches its hide-keyboard gesture to the window that has the focus when the keyboard
+    // opens, so the gesture is switched off again each time.
+    connect(inputMethod(), &QInputMethod::visibleChanged, this, []()
+    {
+        QTimer::singleShot(0, []() { disableKeyboardHideGesture(); });
+    });
+    connect(this, &QGuiApplication::focusWindowChanged, this, []()
+    {
+        QTimer::singleShot(0, []() { disableKeyboardHideGesture(); });
+    });
 #endif // defined(Q_OS_IOS)
 
 #if defined(Q_OS_ANDROID)

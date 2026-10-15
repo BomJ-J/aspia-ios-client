@@ -67,6 +67,30 @@ TouchScroller::TouchScroller(QAbstractScrollArea* area)
 TouchScroller::~TouchScroller() = default;
 
 //--------------------------------------------------------------------------------------------------
+void TouchScroller::setOrientation(Qt::Orientation orientation)
+{
+    orientation_ = orientation;
+}
+
+//--------------------------------------------------------------------------------------------------
+double TouchScroller::along(const QPointF& pos) const
+{
+    return orientation_ == Qt::Vertical ? pos.y() : pos.x();
+}
+
+//--------------------------------------------------------------------------------------------------
+double TouchScroller::across(const QPointF& pos) const
+{
+    return orientation_ == Qt::Vertical ? pos.x() : pos.y();
+}
+
+//--------------------------------------------------------------------------------------------------
+QScrollBar* TouchScroller::scrollBar() const
+{
+    return orientation_ == Qt::Vertical ? area_->verticalScrollBar() : area_->horizontalScrollBar();
+}
+
+//--------------------------------------------------------------------------------------------------
 bool TouchScroller::eventFilter(QObject* object, QEvent* event)
 {
     if (object != area_->viewport() || sending_)
@@ -151,7 +175,7 @@ void TouchScroller::onPressDelayTimeout()
 //--------------------------------------------------------------------------------------------------
 void TouchScroller::onFlingValueChanged(double value)
 {
-    area_->verticalScrollBar()->setValue(qRound(value));
+    scrollBar()->setValue(qRound(value));
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -168,7 +192,7 @@ void TouchScroller::handlePress(const QPointF& global_pos, qint64 time)
     last_pos_ = global_pos;
     pending_scroll_ = 0.0;
     samples_.clear();
-    addSample(time, global_pos.y());
+    addSample(time, along(global_pos));
 
     // A finger that stops a flick is not a tap on whatever came to rest under it.
     if (flinging)
@@ -187,12 +211,12 @@ void TouchScroller::handleMove(const QPointF& global_pos, qint64 time)
     if (state_ == State::IDLE)
         return;
 
-    addSample(time, global_pos.y());
+    addSample(time, along(global_pos));
 
     if (state_ == State::PRESSED)
     {
         const QPointF delta = global_pos - press_pos_;
-        if (qAbs(delta.y()) <= kDragThreshold || qAbs(delta.y()) < qAbs(delta.x()))
+        if (qAbs(along(delta)) <= kDragThreshold || qAbs(along(delta)) < qAbs(across(delta)))
             return;
 
         state_ = State::DRAGGING;
@@ -200,10 +224,14 @@ void TouchScroller::handleMove(const QPointF& global_pos, qint64 time)
 
         // The threshold distance is not scrolled, so the content does not jump when the drag starts.
         last_pos_ = press_pos_;
-        last_pos_.ry() += (delta.y() > 0) ? kDragThreshold : -kDragThreshold;
+        const double threshold = (along(delta) > 0) ? kDragThreshold : -kDragThreshold;
+        if (orientation_ == Qt::Vertical)
+            last_pos_.ry() += threshold;
+        else
+            last_pos_.rx() += threshold;
     }
 
-    scrollBy(global_pos.y() - last_pos_.y());
+    scrollBy(along(global_pos) - along(last_pos_));
     last_pos_ = global_pos;
 }
 
@@ -213,7 +241,7 @@ void TouchScroller::handleRelease(const QPointF& global_pos, qint64 time)
     if (state_ == State::IDLE)
         return;
 
-    addSample(time, global_pos.y());
+    addSample(time, along(global_pos));
 
     if (state_ == State::PRESSED)
     {
@@ -229,7 +257,7 @@ void TouchScroller::handleRelease(const QPointF& global_pos, qint64 time)
         return;
     }
 
-    scrollBy(global_pos.y() - last_pos_.y());
+    scrollBy(along(global_pos) - along(last_pos_));
     state_ = State::IDLE;
 
     // The content moves against the finger.
@@ -265,14 +293,14 @@ void TouchScroller::scrollBy(double delta)
     const int step = qRound(pending_scroll_);
     pending_scroll_ -= step;
 
-    QScrollBar* bar = area_->verticalScrollBar();
+    QScrollBar* bar = scrollBar();
     bar->setValue(bar->value() + step);
 }
 
 //--------------------------------------------------------------------------------------------------
 void TouchScroller::startFling(double velocity)
 {
-    const QScrollBar* bar = area_->verticalScrollBar();
+    const QScrollBar* bar = scrollBar();
     const double speed = qAbs(velocity);
     const double start = bar->value();
 
