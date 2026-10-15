@@ -18,7 +18,7 @@
 
 ### 1. Скачать IPA
 
-Готовый файл `Aspia-unsigned.ipa` лежит в ветке [`ci-logs-ios`](https://github.com/BomJ-J/aspia/tree/ci-logs-ios) — откройте файл и нажмите кнопку скачивания. Ещё его можно взять во вкладке [**Actions**](https://github.com/BomJ-J/aspia/actions/workflows/ios.yml) → последний успешный запуск → раздел **Artifacts** (нужно войти в GitHub).
+[**Скачать Aspia-iOS.ipa**](../../../../releases/latest/download/Aspia-iOS.ipa) — ссылка всегда ведёт на самую свежую сборку. Прошлые сборки лежат на странице [Releases](../../../../releases).
 
 Файл не подписан и не содержит ничьих личных данных: он собирается на серверах GitHub.
 
@@ -27,7 +27,7 @@
 Понадобится компьютер (macOS или Windows) и кабель.
 
 1. Скачайте [Sideloadly](https://sideloadly.io) и подключите iPhone кабелем.
-2. Перетащите `Aspia-unsigned.ipa` в окно Sideloadly.
+2. Перетащите `Aspia-iOS.ipa` в окно Sideloadly.
 3. Введите Apple ID и нажмите **Start**. Sideloadly передаёт пароль только Apple, чтобы получить бесплатный сертификат. Если не хотите вводить пароль от основного аккаунта, заведите отдельный бесплатный Apple ID только для этого.
 4. Если Sideloadly скажет, что идентификатор приложения занят, задайте в дополнительных настройках свой Bundle ID, например `com.yourname.aspia`.
 
@@ -58,9 +58,9 @@
 
 1. Сделайте **Fork** этого репозитория.
 2. В своём форке откройте вкладку **Actions** и включите workflows (в форках они по умолчанию выключены).
-3. Внесите изменения в ветку `ios-client` и отправьте их (push).
+3. Внесите изменения в ветку `master` и отправьте их (push).
 4. GitHub сам соберёт приложение (workflow `.github/workflows/ios.yml`). Первая сборка идёт 1,5–2 часа — с нуля собираются все библиотеки. Следующие быстрее, потому что библиотеки берутся из кэша.
-5. Готовый IPA появится в **Artifacts** запуска и в ветке `ci-logs-ios`. Там же лежат логи сборки (`errors.txt`, `build-tail.log`).
+5. Готовый IPA появится в разделе **Releases** вашего форка. Логи сборки (`errors.txt`, `build-tail.log`) лежат в ветке `ci-logs-ios`.
 
 ### На своём Mac
 
@@ -70,8 +70,8 @@
 # Подмодуль vcpkg4aspia прописан по SSH; без SSH-ключа GitHub его можно забрать по HTTPS
 git config --global url."https://github.com/".insteadOf git@github.com:
 
-git clone --recursive -b ios-client https://github.com/BomJ-J/aspia.git
-cd aspia
+git clone --recursive https://github.com/BomJ-J/Aspia-iOS-Client.git
+cd Aspia-iOS-Client
 
 # Qt 6.11.1 для iOS вместе с Qt для macOS (из него берутся moc, rcc и прочие утилиты)
 python3 -m pip install aqtinstall

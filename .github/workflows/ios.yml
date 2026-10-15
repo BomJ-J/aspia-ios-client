@@ -3,13 +3,14 @@ name: ios
 on:
   push:
     branches:
-      - ios-client
+      - master
     paths-ignore:
       - 'README.md'
       - 'LICENSE.md'
       - 'CONTRIBUTING.md'
       - 'CODE_OF_CONDUCT.md'
       - 'installer/ios/README*.md'
+      - '.github/ISSUE_TEMPLATE/**'
   workflow_dispatch:
 
 concurrency:
@@ -126,6 +127,40 @@ jobs:
           retention-days: 14
 
       # Step 11
+      # Every build of master is published as a release. The asset keeps one name, so
+      # releases/latest/download/Aspia-iOS.ipa always points to the newest build, and the older
+      # ones stay on the Releases page.
+      - name: Publish release
+        if: github.ref == 'refs/heads/master'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          MAJOR=$(sed -n 's/^set(ASPIA_VERSION_MAJOR \([0-9]*\))/\1/p' CMakeLists.txt)
+          MINOR=$(sed -n 's/^set(ASPIA_VERSION_MINOR \([0-9]*\))/\1/p' CMakeLists.txt)
+          PATCH=$(sed -n 's/^set(ASPIA_VERSION_PATCH \([0-9]*\))/\1/p' CMakeLists.txt)
+          VERSION="$MAJOR.$MINOR.$PATCH"
+          TAG="ios-v$VERSION-build$GITHUB_RUN_NUMBER"
+
+          cp Aspia-unsigned.ipa Aspia-iOS.ipa
+
+          {
+            echo "Aspia Client $VERSION для iPhone и iPad (iOS 17+), сборка $GITHUB_RUN_NUMBER."
+            echo
+            echo "Файл не подписан: он подписывается вашим Apple ID при установке через Sideloadly."
+            echo "Инструкция: [installer/ios/README.ru.md](https://github.com/$GITHUB_REPOSITORY/blob/master/installer/ios/README.ru.md)"
+            echo
+            echo "Изменения:"
+            git log -1 --format='- %s'
+          } > release-notes.md
+
+          gh release create "$TAG" Aspia-iOS.ipa \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Aspia iOS $VERSION (сборка $GITHUB_RUN_NUMBER)" \
+            --notes-file release-notes.md \
+            --latest
+
+      # Step 12
       # The logs go to a branch of their own as well, where they can be read without signing in.
       - name: Publish logs
         if: always()
