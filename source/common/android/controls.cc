@@ -119,8 +119,13 @@ QColor Controls::accentColor()
     // The application palette is read directly so the accent follows the current theme even on the
     // first paint after a theme change, when a cached widget palette may still be stale.
     const QPalette palette = QApplication::palette();
-    const QColor accent = palette.color(QPalette::Highlight);
+    QColor accent = palette.color(QPalette::Highlight);
     const QColor background = palette.color(QPalette::Window);
+
+    // iOS gives the selection color some transparency. The controls draw the accent as a solid
+    // color (and add transparency of their own where they want it), so it is made opaque here;
+    // otherwise buttons and labels come out pale while the switches, which blend it, do not.
+    accent.setAlpha(255);
 
     if (contrastRatio(accent, background) >= kMinAccentContrast)
         return accent;

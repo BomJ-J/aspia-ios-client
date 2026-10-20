@@ -314,12 +314,16 @@ void SysInfoWindow::buildCategories()
             connect(category.page, &SysInfoWidget::sig_systemInfoRequest,
                     this, &SysInfoWindow::onSystemInfoRequest);
 
-            // The pages are the desktop ones: a finger drags their lists instead of selecting rows.
-            if (QTreeWidget* tree = category.page->treeWidget())
+            // The pages are the desktop ones: a finger drags their lists (some pages have two)
+            // instead of selecting rows, sideways as well, since their columns are wider than a phone.
+            const QList<QTreeWidget*> trees = category.page->findChildren<QTreeWidget*>();
+            for (QTreeWidget* tree : trees)
             {
                 tree->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
                 tree->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-                new TouchScroller(tree);
+
+                TouchScroller* scroller = new TouchScroller(tree);
+                scroller->setOrientations(Qt::Horizontal | Qt::Vertical);
             }
         }
     };

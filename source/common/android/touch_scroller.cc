@@ -70,6 +70,14 @@ TouchScroller::~TouchScroller() = default;
 void TouchScroller::setOrientation(Qt::Orientation orientation)
 {
     orientation_ = orientation;
+    orientations_ = orientation;
+}
+
+//--------------------------------------------------------------------------------------------------
+void TouchScroller::setOrientations(Qt::Orientations orientations)
+{
+    orientations_ = orientations;
+    orientation_ = (orientations & Qt::Vertical) ? Qt::Vertical : Qt::Horizontal;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -210,6 +218,19 @@ void TouchScroller::handleMove(const QPointF& global_pos, qint64 time)
 {
     if (state_ == State::IDLE)
         return;
+
+    if (state_ == State::PRESSED && orientations_ == (Qt::Horizontal | Qt::Vertical))
+    {
+        // Until the drag starts, its direction is the one the finger has moved most in.
+        const QPointF moved = global_pos - press_pos_;
+        const Qt::Orientation axis =
+            qAbs(moved.x()) > qAbs(moved.y()) ? Qt::Horizontal : Qt::Vertical;
+        if (axis != orientation_)
+        {
+            orientation_ = axis;
+            samples_.clear();
+        }
+    }
 
     addSample(time, along(global_pos));
 

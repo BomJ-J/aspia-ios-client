@@ -45,6 +45,10 @@ public:
     // The direction a drag scrolls the area in. Vertical by default.
     void setOrientation(Qt::Orientation orientation);
 
+    // Lets a drag scroll in either direction. Each drag follows the one it starts in, as a list
+    // does on a phone, so a vertical swipe does not drift sideways.
+    void setOrientations(Qt::Orientations orientations);
+
     // QObject implementation.
     bool eventFilter(QObject* object, QEvent* event) final;
 
@@ -91,6 +95,7 @@ private:
     QScrollBar* scrollBar() const;
 
     Qt::Orientation orientation_ = Qt::Vertical;
+    Qt::Orientations orientations_ = Qt::Vertical;
 
     QAbstractScrollArea* area_;
     QTimer* press_timer_;
