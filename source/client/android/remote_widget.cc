@@ -18,6 +18,8 @@
 
 #include "client/android/remote_widget.h"
 
+#include <QCoreApplication>
+
 #include <QHash>
 #include <QHeaderView>
 #include <QSet>
@@ -122,6 +124,18 @@ void populateGroups(qint64 router_id, QTreeWidgetItem* workspace_item, const QLi
     };
 
     build(0, workspace_item);
+}
+
+//--------------------------------------------------------------------------------------------------
+// The name of a session type in the menu. The names shared with the other session menus are
+// translated under this screen, the system information one under the session types.
+QString sessionName(const char* name)
+{
+    const QString translated = QCoreApplication::translate("RemoteWidget", name);
+    if (translated != QLatin1String(name))
+        return translated;
+
+    return QCoreApplication::translate("SessionType", name);
 }
 
 } // namespace
@@ -919,6 +933,8 @@ void RemoteWidget::showSessionMenu(const HostConfig& host, bool portable)
           ":/img/file-explorer.svg" },
         { proto::peer::SESSION_TYPE_CHAT,          QT_TRANSLATE_NOOP("RemoteWidget", "Chat"),
           ":/img/chat.svg" },
+        { proto::peer::SESSION_TYPE_SYSTEM_INFO,   QT_TRANSLATE_NOOP("SessionType", "System Information"),
+          ":/img/system-information.svg" },
     };
 
     BottomSheet* sheet = new BottomSheet(this);
@@ -935,7 +951,7 @@ void RemoteWidget::showSessionMenu(const HostConfig& host, bool portable)
         }
 
         types.append(session.type);
-        sheet->addItem(tr(session.name), session.icon, false, false);
+        sheet->addItem(sessionName(session.name), session.icon, false, false);
     }
 
     connect(sheet, &BottomSheet::sig_triggered, this, [this, host, types](int index)

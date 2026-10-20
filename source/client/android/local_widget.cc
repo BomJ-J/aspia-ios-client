@@ -18,6 +18,8 @@
 
 #include "client/android/local_widget.h"
 
+#include <QCoreApplication>
+
 #include <QFileDialog>
 #include <QHeaderView>
 #include <QStackedWidget>
@@ -56,6 +58,18 @@ constexpr int kPageSearch = 4;
 // row carries kGroupIdRole.
 constexpr int kGroupIdRole = Qt::UserRole;
 constexpr int kHostIdRole = Qt::UserRole + 1;
+
+//--------------------------------------------------------------------------------------------------
+// The name of a session type in the menu. The names shared with the other session menus are
+// translated under this screen, the system information one under the session types.
+QString sessionName(const char* name)
+{
+    const QString translated = QCoreApplication::translate("LocalWidget", name);
+    if (translated != QLatin1String(name))
+        return translated;
+
+    return QCoreApplication::translate("SessionType", name);
+}
 
 } // namespace
 
@@ -660,11 +674,13 @@ void LocalWidget::showSessionMenu(qint64 host_id)
           ":/img/file-explorer.svg" },
         { proto::peer::SESSION_TYPE_CHAT,          QT_TRANSLATE_NOOP("LocalWidget", "Chat"),
           ":/img/chat.svg" },
+        { proto::peer::SESSION_TYPE_SYSTEM_INFO,   QT_TRANSLATE_NOOP("SessionType", "System Information"),
+          ":/img/system-information.svg" },
     };
 
     BottomSheet* sheet = new BottomSheet(this);
     for (const auto& session : kSessions)
-        sheet->addItem(tr(session.name), session.icon, false, false);
+        sheet->addItem(sessionName(session.name), session.icon, false, false);
 
     connect(sheet, &BottomSheet::sig_triggered, this, [this, host_id](int index)
     {

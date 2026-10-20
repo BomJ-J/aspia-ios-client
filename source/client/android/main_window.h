@@ -34,6 +34,7 @@ class AppBar;
 class AuthorizationWindow;
 class BottomNavigationBar;
 class ChatWindow;
+class SysInfoWindow;
 class DesktopWindow;
 class FileTransferWindow;
 class HostConfig;
@@ -74,6 +75,7 @@ private slots:
     void onDesktopClosed();
     void onFileTransferClosed();
     void onChatClosed();
+    void onSysInfoClosed();
     void onAuthorizationAccepted();
     void onAuthorizationClosed();
     void onTwoFactorRequired(qint64 router_id);
@@ -127,6 +129,7 @@ private:
 
     // Opens the chat screen for the given host as a regular page (not full-screen).
     void openChat(const HostConfig& host, bool credentials_saved);
+    void openSysInfo(const HostConfig& host, bool credentials_saved);
 
     // Resolves an aspia:// link against the address book and opens the session. If a session is
     // already active, the link is ignored with a notification.
@@ -143,6 +146,7 @@ private:
     DesktopWindow* desktop_ = nullptr;
     FileTransferWindow* file_transfer_ = nullptr;
     ChatWindow* chat_ = nullptr;
+    SysInfoWindow* sys_info_ = nullptr;
     AuthorizationWindow* authorization_ = nullptr;
 
     QPointer<QDialog> two_factor_dialog_;

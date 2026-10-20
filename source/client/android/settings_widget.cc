@@ -323,6 +323,12 @@ void SettingsWidget::buildSecuritySection(QVBoxLayout* layout)
     connect(change_password, &Button::clicked, this, [this]() { showMasterPassword(); });
     layout->addWidget(change_password);
 
+    // The same screen as the key button of the app bar, with a name on it: the saved logins that the
+    // hosts can be told to use.
+    Button* credentials = new Button(tr("Credentials"), Button::Role::OUTLINED);
+    connect(credentials, &Button::clicked, this, &SettingsWidget::showCredentials);
+    layout->addWidget(credentials);
+
     const BiometricGate::Status biometric_status = BiometricGate::status();
     const bool biometric_enabled = Database::instance().isBiometricUnlockEnabled();
     const bool usable = biometric_status == BiometricGate::Status::AVAILABLE || biometric_enabled;

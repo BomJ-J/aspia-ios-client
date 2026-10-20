@@ -78,8 +78,15 @@ list(APPEND SOURCE_COMMON_TESTS
 
 include(desktop/sources.cmake)
 
-if (NOT MOBILE)
-    include(sys_info/sources.cmake)
+include(sys_info/sources.cmake)
+
+if (MOBILE)
+    # The touch interface shows the pages of system information on screens of its own; the desktop
+    # view around them (splitter, printing, saving to a file) is left out.
+    list(REMOVE_ITEM SOURCE_COMMON_SYS_INFO
+        ${CMAKE_CURRENT_SOURCE_DIR}/sys_info/sys_info_view.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/sys_info/sys_info_view.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/sys_info/sys_info_view.ui)
 endif()
 
 if (WIN32)

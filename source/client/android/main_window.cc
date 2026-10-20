@@ -43,6 +43,7 @@
 #include "client/router_controller.h"
 #include "client/android/authorization_window.h"
 #include "client/android/chat_window.h"
+#include "client/android/sys_info_window.h"
 #include "client/android/desktop_window.h"
 #include "client/android/file_transfer_window.h"
 #include "client/android/local_widget.h"
@@ -309,6 +310,12 @@ bool AndroidMainWindow::eventFilter(QObject* watched, QEvent* event)
         onFileTransferClosed();
     else if (screen == chat_)
         onChatClosed();
+    else if (screen == sys_info_)
+    {
+        // A category page goes back to the list first.
+        if (!sys_info_->goBack())
+            onSysInfoClosed();
+    }
     else if (screen == authorization_)
         onAuthorizationClosed();
     else
@@ -573,6 +580,18 @@ void AndroidMainWindow::onFileTransferClosed()
 }
 
 //--------------------------------------------------------------------------------------------------
+void AndroidMainWindow::onSysInfoClosed()
+{
+    if (!sys_info_)
+        return;
+
+    stack_root_->setCurrentWidget(shell_);
+    stack_root_->removeWidget(sys_info_);
+    sys_info_->deleteLater();
+    sys_info_ = nullptr;
+}
+
+//--------------------------------------------------------------------------------------------------
 void AndroidMainWindow::onChatClosed()
 {
     if (!chat_)
@@ -829,7 +848,7 @@ void AndroidMainWindow::relock()
 void AndroidMainWindow::openSession(HostConfig host, proto::peer::SessionType session_type)
 {
     // Only a single session is supported at a time.
-    if (desktop_ || file_transfer_ || chat_ || authorization_)
+    if (desktop_ || file_transfer_ || chat_ || sys_info_ || authorization_)
         return;
 
     if (host.entryId() > 0 && host.routerId() != 0)
@@ -906,6 +925,10 @@ void AndroidMainWindow::startSession(const HostConfig& host, proto::peer::Sessio
 
         case proto::peer::SESSION_TYPE_CHAT:
             openChat(host, credentials_saved);
+            break;
+
+        case proto::peer::SESSION_TYPE_SYSTEM_INFO:
+            openSysInfo(host, credentials_saved);
             break;
 
         default:
@@ -1003,6 +1026,16 @@ void AndroidMainWindow::openFileTransfer(const HostConfig& host, bool credential
 }
 
 //--------------------------------------------------------------------------------------------------
+void AndroidMainWindow::openSysInfo(const HostConfig& host, bool credentials_saved)
+{
+    sys_info_ = new SysInfoWindow(host, credentials_saved);
+    connect(sys_info_, &SysInfoWindow::sig_closed, this, &AndroidMainWindow::onSysInfoClosed);
+
+    stack_root_->addWidget(sys_info_);
+    stack_root_->setCurrentWidget(sys_info_);
+}
+
+//--------------------------------------------------------------------------------------------------
 void AndroidMainWindow::openChat(const HostConfig& host, bool credentials_saved)
 {
     chat_ = new ChatWindow(host, credentials_saved);
@@ -1025,7 +1058,7 @@ void AndroidMainWindow::connectToUrl(const QString& url)
     }
 
     // Only a single session is supported at a time.
-    if (desktop_ || file_transfer_ || chat_)
+    if (desktop_ || file_transfer_ || chat_ || sys_info_)
     {
         MessageDialog::info(this, tr("Connection"),
                             tr("Another session is active. Close it and open the link again."));
@@ -1035,7 +1068,8 @@ void AndroidMainWindow::connectToUrl(const QString& url)
     proto::peer::SessionType session_type = host_url.sessionType();
     if (session_type != proto::peer::SESSION_TYPE_DESKTOP &&
         session_type != proto::peer::SESSION_TYPE_FILE_TRANSFER &&
-        session_type != proto::peer::SESSION_TYPE_CHAT)
+        session_type != proto::peer::SESSION_TYPE_CHAT &&
+        session_type != proto::peer::SESSION_TYPE_SYSTEM_INFO)
     {
         MessageDialog::info(this, tr("Connection"),
                             tr("The session type from the link is not supported on this device."));
