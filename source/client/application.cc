@@ -27,9 +27,9 @@
 #include "client/workers/router_worker.h"
 #include "client/workers/update_worker.h"
 
-#if !defined(Q_OS_ANDROID)
+#if !defined(ASPIA_MOBILE)
 #include "client/mcp/mcp_worker.h"
-#endif // !defined(Q_OS_ANDROID)
+#endif // !defined(ASPIA_MOBILE)
 
 #include <QIcon>
 
@@ -148,10 +148,10 @@ Application::Application(int& argc, char* argv[])
     addWorker(std::make_unique<RouterWorker>());
     addWorker(std::make_unique<UpdateWorker>());
 
-#if !defined(Q_OS_ANDROID)
+#if !defined(ASPIA_MOBILE)
     if (Database::instance().isMcpEnabled())
         addWorker(std::make_unique<McpWorker>());
-#endif // !defined(Q_OS_ANDROID)
+#endif // !defined(ASPIA_MOBILE)
 
 #if defined(Q_OS_WINDOWS)
     registerUrlHandler();
