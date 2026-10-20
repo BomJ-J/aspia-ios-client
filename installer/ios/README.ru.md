@@ -93,7 +93,7 @@ mkdir -p Payload && cp -R builds/local-ios/Release/Aspia.app Payload/
 zip -qry Aspia-unsigned.ipa Payload
 ```
 
-Сгенерированный проект можно открыть в Xcode: `builds/local-ios/aspia.xcodeproj`. Выберите цель `aspia_client`, свою команду (Personal Team) во вкладке **Signing & Capabilities** — и запускайте прямо на подключённом iPhone.
+Чтобы собрать и поставить приложение прямо из Xcode на подключённый iPhone, следуйте разделу [«Сборка через Xcode»](../../README.md#сборка-через-xcode) на главной странице.
 
 ## Что изменено для iOS
 

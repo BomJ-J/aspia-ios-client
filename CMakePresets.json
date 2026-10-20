@@ -269,6 +269,13 @@
             "macOS"
           ]
         }
+      },
+      "cacheVariables": {
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED": "YES",
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED": "YES",
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY": "Apple Development",
+        "CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_STYLE": "Automatic",
+        "CMAKE_CONFIGURATION_TYPES": "Release"
       }
     }
   ],
