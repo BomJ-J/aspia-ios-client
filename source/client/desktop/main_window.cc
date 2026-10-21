@@ -141,8 +141,6 @@ MainWindow::MainWindow(QWidget* parent)
     restoreState(settings.windowState());
 
     ui->action_toolbar->setChecked(settings.isToolBarEnabled());
-    ui->action_statusbar->setChecked(settings.isStatusBarEnabled());
-    ui->statusbar->setVisible(settings.isStatusBarEnabled());
 
     bool large_icons = settings.largeIcons();
     ui->toolbar->setIconSize(large_icons ? QSize(32, 32) : QSize(24, 24));
@@ -165,7 +163,6 @@ MainWindow::MainWindow(QWidget* parent)
     connect(ui->action_exit, &QAction::triggered, this, &MainWindow::close);
     connect(ui->toolbar, &QToolBar::visibilityChanged, ui->action_toolbar, &QAction::setChecked);
     connect(ui->action_toolbar, &QAction::toggled, ui->toolbar, &QToolBar::setVisible);
-    connect(ui->action_statusbar, &QAction::toggled, this, &MainWindow::updateStatusBarVisibility);
     connect(ui->action_large_icons, &QAction::toggled, this, [this](bool enable)
     {
         ui->toolbar->setIconSize(enable ? QSize(32, 32) : QSize(24, 24));
@@ -385,7 +382,7 @@ void MainWindow::closeEvent(QCloseEvent* /* event */)
 }
 
 //--------------------------------------------------------------------------------------------------
-QList<McpController::ClientInfo> MainWindow::clients() const
+QList<McpController::ClientInfo> MainWindow::mcpClients() const
 {
     QList<McpController::ClientInfo> list;
 
@@ -429,7 +426,7 @@ QList<McpController::ClientInfo> MainWindow::clients() const
 }
 
 //--------------------------------------------------------------------------------------------------
-McpController::DesktopWindow* MainWindow::desktopWindow(qint64 client_id) const
+McpController::DesktopWindow* MainWindow::mcpDesktopWindow(qint64 client_id) const
 {
     for (int i = 0; i < ui->tabs->count(); ++i)
     {
@@ -443,7 +440,7 @@ McpController::DesktopWindow* MainWindow::desktopWindow(qint64 client_id) const
 }
 
 //--------------------------------------------------------------------------------------------------
-McpController::FileTransferWindow* MainWindow::fileTransferWindow(qint64 client_id) const
+McpController::FileTransferWindow* MainWindow::mcpFileTransferWindow(qint64 client_id) const
 {
     for (int i = 0; i < ui->tabs->count(); ++i)
     {
@@ -457,7 +454,7 @@ McpController::FileTransferWindow* MainWindow::fileTransferWindow(qint64 client_
 }
 
 //--------------------------------------------------------------------------------------------------
-McpController::TerminalWindow* MainWindow::terminalWindow(qint64 client_id) const
+McpController::TerminalWindow* MainWindow::mcpTerminalWindow(qint64 client_id) const
 {
     for (int i = 0; i < ui->tabs->count(); ++i)
     {
@@ -471,19 +468,19 @@ McpController::TerminalWindow* MainWindow::terminalWindow(qint64 client_id) cons
 }
 
 //--------------------------------------------------------------------------------------------------
-McpController::SystemInfoWindow* MainWindow::systemInfoWindow(qint64 client_id) const
+McpController::SystemInfoWindow* MainWindow::mcpSystemInfoWindow(qint64 client_id) const
 {
     return dynamic_cast<McpController::SystemInfoWindow*>(clientWindow(client_id));
 }
 
 //--------------------------------------------------------------------------------------------------
-McpController::ChatWindow* MainWindow::chatWindow(qint64 client_id) const
+McpController::ChatWindow* MainWindow::mcpChatWindow(qint64 client_id) const
 {
     return dynamic_cast<McpController::ChatWindow*>(clientWindow(client_id));
 }
 
 //--------------------------------------------------------------------------------------------------
-QString MainWindow::clientDialog(qint64 client_id) const
+QString MainWindow::mcpClientDialog(qint64 client_id) const
 {
     ClientWindow* client_window = clientWindow(client_id);
     if (!client_window)
@@ -494,14 +491,14 @@ QString MainWindow::clientDialog(qint64 client_id) const
 }
 
 //--------------------------------------------------------------------------------------------------
-void MainWindow::closeClient(qint64 client_id)
+void MainWindow::mcpCloseClient(qint64 client_id)
 {
     if (ClientWindow* client_window = clientWindow(client_id))
         client_window->close();
 }
 
 //--------------------------------------------------------------------------------------------------
-bool MainWindow::showClient(qint64 client_id)
+bool MainWindow::mcpShowClient(qint64 client_id)
 {
     for (int i = 0; i < ui->tabs->count(); ++i)
     {
@@ -515,7 +512,7 @@ bool MainWindow::showClient(qint64 client_id)
 }
 
 //--------------------------------------------------------------------------------------------------
-bool MainWindow::asksCredentials() const
+bool MainWindow::mcpAsksCredentials() const
 {
     const QList<ClientWindow*> client_windows = findChildren<ClientWindow*>(Qt::FindDirectChildrenOnly);
     for (const ClientWindow* client_window : client_windows)
@@ -528,14 +525,14 @@ bool MainWindow::asksCredentials() const
 }
 
 //--------------------------------------------------------------------------------------------------
-void MainWindow::connectLocalHost(qint64 entry_id, proto::peer::SessionType session_type)
+void MainWindow::mcpConnectLocalHost(qint64 entry_id, proto::peer::SessionType session_type)
 {
     if (ManagementTab* management_tab = managementTab())
         management_tab->connectLocalHost(entry_id, session_type);
 }
 
 //--------------------------------------------------------------------------------------------------
-void MainWindow::connectRouterHost(const HostConfig& host, proto::peer::SessionType session_type)
+void MainWindow::mcpConnectRouterHost(const HostConfig& host, proto::peer::SessionType session_type)
 {
     if (ManagementTab* management_tab = managementTab())
         management_tab->connectRouterHost(host, session_type);
@@ -642,7 +639,7 @@ void MainWindow::onCurrentTabChanged(int index)
     if (active_tab_)
     {
         removeTabActions();
-        active_tab_->deactivate(ui->statusbar);
+        active_tab_->deactivate();
         active_tab_ = nullptr;
     }
 
@@ -659,9 +656,8 @@ void MainWindow::onCurrentTabChanged(int index)
 
     active_tab_ = tab;
     installTabActions(active_tab_);
-    active_tab_->activate(ui->statusbar);
+    active_tab_->activate();
     syncSearchField();
-    updateStatusBarVisibility();
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -674,7 +670,7 @@ void MainWindow::onCloseTab(int index)
     if (tab == active_tab_)
     {
         removeTabActions();
-        tab->deactivate(ui->statusbar);
+        tab->deactivate();
         active_tab_ = nullptr;
     }
 
@@ -1019,7 +1015,6 @@ void MainWindow::saveWindowState()
     settings.setWindowGeometry(saveGeometry());
     settings.setWindowState(saveState());
     settings.setToolBarEnabled(ui->action_toolbar->isChecked());
-    settings.setStatusBarEnabled(ui->action_statusbar->isChecked());
     settings.setSearchFieldEnabled(ui->action_search_field->isChecked());
     settings.setLargeIcons(ui->action_large_icons->isChecked());
     settings.setOpenSessionsInTabs(ui->action_sessions_in_tabs->isChecked());
@@ -1220,13 +1215,6 @@ void MainWindow::syncSearchField()
         QSignalBlocker blocker(search_field_);
         search_field_->setText(text);
     }
-}
-
-//--------------------------------------------------------------------------------------------------
-void MainWindow::updateStatusBarVisibility()
-{
-    bool tab_has_statusbar = !active_tab_ || active_tab_->hasStatusBar();
-    ui->statusbar->setVisible(ui->action_statusbar->isChecked() && tab_has_statusbar);
 }
 
 //--------------------------------------------------------------------------------------------------
