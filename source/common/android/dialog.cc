@@ -186,6 +186,9 @@ void Dialog::setVisible(bool visible)
 //--------------------------------------------------------------------------------------------------
 void Dialog::done(int result)
 {
+    if (!dismissible_ && result == QDialog::Rejected)
+        return;
+
     if (QWidget* focus = focusWidget())
         focus->clearFocus();
 

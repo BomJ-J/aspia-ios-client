@@ -57,6 +57,10 @@ public:
     // window (the app bar, the navigation bar) is only dimmed by the scrim.
     void setBlurBehind(bool enable);
 
+    // A dialog that is not dismissible cannot be rejected: a tap on the scrim, the Escape and Back
+    // keys leave it open. It closes only by accepting it.
+    void setDismissible(bool enable) { dismissible_ = enable; }
+
     // QWidget implementation.
     void setVisible(bool visible) final;
 
@@ -92,6 +96,7 @@ private:
     QPixmap blur_pixmap_;
     QRect blur_rect_;
     bool blur_behind_ = false;
+    bool dismissible_ = true;
 
     Q_DISABLE_COPY_MOVE(Dialog)
 };

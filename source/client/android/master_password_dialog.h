@@ -38,7 +38,8 @@ public:
         UNLOCK
     };
 
-    explicit MasterPasswordDialog(Mode mode, QWidget* parent = nullptr);
+    // |cancelable| adds a Cancel button that rejects the dialog.
+    MasterPasswordDialog(Mode mode, bool cancelable, QWidget* parent = nullptr);
     ~MasterPasswordDialog() final;
 
 private slots:

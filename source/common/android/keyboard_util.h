@@ -28,7 +28,19 @@
 // pixels; the iOS plugin reports points, the same units as the widgets.
 inline qreal keyboardTop(const QWidget* widget)
 {
-    const qreal top = QGuiApplication::inputMethod()->keyboardRectangle().top();
+    const QRectF keyboard = QGuiApplication::inputMethod()->keyboardRectangle();
+
+    // While the keyboard slides in, Qt for iOS reports the rectangle it starts from, which iOS 26
+    // leaves empty. Taken as is, its top of 0 would make the keyboard cover the whole window and the
+    // screens would squeeze their content away for the length of the animation. Until the real
+    // rectangle arrives the keyboard is taken to sit below the window.
+    if (keyboard.isEmpty())
+    {
+        const QWidget* window = widget->window();
+        return window->mapToGlobal(QPoint(0, window->height())).y();
+    }
+
+    const qreal top = keyboard.top();
 #if defined(Q_OS_ANDROID)
     return top / widget->devicePixelRatioF();
 #else

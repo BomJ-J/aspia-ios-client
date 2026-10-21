@@ -557,7 +557,8 @@ bool SettingsWidget::setBiometricEnabled(bool enable)
 
     // Confirm the master password before binding its key to a biometric, so a momentarily unlocked
     // app cannot be used to enroll someone else's fingerprint.
-    AutoQPointer<MasterPasswordDialog> dialog(new MasterPasswordDialog(MasterPasswordDialog::Mode::UNLOCK, this));
+    AutoQPointer<MasterPasswordDialog> dialog(
+        new MasterPasswordDialog(MasterPasswordDialog::Mode::UNLOCK, true, this));
     if (dialog->exec() != QDialog::Accepted)
         return false;
 

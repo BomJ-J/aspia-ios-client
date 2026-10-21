@@ -84,6 +84,18 @@ enum Section
 };
 
 //--------------------------------------------------------------------------------------------------
+// Whether the lock screen can be canceled, which quits the application. An iOS application does
+// not quit itself: it would look like a crash. There the lock screen stays until it is unlocked.
+bool isLockCancelable()
+{
+#if defined(Q_OS_IOS)
+    return false;
+#else
+    return true;
+#endif
+}
+
+//--------------------------------------------------------------------------------------------------
 // Allows or forbids the window from drawing into the display cutout area (the camera notch). Pairs
 // with clearing WA_ContentsMarginsRespectsSafeArea so the content actually fills the cutout instead
 // of being letterboxed below it.
@@ -710,8 +722,10 @@ void AndroidMainWindow::onApplicationStateChanged(Qt::ApplicationState state)
         const TimePoint since = background_since_;
         background_since_ = TimePoint();
 
+        // Queued: the lock prompt spins a nested event loop for as long as it is on screen, and iOS
+        // kills an application that does not return from the activation notification in time.
         if (Clock::now() - since >= kLockTimeout)
-            relock();
+            QMetaObject::invokeMethod(this, &AndroidMainWindow::relock, Qt::QueuedConnection);
     }
     else if (!relocking_ && background_since_ == TimePoint())
     {
@@ -763,7 +777,8 @@ void AndroidMainWindow::runMasterPasswordGate()
 
     // The data cryptor is invalid until the dialog unlocks it, so quit if the user cancels. The
     // dialog is anchored to the content stack so only it is blurred, not the bars.
-    AutoQPointer<MasterPasswordDialog> dialog(new MasterPasswordDialog(mode, stack_content_));
+    AutoQPointer<MasterPasswordDialog> dialog(
+        new MasterPasswordDialog(mode, isLockCancelable(), stack_content_));
     if (dialog->exec() != QDialog::Accepted)
     {
         QCoreApplication::quit();
@@ -831,7 +846,8 @@ void AndroidMainWindow::relock()
 
     // The data cryptor stays open; this only re-verifies the user (password or fingerprint).
     AutoQPointer<MasterPasswordDialog> dialog(
-        new MasterPasswordDialog(MasterPasswordDialog::Mode::UNLOCK, stack_content_));
+        new MasterPasswordDialog(MasterPasswordDialog::Mode::UNLOCK, isLockCancelable(),
+                                 stack_content_));
     if (dialog->exec() != QDialog::Accepted)
     {
         QCoreApplication::quit();

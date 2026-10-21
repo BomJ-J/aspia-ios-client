@@ -32,7 +32,7 @@
 #include "common/android/line_edit.h"
 
 //--------------------------------------------------------------------------------------------------
-MasterPasswordDialog::MasterPasswordDialog(Mode mode, QWidget* parent)
+MasterPasswordDialog::MasterPasswordDialog(Mode mode, bool cancelable, QWidget* parent)
     : Dialog(parent),
       edit_password_(new LineEdit(this)),
       edit_confirm_(nullptr),
@@ -77,10 +77,20 @@ MasterPasswordDialog::MasterPasswordDialog(Mode mode, QWidget* parent)
         content->addWidget(edit_confirm_);
     }
 
-    Button* cancel = addButton(tr("Cancel"), Button::Role::TEXT);
-    Button* accept = addButton(tr("OK"), Button::Role::FILLED);
+    // The lock screens of iOS have no Cancel: canceling them would quit the application, which iOS
+    // applications do not do.
+    if (cancelable)
+    {
+        Button* cancel = addButton(tr("Cancel"), Button::Role::TEXT);
+        connect(cancel, &Button::clicked, this, &MasterPasswordDialog::reject);
+    }
+    else
+    {
+        // Nor does a tap beside the card close it.
+        setDismissible(false);
+    }
 
-    connect(cancel, &Button::clicked, this, &MasterPasswordDialog::reject);
+    Button* accept = addButton(tr("OK"), Button::Role::FILLED);
     connect(accept, &Button::clicked, this, &MasterPasswordDialog::onAccept);
 
     // The system already shows a biometric prompt automatically when unlock is available; the
