@@ -29,3 +29,6 @@ CMakeUserPresets.json
 # Claude Code working data: project memory, skills and session state. Holds machine
 # addresses and credentials of the build fleet, must never reach the public repository.
 /.claude/
+
+# macOS Finder metadata
+.DS_Store

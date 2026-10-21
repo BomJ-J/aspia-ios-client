@@ -68,6 +68,10 @@ endif()
 
 if (IOS)
     message(STATUS "iOS detected")
+
+    # The IPA is handed out to other people: keep the absolute paths of the build machine (with the
+    # name of its user) out of __FILE__ and the debug information.
+    add_compile_options("-ffile-prefix-map=${CMAKE_SOURCE_DIR}/=" "-ffile-prefix-map=${CMAKE_BINARY_DIR}/=")
 endif()
 
 if (ANDROID)

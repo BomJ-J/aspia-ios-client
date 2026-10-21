@@ -93,6 +93,14 @@ mkdir -p Payload && cp -R builds/local-ios/Release/Aspia.app Payload/
 zip -qry Aspia-unsigned.ipa Payload
 ```
 
+Всё это, кроме установки Qt, делает один скрипт. Он сам находит Qt в `~/Qt/6.11.1` и iOS SDK в Xcode и кладёт готовый файл в `builds/Aspia-unsigned.ipa`:
+
+```bash
+installer/ios/build-ipa.sh com.yourname.aspia
+```
+
+Bundle ID нужен только при первом запуске, потом он запоминается. Повторные запуски пересобирают только изменённое и проходят за минуты.
+
 Чтобы собрать и поставить приложение прямо из Xcode на подключённый iPhone, следуйте разделу [«Сборка через Xcode»](../../README.md#сборка-через-xcode) на главной странице.
 
 ## Что изменено для iOS
