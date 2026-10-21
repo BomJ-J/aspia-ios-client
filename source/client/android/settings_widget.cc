@@ -337,6 +337,7 @@ void SettingsWidget::buildSecuritySection(QVBoxLayout* layout)
     biometric->setChecked(biometric_enabled);
     biometric->setEnabled(usable);
     layout->addWidget(biometric);
+    biometric_switch_ = biometric;
 
     if (usable)
     {
@@ -541,6 +542,16 @@ void SettingsWidget::buildUpdateSection(QVBoxLayout* layout)
     Button* check = new Button(tr("Check for updates"), Button::Role::FILLED);
     connect(check, &Button::clicked, this, &SettingsWidget::showUpdate);
     layout->addWidget(check);
+}
+
+//--------------------------------------------------------------------------------------------------
+void SettingsWidget::updateBiometricSwitch()
+{
+    if (!biometric_switch_)
+        return;
+
+    QSignalBlocker blocker(biometric_switch_);
+    biometric_switch_->setChecked(Database::instance().isBiometricUnlockEnabled());
 }
 
 //--------------------------------------------------------------------------------------------------

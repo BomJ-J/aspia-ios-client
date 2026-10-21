@@ -105,6 +105,9 @@ private:
     // user cancels.
     void relock();
 
+    // After the master password was typed, offers to unlock with the biometrics next time.
+    void offerBiometricUnlock();
+
     // Routes a connection request to the matching session window. Only a single session is supported
     // at a time.
     void openSession(HostConfig host, proto::peer::SessionType session_type);

@@ -20,6 +20,7 @@
 #define CLIENT_ANDROID_SETTINGS_WIDGET_H
 
 #include <QList>
+#include <QPointer>
 #include <QWidget>
 
 #include <functional>
@@ -35,6 +36,7 @@ class CredentialsWidget;
 class MasterPasswordWidget;
 class IconButton;
 class ScrollArea;
+class Switch;
 
 // Settings screen for the Android client: the same preferences as the desktop client, applied
 // immediately on change. Backed by the shared Settings storage. The credentials and the about
@@ -60,6 +62,9 @@ public:
     // Opens the update page and starts a check on it.
     void showUpdate();
 
+    // Brings the biometric unlock switch in line with the database (enabled elsewhere).
+    void updateBiometricSwitch();
+
 signals:
     // Requests the host bar to show |title| with a back button (a sub-page) or the default state.
     void sig_titleChanged(const QString& title, bool back_visible);
@@ -73,6 +78,7 @@ private slots:
     void onMasterPasswordChanged();
 
 private:
+    QPointer<Switch> biometric_switch_;
     void showCredentials();
     void showAbout();
     void showMasterPassword();

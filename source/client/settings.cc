@@ -32,6 +32,7 @@ namespace {
 const QString kVersionParam = "version";
 const QString kLocaleParam = "locale";
 const QString kSystemLocaleParam = "system_locale";
+const QString kBiometricOfferDeclinedParam = "biometric_offer_declined";
 const QString kThemeParam = "theme";
 const QString kSessionTypeParam = "session_type";
 const QString kOneTimePasswordCheckedParam = "one_time_password_checked";
@@ -116,6 +117,18 @@ QString Settings::systemLocale() const
 void Settings::setSystemLocale(const QString& locale)
 {
     settings_.setValue(kSystemLocaleParam, locale);
+}
+
+//--------------------------------------------------------------------------------------------------
+bool Settings::isBiometricOfferDeclined() const
+{
+    return settings_.value(kBiometricOfferDeclinedParam, false).toBool();
+}
+
+//--------------------------------------------------------------------------------------------------
+void Settings::setBiometricOfferDeclined(bool declined)
+{
+    settings_.setValue(kBiometricOfferDeclinedParam, declined);
 }
 
 //--------------------------------------------------------------------------------------------------

@@ -41,7 +41,9 @@
 #include "client/host_url.h"
 #include "client/master_password.h"
 #include "client/router_controller.h"
+#include "client/settings.h"
 #include "client/android/authorization_window.h"
+#include "client/android/biometric_gate.h"
 #include "client/android/chat_window.h"
 #include "client/android/sys_info_window.h"
 #include "client/android/desktop_window.h"
@@ -56,6 +58,8 @@
 #include "common/android/app_bar.h"
 #include "common/android/bottom_navigation_bar.h"
 #include "common/android/bottom_sheet.h"
+#include "common/android/button.h"
+#include "common/android/dialog.h"
 #include "common/android/keyboard_inset.h"
 #include "common/android/menu.h"
 #include "common/android/message_dialog.h"
@@ -785,8 +789,60 @@ void AndroidMainWindow::runMasterPasswordGate()
         return;
     }
 
+    if (!dialog->isUnlockedWithBiometrics())
+        offerBiometricUnlock();
+
     relocking_ = false;
     onUnlocked();
+}
+
+//--------------------------------------------------------------------------------------------------
+void AndroidMainWindow::offerBiometricUnlock()
+{
+    // Offered once the master password is typed, when the biometrics could stand in for it next
+    // time and the user has not turned the offer down.
+    Database& db = Database::instance();
+    Settings settings;
+    if (db.isBiometricUnlockEnabled() || settings.isBiometricOfferDeclined() ||
+        BiometricGate::status() != BiometricGate::Status::AVAILABLE)
+    {
+        return;
+    }
+
+    // The labels of the switch in Settings and of the standard Yes and No buttons are reused, so
+    // they come translated.
+    Dialog dialog(stack_content_);
+    dialog.setTitle(QCoreApplication::translate("SettingsWidget", "Unlock with biometrics"));
+    dialog.setText(tr("Unlock with biometrics next time instead of typing the master password? "
+                      "This can be changed in Settings."));
+
+    Button* no = dialog.addButton(
+        QCoreApplication::translate("QPlatformTheme", "&No").remove('&'), Button::Role::TEXT);
+    Button* yes = dialog.addButton(
+        QCoreApplication::translate("QPlatformTheme", "&Yes").remove('&'), Button::Role::FILLED);
+    connect(no, &Button::clicked, &dialog, &QDialog::reject);
+    connect(yes, &Button::clicked, &dialog, &QDialog::accept);
+
+    if (dialog.exec() != QDialog::Accepted)
+    {
+        settings.setBiometricOfferDeclined(true);
+        return;
+    }
+
+    BiometricGate::Prompt prompt;
+    prompt.title = QCoreApplication::translate("SettingsWidget", "Enable biometric unlock");
+    prompt.negative_text = QCoreApplication::translate("SettingsWidget", "Cancel");
+
+    // The master password was just typed, so the key is bound right away, without asking for it
+    // again as the switch in Settings does.
+    std::optional<BiometricGate::Blob> blob =
+        BiometricGate::enroll(MasterPassword::currentKey(), prompt);
+    if (!blob.has_value() || !db.setBiometricBlob(BiometricGate::pack(*blob)))
+        return;
+
+    QWidget* page = stack_content_->widget(SECTION_SETTINGS);
+    if (SettingsWidget* settings_page = qobject_cast<SettingsWidget*>(page))
+        settings_page->updateBiometricSwitch();
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -853,6 +909,9 @@ void AndroidMainWindow::relock()
         QCoreApplication::quit();
         return;
     }
+
+    if (!dialog->isUnlockedWithBiometrics())
+        offerBiometricUnlock();
 
     relocking_ = false;
 

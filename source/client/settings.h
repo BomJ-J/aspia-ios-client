@@ -45,6 +45,11 @@ public:
     QString systemLocale() const;
     void setSystemLocale(const QString& locale);
 
+    // The user turned down the offer to unlock with the biometrics after typing the master
+    // password; it is not made again.
+    bool isBiometricOfferDeclined() const;
+    void setBiometricOfferDeclined(bool declined);
+
     QString theme() const;
     void setTheme(const QString& theme);
 

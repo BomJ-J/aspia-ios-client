@@ -324,6 +324,11 @@
 <context>
     <name>AndroidMainWindow</name>
     <message>
+        <location filename="../client/android/main_window.cc" line="816"/>
+        <source>Unlock with biometrics next time instead of typing the master password? This can be changed in Settings.</source>
+        <translation>Desbloquear com biometria da próxima vez em vez de digitar a senha mestra? Isso pode ser alterado nas Configurações.</translation>
+    </message>
+    <message>
         <location filename="../client/android/main_window.cc" line="175"/>
         <location filename="../client/android/main_window.cc" line="350"/>
         <location filename="../client/android/main_window.cc" line="398"/>

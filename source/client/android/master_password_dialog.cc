@@ -192,6 +192,7 @@ void MasterPasswordDialog::tryBiometricUnlock()
         case BiometricGate::Result::SUCCESS:
             if (MasterPassword::unlockWithKey(result.key))
             {
+                unlocked_with_biometrics_ = true;
                 accept();
                 return;
             }

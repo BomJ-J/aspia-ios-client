@@ -42,6 +42,9 @@ public:
     MasterPasswordDialog(Mode mode, bool cancelable, QWidget* parent = nullptr);
     ~MasterPasswordDialog() final;
 
+    // Whether the dialog was passed with the biometrics rather than with the password.
+    bool isUnlockedWithBiometrics() const { return unlocked_with_biometrics_; }
+
 private slots:
     void onAccept();
     void tryBiometricUnlock();
@@ -56,6 +59,7 @@ private:
     LineEdit* edit_confirm_ = nullptr;
     Label* label_error_ = nullptr;
     Mode mode_ = Mode::UNLOCK;
+    bool unlocked_with_biometrics_ = false;
 
     Q_DISABLE_COPY_MOVE(MasterPasswordDialog)
 };
