@@ -40,6 +40,11 @@ public:
     QString locale() const;
     void setLocale(const QString& locale);
 
+    // Language the system reported at the previous start. On iOS it carries the language chosen for
+    // the application in the iOS Settings.
+    QString systemLocale() const;
+    void setSystemLocale(const QString& locale);
+
     QString theme() const;
     void setTheme(const QString& theme);
 

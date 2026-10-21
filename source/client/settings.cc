@@ -31,6 +31,7 @@ namespace {
 
 const QString kVersionParam = "version";
 const QString kLocaleParam = "locale";
+const QString kSystemLocaleParam = "system_locale";
 const QString kThemeParam = "theme";
 const QString kSessionTypeParam = "session_type";
 const QString kOneTimePasswordCheckedParam = "one_time_password_checked";
@@ -104,6 +105,18 @@ QString Settings::locale() const
 void Settings::setLocale(const QString& locale)
 {
     settings_.setValue(kLocaleParam, locale);
+}
+
+//--------------------------------------------------------------------------------------------------
+QString Settings::systemLocale() const
+{
+    return settings_.value(kSystemLocaleParam).toString();
+}
+
+//--------------------------------------------------------------------------------------------------
+void Settings::setSystemLocale(const QString& locale)
+{
+    settings_.setValue(kSystemLocaleParam, locale);
 }
 
 //--------------------------------------------------------------------------------------------------

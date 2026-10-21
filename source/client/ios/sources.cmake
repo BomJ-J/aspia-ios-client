@@ -19,5 +19,7 @@
 # iOS replacements for the parts of the touch interface (client/android) that use JNI.
 collect_sources(SOURCE_CLIENT_IOS
     biometric_gate_ios.mm
+    edit_menu.h
+    edit_menu_ios.mm
     keyboard_gesture.h
     keyboard_gesture_ios.mm)

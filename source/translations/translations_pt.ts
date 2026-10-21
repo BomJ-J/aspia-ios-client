@@ -8371,6 +8371,7 @@ Credenciais importadas: %5</translation>
     </message>
     <message>
         <location filename="../client/android/settings_widget.cc" line="202"/>
+        <location filename="../client/android/settings_widget.cc" line="328"/>
         <source>Credentials</source>
         <translation>Credenciais</translation>
     </message>

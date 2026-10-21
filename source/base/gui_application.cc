@@ -416,6 +416,20 @@ QString GuiApplication::resolveLocale(const QString& locale) const
     if (locale_list_.contains(locale))
         return locale;
 
+    // A BCP 47 name with a script, like zh-Hant-TW from iOS, matches a translation by its language
+    // and territory (zh_TW).
+    const QLocale parsed(locale);
+    if (locale_list_.contains(parsed.name()))
+        return parsed.name();
+
+    // The Norwegian translation is named "no"; systems report Bokmal and Nynorsk.
+    if (parsed.language() == QLocale::NorwegianBokmal ||
+        parsed.language() == QLocale::NorwegianNynorsk)
+    {
+        if (locale_list_.contains("no"))
+            return "no";
+    }
+
     qsizetype separator = locale.indexOf('-');
     if (separator < 0)
         separator = locale.indexOf('_');

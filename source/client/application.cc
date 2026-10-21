@@ -46,8 +46,17 @@
 #include <QDesktopServices>
 #include <QInputMethod>
 #include <QInputMethodQueryEvent>
+#include <QClipboard>
+#include <QElapsedTimer>
+#include <QLineEdit>
+#include <QLocale>
+#include <QMouseEvent>
+#include <QPlainTextEdit>
+#include <QPointer>
+#include <QTextEdit>
 #include <QTimer>
 
+#include "client/ios/edit_menu.h"
 #include "client/ios/keyboard_gesture.h"
 #endif // defined(Q_OS_IOS)
 
@@ -62,6 +71,13 @@ const char kActivateWindow[] = "activate_window";
 const char kOpenUrl[] = "open_url:";
 
 #if defined(Q_OS_IOS)
+//--------------------------------------------------------------------------------------------------
+bool isTextWidget(const QObject* object)
+{
+    return qobject_cast<const QLineEdit*>(object) || qobject_cast<const QTextEdit*>(object) ||
+           qobject_cast<const QPlainTextEdit*>(object);
+}
+
 //--------------------------------------------------------------------------------------------------
 // When the keyboard opens, the iOS plugin of Qt shifts the whole screen up until the text cursor is
 // above the keyboard. The touch interface makes room for the keyboard itself (KeyboardInset and the
@@ -87,6 +103,134 @@ protected:
         query->setValue(Qt::ImCursorRectangle, QRectF());
         return true;
     }
+};
+
+//--------------------------------------------------------------------------------------------------
+// The edit menu of the text fields. Qt for iOS asks a field for a context menu on taps it takes for
+// the field, and the text widgets answer with the desktop menu of Qt (Undo, Redo, Cut, ...); its
+// own fallback, the edit menu of iOS, no longer shows up on current iOS. Those requests are
+// swallowed, and a field opens the edit menu of iOS itself, as the native fields do: on a tap on a
+// field that already has the focus, or on a long press.
+class TextFieldMenu final : public QObject
+{
+public:
+    using QObject::QObject;
+
+protected:
+    bool eventFilter(QObject* watched, QEvent* event) final
+    {
+        const bool text_widget = isTextWidget(watched);
+
+        switch (event->type())
+        {
+            case QEvent::Polish:
+            {
+                // No selection handles, loupe and edit menu gestures of Qt: they place themselves
+                // off the field and take the taps on a selection from it. The hint is set on the
+                // field itself, as QLineEdit answers Qt for iOS without a query event.
+                if (QLineEdit* edit = qobject_cast<QLineEdit*>(watched))
+                    edit->setInputMethodHints(edit->inputMethodHints() | Qt::ImhNoTextHandles);
+                return false;
+            }
+
+            case QEvent::ContextMenu:
+                return text_widget;
+
+            case QEvent::MouseButtonPress:
+            {
+                QLineEdit* edit = qobject_cast<QLineEdit*>(watched);
+                if (!edit)
+                    return false;
+
+                pressed_ = edit;
+                pressed_focused_ = edit->hasFocus();
+                press_pos_ = static_cast<QMouseEvent*>(event)->globalPosition().toPoint();
+                press_timer_.start();
+                return false;
+            }
+
+            case QEvent::MouseButtonRelease:
+            {
+                QLineEdit* edit = qobject_cast<QLineEdit*>(watched);
+                if (!edit || edit != pressed_)
+                    return false;
+
+                pressed_.clear();
+
+                const QPoint pos = static_cast<QMouseEvent*>(event)->globalPosition().toPoint();
+                const bool moved = (pos - press_pos_).manhattanLength() > kTapSlop;
+                const bool long_press = press_timer_.elapsed() >= kLongPressMs;
+
+                if (!moved && (pressed_focused_ || long_press))
+                {
+                    // After the release, so the field has placed its cursor first.
+                    QPointer<QLineEdit> guard(edit);
+                    QTimer::singleShot(0, edit, [guard]() { if (guard) showFor(guard); });
+                }
+                return false;
+            }
+
+            default:
+                return false;
+        }
+    }
+
+private:
+    static constexpr int kTapSlop = 12;
+    static constexpr qint64 kLongPressMs = 450;
+
+    // The labels of the desktop menu of QLineEdit come with the translations of Qt; the mnemonic
+    // markers are dropped.
+    static QString label(const char* source)
+    {
+        return QLineEdit::tr(source).remove('&');
+    }
+
+    static void showFor(QLineEdit* edit)
+    {
+        const bool hidden = edit->echoMode() != QLineEdit::Normal;
+        const bool can_copy = edit->hasSelectedText() && !hidden;
+        const bool can_edit = !edit->isReadOnly();
+        const bool has_text = !edit->text().isEmpty();
+        const bool can_paste = can_edit && !QGuiApplication::clipboard()->text().isEmpty();
+
+        QPointer<QLineEdit> guard(edit);
+
+        QList<EditMenuItem> items;
+        if (can_copy && can_edit)
+            items.append({ label("Cu&t"), [guard]() { if (guard) guard->cut(); } });
+        if (can_copy)
+            items.append({ label("&Copy"), [guard]() { if (guard) guard->copy(); } });
+        if (can_paste)
+            items.append({ label("&Paste"), [guard]() { if (guard) guard->paste(); } });
+        if (has_text && edit->selectedText() != edit->text())
+        {
+            // As in the native fields, the menu comes back for the selection.
+            items.append({ label("Select All"), [guard]()
+            {
+                if (!guard)
+                    return;
+                guard->selectAll();
+                QTimer::singleShot(0, guard, [guard]() { if (guard) showFor(guard); });
+            }});
+        }
+
+        // The menu points at the cursor, or at the whole selection when there is one.
+        QRect target = edit->inputMethodQuery(Qt::ImCursorRectangle).toRect();
+        if (edit->hasSelectedText())
+            target |= edit->inputMethodQuery(Qt::ImAnchorRectangle).toRect();
+        if (target.height() <= 0)
+            target = edit->rect();
+        else if (target.width() <= 0)
+            target.setWidth(1); // The cursor is a line; the menu still needs a rectangle.
+
+        showEditMenu(edit, target, items);
+    }
+
+    QPointer<QLineEdit> pressed_;
+    bool pressed_focused_ = false;
+    QPoint press_pos_;
+    QElapsedTimer press_timer_;
 };
 #endif // defined(Q_OS_IOS)
 
@@ -135,6 +279,19 @@ Application::Application(int& argc, char* argv[])
 
     Settings settings;
 
+#if defined(Q_OS_IOS)
+    // The language is remembered, but a language picked for Aspia in the iOS Settings (or a new
+    // language of the phone) replaces it. iOS reports that choice as the first preferred language.
+    const QStringList ui_languages = QLocale::system().uiLanguages();
+    const QString system_locale = ui_languages.isEmpty() ? QString() : ui_languages.first();
+    if (!system_locale.isEmpty() && system_locale != settings.systemLocale())
+    {
+        LOG(INFO) << "System language changed to:" << system_locale;
+        settings.setSystemLocale(system_locale);
+        settings.setLocale(system_locale);
+    }
+#endif // defined(Q_OS_IOS)
+
     QString locale = resolveLocale(settings.locale());
     if (locale != settings.locale())
     {
@@ -163,6 +320,7 @@ Application::Application(int& argc, char* argv[])
     QDesktopServices::setUrlHandler("aspia", this, "onSystemUrlOpened");
 
     installEventFilter(new KeyboardScrollBlocker(this));
+    installEventFilter(new TextFieldMenu(this));
 
     // Qt attaches its hide-keyboard gesture to the window that has the focus when the keyboard
     // opens, so the gesture is switched off again each time.
