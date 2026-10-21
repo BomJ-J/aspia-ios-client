@@ -63,6 +63,7 @@ public:
     void refresh(const QList<QRect>& dirty_rects);
 
     void showSoftwareKeyboard();
+    void hideSoftwareKeyboard();
 
     // Height (widget pixels) of the key bar shown above the keyboard, so it is excluded from the
     // area used to keep the remote cursor visible.

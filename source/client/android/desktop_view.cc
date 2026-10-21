@@ -192,6 +192,12 @@ void DesktopView::showSoftwareKeyboard()
 }
 
 //--------------------------------------------------------------------------------------------------
+void DesktopView::hideSoftwareKeyboard()
+{
+    QGuiApplication::inputMethod()->hide();
+}
+
+//--------------------------------------------------------------------------------------------------
 void DesktopView::setKeyBarHeight(int height)
 {
     key_bar_height_ = height;
@@ -341,8 +347,13 @@ QVariant DesktopView::inputMethodQuery(Qt::InputMethodQuery query) const
             // like Gboard force an extra number row and a persistent toolbar for any password field,
             // which wastes vertical space. Dropping it leaves a plain non-learning text field that
             // renders just the keys.
+            //
+            // ImhNoTextHandles keeps Qt on iOS from attaching its text selection gestures to the
+            // window. There is no text to select here, and the tap gesture that opens the edit menu
+            // crashed: it shows the menu a run loop pass after the tap, by which time hiding the
+            // keyboard has already torn the gesture down.
             return static_cast<int>(Qt::ImhNoPredictiveText | Qt::ImhNoAutoUppercase |
-                                    Qt::ImhPreferLowercase);
+                                    Qt::ImhPreferLowercase | Qt::ImhNoTextHandles);
 
         default:
             return QWidget::inputMethodQuery(query);

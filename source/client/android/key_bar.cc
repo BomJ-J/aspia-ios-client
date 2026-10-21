@@ -19,20 +19,33 @@
 #include "client/android/key_bar.h"
 
 #include <QHBoxLayout>
+#include <QPainter>
+#include <QPainterPath>
 #include <QPalette>
 
 #include <utility>
 
-#include "common/android/button.h"
-#include "common/android/controls.h"
+#include "client/android/key_button.h"
 #include "common/android/scroll_area.h"
 #include "common/android/touch_scroller.h"
 
 namespace {
 
-// Compact height for the bar keys. Smaller than the shared Button height to keep this auxiliary bar
-// from eating too much screen above the on-screen keyboard.
-constexpr int kKeyHeight = 32;
+// Height of the bar keys and the gaps around them, close to the keys of the keyboard below so the
+// bar reads as a part of it.
+constexpr int kKeyHeight = 36;
+constexpr int kKeySpacing = 6;
+constexpr int kRowMargin = 5;
+
+// The bar is a rounded panel floating above the keyboard: the radius of its corners, the inset from
+// the sides of the window and the gap left between it and the keyboard.
+constexpr double kPanelRadius = 12.0;
+constexpr int kPanelSideInset = 4;
+constexpr int kPanelBottomGap = 2;
+
+// Width of the key that hides the keyboard and of the divider before it.
+constexpr int kHideKeyWidth = 52;
+constexpr int kDividerWidth = 1;
 
 // USB HID usage codes (page 0x07) for the keys offered by the bar.
 const quint32 kUsbLeftCtrl  = 0x0700e0;
@@ -59,15 +72,19 @@ KeyBar::KeyBar(QWidget* parent)
     : QWidget(parent)
 {
     setFocusPolicy(Qt::NoFocus);
-    setAutoFillBackground(true);
 
+    // The panel is drawn in paintEvent(); everything outside its rounded shape stays transparent and
+    // shows the desktop beneath.
+    setAutoFillBackground(false);
     QPalette pal = palette();
-    pal.setColor(QPalette::Window, Controls::surfaceColor());
+    pal.setColor(QPalette::Window, KeyButton::rowColor());
     setPalette(pal);
 
     ScrollArea* scroll = new ScrollArea(this);
     scroll->setFocusPolicy(Qt::NoFocus);
     scroll->setWidgetResizable(true);
+    scroll->setFrameShape(QFrame::NoFrame);
+    scroll->viewport()->setAutoFillBackground(false);
 
     // The keys do not fit the width of a phone, so the row is dragged sideways.
     if (TouchScroller* scroller = scroll->findChild<TouchScroller*>())
@@ -77,13 +94,14 @@ KeyBar::KeyBar(QWidget* parent)
     content->setFocusPolicy(Qt::NoFocus);
 
     QHBoxLayout* row = new QHBoxLayout(content);
-    row->setContentsMargins(8, 3, 8, 3);
-    row->setSpacing(4);
+    row->setContentsMargins(kRowMargin, kRowMargin, kRowMargin, kRowMargin);
+    row->setSpacing(kKeySpacing);
     row->setSizeConstraint(QLayout::SetMinimumSize);
 
     addSpecialKey(row, "Esc", kUsbEscape);
     addSpecialKey(row, "Tab", kUsbTab);
     addSpecialKey(row, "Enter", kUsbEnter);
+    addSpecialKey(row, "Del", kUsbDelete);
     addModifier(row, "Ctrl", kUsbLeftCtrl);
     addModifier(row, "Alt", kUsbLeftAlt);
     addModifier(row, "Shift", kUsbLeftShift);
@@ -96,15 +114,35 @@ KeyBar::KeyBar(QWidget* parent)
     addSpecialKey(row, "End", kUsbEnd);
     addSpecialKey(row, "PgUp", kUsbPageUp);
     addSpecialKey(row, "PgDn", kUsbPageDown);
-    addSpecialKey(row, "Del", kUsbDelete);
 
     scroll->setWidget(content);
+    // setWidget() turns the background filling on, which would square off the rounded panel.
+    content->setAutoFillBackground(false);
+
+    // Stays outside the scrolled row so it can be reached without dragging. The keyboard's own
+    // return key cannot be used to close it: it is sent to the remote computer as Enter.
+    // A divider and the accent tint set it apart from the keys that go to the remote computer.
+    QWidget* divider = new QWidget(this);
+    divider->setFixedSize(kDividerWidth, kKeyHeight);
+    divider->setAutoFillBackground(true);
+    QPalette divider_palette = divider->palette();
+    divider_palette.setColor(QPalette::Window, palette().color(QPalette::Mid));
+    divider->setPalette(divider_palette);
+
+    KeyButton* hide_keyboard = new KeyButton(QString(), KeyButton::Style::FUNCTION, this);
+    hide_keyboard->setIconPath(":/img/material/keyboard_hide.svg");
+    hide_keyboard->setFixedSize(kHideKeyWidth, kKeyHeight);
+    connect(hide_keyboard, &KeyButton::clicked, this, &KeyBar::sig_hideKeyboard);
 
     QHBoxLayout* main_layout = new QHBoxLayout(this);
-    main_layout->setContentsMargins(0, 0, 0, 0);
+    main_layout->setContentsMargins(
+        kPanelSideInset, 0, kPanelSideInset + kRowMargin, kPanelBottomGap);
+    main_layout->setSpacing(kRowMargin);
     main_layout->addWidget(scroll);
+    main_layout->addWidget(divider);
+    main_layout->addWidget(hide_keyboard);
 
-    setFixedHeight(content->sizeHint().height());
+    setFixedHeight(content->sizeHint().height() + kPanelBottomGap);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -113,22 +151,35 @@ KeyBar::~KeyBar() = default;
 //--------------------------------------------------------------------------------------------------
 void KeyBar::clearModifiers()
 {
-    for (Button* button : std::as_const(modifier_buttons_))
-        button->setRole(Button::Role::TEXT);
+    for (KeyButton* button : std::as_const(modifier_buttons_))
+        button->setActive(false);
+}
+
+//--------------------------------------------------------------------------------------------------
+void KeyBar::paintEvent(QPaintEvent* /* event */)
+{
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    const QRectF panel =
+        QRectF(rect()).adjusted(kPanelSideInset, 0, -kPanelSideInset, -kPanelBottomGap);
+
+    QPainterPath path;
+    path.addRoundedRect(panel, kPanelRadius, kPanelRadius);
+    painter.fillPath(path, KeyButton::rowColor());
 }
 
 //--------------------------------------------------------------------------------------------------
 void KeyBar::addModifier(QHBoxLayout* layout, const QString& text, quint32 usb_keycode)
 {
-    Button* button = new Button(text, Button::Role::TEXT, layout->parentWidget());
-    button->setFocusPolicy(Qt::NoFocus);
+    KeyButton* button = new KeyButton(text, KeyButton::Style::LETTER, layout->parentWidget());
     button->setFixedHeight(kKeyHeight);
 
     connect(button, &QPushButton::clicked, this, [this, button, usb_keycode]()
     {
-        // The pressed (filled) state marks a sticky modifier; tapping again cancels it.
-        const bool active = (button->role() != Button::Role::FILLED);
-        button->setRole(active ? Button::Role::FILLED : Button::Role::TEXT);
+        // The filled state marks a sticky modifier; tapping again cancels it.
+        const bool active = !button->isActive();
+        button->setActive(active);
         emit sig_modifierToggled(usb_keycode, active);
     });
 
@@ -139,8 +190,7 @@ void KeyBar::addModifier(QHBoxLayout* layout, const QString& text, quint32 usb_k
 //--------------------------------------------------------------------------------------------------
 void KeyBar::addSpecialKey(QHBoxLayout* layout, const QString& text, quint32 usb_keycode)
 {
-    Button* button = new Button(text, Button::Role::TEXT, layout->parentWidget());
-    button->setFocusPolicy(Qt::NoFocus);
+    KeyButton* button = new KeyButton(text, KeyButton::Style::LETTER, layout->parentWidget());
     button->setFixedHeight(kKeyHeight);
 
     connect(button, &QPushButton::clicked, this, [this, usb_keycode]()

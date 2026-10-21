@@ -22,12 +22,13 @@
 #include <QList>
 #include <QWidget>
 
-class Button;
+class KeyButton;
 class QHBoxLayout;
 
 // Row of keys shown above the on-screen keyboard for keys it does not provide: sticky modifiers
-// (Ctrl/Alt/Shift/Win), navigation/special keys and a Ctrl+Alt+Del shortcut. It only reports the
-// taps; the key sequences are composed by DesktopView.
+// (Ctrl/Alt/Shift/Win), navigation/special keys and a Ctrl+Alt+Del shortcut, plus a button pinned
+// to the right edge that hides the keyboard. It only reports the taps; the key sequences are
+// composed by DesktopView.
 class KeyBar final : public QWidget
 {
     Q_OBJECT
@@ -43,12 +44,17 @@ public slots:
 signals:
     void sig_modifierToggled(quint32 usb_keycode, bool active);
     void sig_specialKey(quint32 usb_keycode);
+    void sig_hideKeyboard();
+
+protected:
+    // QWidget implementation.
+    void paintEvent(QPaintEvent* event) final;
 
 private:
     void addModifier(QHBoxLayout* layout, const QString& text, quint32 usb_keycode);
     void addSpecialKey(QHBoxLayout* layout, const QString& text, quint32 usb_keycode);
 
-    QList<Button*> modifier_buttons_;
+    QList<KeyButton*> modifier_buttons_;
 
     Q_DISABLE_COPY_MOVE(KeyBar)
 };

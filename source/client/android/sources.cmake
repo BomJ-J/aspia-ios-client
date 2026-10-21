@@ -47,6 +47,8 @@ collect_sources(SOURCE_CLIENT_ANDROID
     file_transfer_window.h
     key_bar.cc
     key_bar.h
+    key_button.cc
+    key_button.h
     local_group_editor.cc
     local_group_editor.h
     local_host_editor.cc

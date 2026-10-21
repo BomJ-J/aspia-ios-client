@@ -113,6 +113,9 @@ private slots:
     void onApplicationStateChanged(Qt::ApplicationState state);
 
 private:
+    // Margins of the window kept clear of the camera cutout and the home indicator.
+    QMargins safeAreaMargins() const;
+
     // Drops the credentials kept for a host of a router after the host refused them.
     void forgetHostCredentials();
 

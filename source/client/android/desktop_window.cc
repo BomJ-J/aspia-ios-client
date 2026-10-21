@@ -21,6 +21,7 @@
 #include <QGridLayout>
 #include <QPointF>
 #include <QTimer>
+#include <QWindow>
 
 #include "base/gui_application.h"
 #include "base/logging.h"
@@ -118,6 +119,7 @@ DesktopWindow::DesktopWindow(const HostConfig& host, bool credentials_saved, QWi
     connect(view_, &DesktopView::sig_modifiersCleared, key_bar_, &KeyBar::clearModifiers);
     connect(key_bar_, &KeyBar::sig_modifierToggled, view_, &DesktopView::onModifierToggled);
     connect(key_bar_, &KeyBar::sig_specialKey, view_, &DesktopView::onSpecialKey);
+    connect(key_bar_, &KeyBar::sig_hideKeyboard, view_, &DesktopView::hideSoftwareKeyboard);
 
     connect(GuiApplication::instance(), &QGuiApplication::applicationStateChanged,
             this, &DesktopWindow::onApplicationStateChanged);
@@ -228,7 +230,11 @@ void DesktopWindow::resizeEvent(QResizeEvent* event)
 
     // Keep the key bar spanning the width; its vertical position is set when the keyboard changes.
     if (key_bar_ && key_bar_->isVisible())
-        key_bar_->setGeometry(0, key_bar_->y(), width(), key_bar_->height());
+    {
+        const QMargins safe_area = safeAreaMargins();
+        key_bar_->setGeometry(safe_area.left(), key_bar_->y(),
+                              width() - safe_area.left() - safe_area.right(), key_bar_->height());
+    }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -434,6 +440,14 @@ void DesktopWindow::onShowStatistics()
 }
 
 //--------------------------------------------------------------------------------------------------
+QMargins DesktopWindow::safeAreaMargins() const
+{
+    const QWidget* top_level = window();
+    QWindow* handle = top_level ? top_level->windowHandle() : nullptr;
+    return handle ? handle->safeAreaMargins() : QMargins();
+}
+
+//--------------------------------------------------------------------------------------------------
 void DesktopWindow::onKeyboardInsetChanged(int inset)
 {
     if (inset <= 0)
@@ -442,8 +456,11 @@ void DesktopWindow::onKeyboardInsetChanged(int inset)
         return;
     }
 
+    // In landscape the camera cutout takes a side of the screen; the bar stays clear of it.
+    const QMargins safe_area = safeAreaMargins();
     const int bar_height = key_bar_->height();
-    key_bar_->setGeometry(0, height() - inset - bar_height, width(), bar_height);
+    key_bar_->setGeometry(safe_area.left(), height() - inset - bar_height,
+                          width() - safe_area.left() - safe_area.right(), bar_height);
     key_bar_->raise();
     key_bar_->show();
 }
