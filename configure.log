@@ -1,0 +1,1393 @@
+The CMAKE_WARN_DEPRECATED variable is deprecated.  Use -W[no-]deprecated instead.
+-- Running vcpkg install
+Detecting compiler hash for triplet arm64-osx...
+Compiler found: /usr/bin/c++
+Detecting compiler hash for triplet arm64-ios-aspia...
+Compiler found: /usr/bin/c++
+The following packages will be built and installed:
+  * abseil:arm64-ios-aspia@20260107.1#3
+  * abseil:arm64-osx@20260107.1#3
+    asio:arm64-ios-aspia@1.32.0
+    curl[core,non-http,openssl]:arm64-ios-aspia@8.21.0#1
+    enet:arm64-ios-aspia@1.3.18#1
+    gtest:arm64-ios-aspia@1.17.0#2
+    libjpeg-turbo:arm64-ios-aspia@3.2.0
+    libvpx:arm64-ios-aspia@1.16.0#2
+    libwebm:arm64-ios-aspia@1.0.0.32
+    libyuv:arm64-ios-aspia@1916
+    miniupnpc:arm64-ios-aspia@2.3.2
+    nayuki-qr-code-generator:arm64-ios-aspia@1.8.0#1
+    openssl:arm64-ios-aspia@3.6.3
+    opus:arm64-ios-aspia@1.5.2#1
+  * protobuf:arm64-osx@6.33.4#2
+    protobuf:arm64-ios-aspia@6.33.4#2
+    sqlite3[core,json1]:arm64-ios-aspia@3.53.3
+  * utf8-range:arm64-ios-aspia@6.33.4
+  * utf8-range:arm64-osx@6.33.4
+  * vcpkg-cmake:arm64-osx@2024-04-23
+  * vcpkg-cmake-config:arm64-osx@2024-05-23
+  * vcpkg-cmake-get-vars:arm64-osx@2025-05-29
+  * zlib:arm64-ios-aspia@1.3.2#1
+    zstd:arm64-ios-aspia@1.5.7
+Additional packages (*) will be modified to complete this operation.
+Restored 0 package(s) from /Users/runner/.cache/vcpkg/archives in 488 us. Use --debug to see more details.
+Restored 0 package(s) from /Users/runner/.cache/vcpkg/archives in 99 us. Use --debug to see more details.
+Installing 1/24 vcpkg-cmake-config:arm64-osx@2024-05-23...
+vcpkg-cmake-config:arm64-osx@2024-05-23 package ABI: cfee833d1fbe1da731c2dbe216237b1d6a5315f109881996ab6df04aa9bb88a0
+Building vcpkg-cmake-config:arm64-osx@2024-05-23...
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-config_arm64-osx/share/vcpkg-cmake-config/vcpkg_cmake_config_fixup.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-config_arm64-osx/share/vcpkg-cmake-config/vcpkg-port-config.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-config_arm64-osx/share/vcpkg-cmake-config/copyright
+-- Skipping post-build validation due to VCPKG_POLICY_EMPTY_PACKAGE
+Starting submission of vcpkg-cmake-config:arm64-osx@2024-05-23 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake-config:arm64-osx: 32.1 ms
+Installing 2/24 vcpkg-cmake:arm64-osx@2024-04-23...
+vcpkg-cmake:arm64-osx@2024-04-23 package ABI: 37e3d7d6d726aee96537770c46fafcdb4993028296520de298c88e3c4ff593d4
+Building vcpkg-cmake:arm64-osx@2024-04-23...
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake_arm64-osx/share/vcpkg-cmake/vcpkg_cmake_configure.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake_arm64-osx/share/vcpkg-cmake/vcpkg_cmake_build.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake_arm64-osx/share/vcpkg-cmake/vcpkg_cmake_install.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake_arm64-osx/share/vcpkg-cmake/vcpkg-port-config.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake_arm64-osx/share/vcpkg-cmake/copyright
+-- Performing post-build validation
+Starting submission of vcpkg-cmake:arm64-osx@2024-04-23 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake:arm64-osx: 33 ms
+Completed submission of vcpkg-cmake-config:arm64-osx@2024-05-23 to 2 binary cache(s) in 19 ms
+Installing 3/24 asio:arm64-ios-aspia@1.32.0...
+asio:arm64-ios-aspia@1.32.0 package ABI: 77216d1d264d3aa8d59c79f28530e7a7c3bbbbad00f862749b7e69465486d6b9
+Building asio:arm64-ios-aspia@1.32.0...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/chriskohlhoff/asio/archive/asio-1-32-0.tar.gz -> chriskohlhoff-asio-asio-1-32-0.tar.gz
+Successfully downloaded chriskohlhoff-asio-asio-1-32-0.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/chriskohlhoff-asio-asio-1-32-0.tar.gz
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/asio/src/sio-1-32-0-e4cfb7a1b9.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/asio_arm64-ios-aspia/share/pkgconfig/asio.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/asio_arm64-ios-aspia/share/asio/asio-config.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/asio_arm64-ios-aspia/share/asio/copyright
+-- Performing post-build validation
+Starting submission of asio:arm64-ios-aspia@1.32.0 to 1 binary cache(s) in the background
+Elapsed time to handle asio:arm64-ios-aspia: 2.3 s
+Completed submission of vcpkg-cmake:arm64-osx@2024-04-23 to 2 binary cache(s) in 16.4 ms
+Installing 4/24 vcpkg-cmake-get-vars:arm64-osx@2025-05-29...
+vcpkg-cmake-get-vars:arm64-osx@2025-05-29 package ABI: 1b472ba1a52d0836ee1e1351eeccdf0ec3f7e29f620264a91ea1bd7d30b41173
+Building vcpkg-cmake-get-vars:arm64-osx@2025-05-29...
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/vcpkg_cmake_get_vars.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/cmake_get_vars
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/cmake_get_vars/CMakeLists.txt
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/cmake-get-vars.cmake.in
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/vcpkg-port-config.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/copyright
+-- Performing post-build validation
+Starting submission of vcpkg-cmake-get-vars:arm64-osx@2025-05-29 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake-get-vars:arm64-osx: 36.3 ms
+Installing 5/24 openssl:arm64-ios-aspia@3.6.3...
+openssl:arm64-ios-aspia@3.6.3 package ABI: a358e6f6e725a943df1f111a74f754a154376fce6b70095a56eacfe9c62f69a2
+Building openssl:arm64-ios-aspia@3.6.3...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/openssl/openssl/archive/openssl-3.6.3.tar.gz -> openssl-openssl-openssl-3.6.3.tar.gz
+Successfully downloaded openssl-openssl-openssl-3.6.3.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/openssl-openssl-openssl-3.6.3.tar.gz
+-- Applying patch cmake-config.patch
+-- Applying patch command-line-length.patch
+-- Applying patch script-prefix.patch
+-- Applying patch windows/install-layout.patch
+-- Applying patch windows/install-pdbs.patch
+-- Applying patch windows/install-programs.diff
+-- Applying patch unix/android-cc.patch
+-- Applying patch unix/move-openssldir.patch
+-- Applying patch unix/no-empty-dirs.patch
+-- Applying patch unix/no-static-libs-for-shared.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/src/nssl-3.6.3-28a9d34a24.clean
+-- Getting CMake variables for arm64-ios-aspia
+-- Loading CMake variables from /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/cmake-get-vars_C_CXX-arm64-ios-aspia.cmake.log
+-- Getting CMake variables for arm64-ios-aspia-rel
+-- Configuring arm64-ios-aspia-rel
+-- Building arm64-ios-aspia-rel
+-- Installing arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/openssl_arm64-ios-aspia/lib/pkgconfig/libcrypto.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/openssl_arm64-ios-aspia/lib/pkgconfig/libssl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/openssl_arm64-ios-aspia/lib/pkgconfig/openssl.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/openssl_arm64-ios-aspia/share/openssl/usage
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/openssl_arm64-ios-aspia/share/openssl/copyright
+-- Performing post-build validation
+Starting submission of openssl:arm64-ios-aspia@3.6.3 to 1 binary cache(s) in the background
+Elapsed time to handle openssl:arm64-ios-aspia: 1.3 min
+Completed submission of asio:arm64-ios-aspia@1.32.0 to 2 binary cache(s) in 141 ms
+Completed submission of vcpkg-cmake-get-vars:arm64-osx@2025-05-29 to 2 binary cache(s) in 9.89 ms
+Installing 6/24 zlib:arm64-ios-aspia@1.3.2#1...
+zlib:arm64-ios-aspia@1.3.2#1 package ABI: 0506d82bfb62aec3e8f58c5a9e247c3d61fbdcb804fec3471b1ef3819c6b2dc9
+Building zlib:arm64-ios-aspia@1.3.2#1...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/madler/zlib/archive/v1.3.2.tar.gz -> madler-zlib-v1.3.2.tar.gz
+Successfully downloaded madler-zlib-v1.3.2.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/madler-zlib-v1.3.2.tar.gz
+-- Applying patch 0001-no-version-script-on-ohos.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/zlib/src/v1.3.2-c19a0bfd23.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/zlib_arm64-ios-aspia/lib/pkgconfig/zlib.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/zlib_arm64-ios-aspia/share/zlib/vcpkg-cmake-wrapper.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/zlib_arm64-ios-aspia/share/zlib/copyright
+-- Performing post-build validation
+Starting submission of zlib:arm64-ios-aspia@1.3.2#1 to 1 binary cache(s) in the background
+Elapsed time to handle zlib:arm64-ios-aspia: 3.2 s
+Completed submission of openssl:arm64-ios-aspia@3.6.3 to 2 binary cache(s) in 572 ms
+Installing 7/24 curl[core,non-http,openssl]:arm64-ios-aspia@8.21.0#1...
+curl[core,non-http,openssl]:arm64-ios-aspia@8.21.0#1 package ABI: 219c7408916505229f8d4500a1c19e634a9e5ea4717bc9b3dea5a3d5de5a8e9d
+Building curl[core,non-http,openssl]:arm64-ios-aspia@8.21.0#1...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/curl/curl/archive/curl-8_21_0.tar.gz -> curl-curl-curl-8_21_0.tar.gz
+Successfully downloaded curl-curl-curl-8_21_0.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/curl-curl-curl-8_21_0.tar.gz
+-- Applying patch dependencies.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/curl/src/url-8_21_0-3ffa9f46b7.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/curl_arm64-ios-aspia/lib/pkgconfig/libcurl.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/curl_arm64-ios-aspia/share/curl/vcpkg-cmake-wrapper.cmake
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/curl_arm64-ios-aspia/share/curl/usage
+-- Performing post-build validation
+Starting submission of curl[core,non-http,openssl]:arm64-ios-aspia@8.21.0#1 to 1 binary cache(s) in the background
+Elapsed time to handle curl:arm64-ios-aspia: 27 s
+Completed submission of zlib:arm64-ios-aspia@1.3.2#1 to 2 binary cache(s) in 52.9 ms
+Installing 8/24 enet:arm64-ios-aspia@1.3.18#1...
+enet:arm64-ios-aspia@1.3.18#1 package ABI: d85852e7c801f92c2dc58f0d03a8f02096d5323c1b88433d0278b3dcd1746d6b
+Building enet:arm64-ios-aspia@1.3.18#1...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/lsalzman/enet/archive/v1.3.18.tar.gz -> lsalzman-enet-v1.3.18.tar.gz
+Successfully downloaded lsalzman-enet-v1.3.18.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/lsalzman-enet-v1.3.18.tar.gz
+-- Applying patch fix-export.patch
+-- Applying patch increase-window-size.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/enet/src/v1.3.18-bee70ebf5f.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/enet_arm64-ios-aspia/share/enet/copyright
+-- Performing post-build validation
+Starting submission of enet:arm64-ios-aspia@1.3.18#1 to 1 binary cache(s) in the background
+Elapsed time to handle enet:arm64-ios-aspia: 2.9 s
+Completed submission of curl[core,non-http,openssl]:arm64-ios-aspia@8.21.0#1 to 2 binary cache(s) in 99.1 ms
+Installing 9/24 gtest:arm64-ios-aspia@1.17.0#2...
+gtest:arm64-ios-aspia@1.17.0#2 package ABI: 0a812a5d8247c25ae41638c88f2bc9134d7c30ea00839073bf9fd696c7a396dc
+Building gtest:arm64-ios-aspia@1.17.0#2...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/google/googletest/archive/v1.17.0.tar.gz -> google-googletest-v1.17.0.tar.gz
+Successfully downloaded google-googletest-v1.17.0.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/google-googletest-v1.17.0.tar.gz
+-- Applying patch 001-fix-UWP-death-test.patch
+-- Applying patch clang-tidy-no-lint.patch
+-- Applying patch fix-main-lib-path.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/gtest/src/v1.17.0-0c449efaff.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest_main.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-all.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-assertion-result.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-death-test.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-filepath.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-internal-inl.h
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-matchers.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-port.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-printers.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-test-part.cc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/src/gtest-typed-test.cc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/lib/pkgconfig/gmock.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/lib/pkgconfig/gmock_main.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/lib/pkgconfig/gtest.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/lib/pkgconfig/gtest_main.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/share/gtest/copyright
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/gtest_arm64-ios-aspia/share/gtest/usage
+-- Performing post-build validation
+Starting submission of gtest:arm64-ios-aspia@1.17.0#2 to 1 binary cache(s) in the background
+Elapsed time to handle gtest:arm64-ios-aspia: 7.3 s
+Completed submission of enet:arm64-ios-aspia@1.3.18#1 to 2 binary cache(s) in 17 ms
+Installing 10/24 libjpeg-turbo:arm64-ios-aspia@3.2.0...
+libjpeg-turbo:arm64-ios-aspia@3.2.0 package ABI: 279e1cc3f78391f30b5ef6a09432ed39b943bd7bc250cd64536846a5f33a38fc
+Building libjpeg-turbo:arm64-ios-aspia@3.2.0...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/libjpeg-turbo/libjpeg-turbo/archive/3.2.0.tar.gz -> libjpeg-turbo-libjpeg-turbo-3.2.0.tar.gz
+Successfully downloaded libjpeg-turbo-libjpeg-turbo-3.2.0.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/libjpeg-turbo-libjpeg-turbo-3.2.0.tar.gz
+-- Applying patch add-options-for-docs-headers.patch
+-- Applying patch workaround_cmake_system_processor.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/libjpeg-turbo/src/3.2.0-3cdbbb0a83.clean
+-- Configuring arm64-ios-aspia
+CMake Warning at /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-osx/share/vcpkg-cmake/vcpkg_cmake_configure.cmake:344 (message):
+  The following variables are not used in CMakeLists.txt:
+
+      NEON_INTRINSICS
+
+  Please recheck them and remove the unnecessary options from the
+  `vcpkg_cmake_configure` call.
+
+  If these options should still be passed for whatever reason, please use the
+  `MAYBE_UNUSED_VARIABLES` argument.
+Call Stack (most recent call first):
+  ports/libjpeg-turbo/portfile.cmake:45 (vcpkg_cmake_configure)
+  scripts/ports.cmake:206 (include)
+
+
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/libjpeg-turbo_arm64-ios-aspia/lib/pkgconfig/libjpeg.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/libjpeg-turbo_arm64-ios-aspia/lib/pkgconfig/libturbojpeg.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/libjpeg-turbo_arm64-ios-aspia/share/libjpeg-turbo/copyright
+-- Performing post-build validation
+Starting submission of libjpeg-turbo:arm64-ios-aspia@3.2.0 to 1 binary cache(s) in the background
+Elapsed time to handle libjpeg-turbo:arm64-ios-aspia: 15 s
+Completed submission of gtest:arm64-ios-aspia@1.17.0#2 to 2 binary cache(s) in 85.7 ms
+Installing 11/24 libvpx:arm64-ios-aspia@1.16.0#2...
+libvpx:arm64-ios-aspia@1.16.0#2 package ABI: e4e753fdeecdccc99d9186a8c44ccab22bab9d9f02f1ba13bbc0e09337f8ef37
+Building libvpx:arm64-ios-aspia@1.16.0#2...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/webmproject/libvpx/archive/v1.16.0.tar.gz -> webmproject-libvpx-v1.16.0.tar.gz
+Successfully downloaded webmproject-libvpx-v1.16.0.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/webmproject-libvpx-v1.16.0.tar.gz
+-- Applying patch 0003-add-uwp-v142-and-v143-support.patch
+-- Applying patch 0004-remove-library-suffixes.patch
+-- Applying patch 0005-dont-expect-gnu-diff.patch
+-- Applying patch 0006-gen-vcxproj-ignore-unknown-flags.patch
+-- Applying patch 0007-msvc-use-Fo-in-toolchain-probe.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/libvpx/src/v1.16.0-3ff4c94069.clean
+-- Getting CMake variables for arm64-ios-aspia
+-- Loading CMake variables from /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/libvpx/cmake-get-vars_C_CXX-arm64-ios-aspia.cmake.log
+-- Build info. Target: arm64-darwin-gcc; Options: --disable-examples --disable-tools --disable-docs --disable-unit-tests --enable-pic --enable-static --disable-shared
+-- Configuring libvpx for Release
+-- Building libvpx for Release
+-- Installing libvpx for Release
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/libvpx_arm64-ios-aspia/lib/pkgconfig/vpx.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/libvpx_arm64-ios-aspia/share/libvpx/copyright
+-- Performing post-build validation
+Starting submission of libvpx:arm64-ios-aspia@1.16.0#2 to 1 binary cache(s) in the background
+Elapsed time to handle libvpx:arm64-ios-aspia: 27 s
+Completed submission of libjpeg-turbo:arm64-ios-aspia@3.2.0 to 2 binary cache(s) in 95 ms
+Installing 12/24 libwebm:arm64-ios-aspia@1.0.0.32...
+libwebm:arm64-ios-aspia@1.0.0.32 package ABI: 10bcc258fad563e2fe78233a43a3433fef694a86b3622963afe1b73862263677
+Building libwebm:arm64-ios-aspia@1.0.0.32...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.32.tar.gz -> webmproject-libwebm-libwebm-1.0.0.32.tar.gz
+Successfully downloaded webmproject-libwebm-libwebm-1.0.0.32.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/webmproject-libwebm-libwebm-1.0.0.32.tar.gz
+-- Applying patch Fix-cmake.patch
+-- Applying patch fix-export-config.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/libwebm/src/m-1.0.0.32-9ecaf6feb0.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/libwebm_arm64-ios-aspia/share/libwebm/copyright
+-- Performing post-build validation
+Starting submission of libwebm:arm64-ios-aspia@1.0.0.32 to 1 binary cache(s) in the background
+Elapsed time to handle libwebm:arm64-ios-aspia: 4.4 s
+Completed submission of libvpx:arm64-ios-aspia@1.16.0#2 to 2 binary cache(s) in 107 ms
+Installing 13/24 libyuv:arm64-ios-aspia@1916...
+libyuv:arm64-ios-aspia@1916 package ABI: 08ea78f90f9571710d58157f8be919c10c664b8a73e3dbc71d0d76d23842baba
+Building libyuv:arm64-ios-aspia@1916...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+-- Fetching https://chromium.googlesource.com/libyuv/libyuv d98915a654d3564e4802a0004add46221c4e4348...
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/libyuv-d98915a654d3564e4802a0004add46221c4e4348.tar.gz
+-- Applying patch cmake.diff
+-- Applying patch neon-detect.diff
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/libyuv/src/221c4e4348-1c36787d94.clean
+-- Getting CMake variables for arm64-ios-aspia
+-- Loading CMake variables from /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/libyuv/cmake-get-vars_C_CXX-arm64-ios-aspia.cmake.log
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/libyuv_arm64-ios-aspia/share/libyuv/copyright
+-- Performing post-build validation
+Starting submission of libyuv:arm64-ios-aspia@1916 to 1 binary cache(s) in the background
+Elapsed time to handle libyuv:arm64-ios-aspia: 5.6 s
+Completed submission of libwebm:arm64-ios-aspia@1.0.0.32 to 2 binary cache(s) in 29.6 ms
+Installing 14/24 miniupnpc:arm64-ios-aspia@2.3.2...
+miniupnpc:arm64-ios-aspia@2.3.2 package ABI: 252abf8324a37d438ea70570b6dc2b258df33b2bdd65f2ae4d90ebb27e904374
+Building miniupnpc:arm64-ios-aspia@2.3.2...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/miniupnp/miniupnp/archive/miniupnpc_2_3_2.tar.gz -> miniupnp-miniupnp-miniupnpc_2_3_2.tar.gz
+Successfully downloaded miniupnp-miniupnp-miniupnpc_2_3_2.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/miniupnp-miniupnp-miniupnpc_2_3_2.tar.gz
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/miniupnpc/src/pnpc_2_3_2-d021c8e75c.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/miniupnpc_arm64-ios-aspia/lib/pkgconfig/miniupnpc.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/miniupnpc_arm64-ios-aspia/share/miniupnpc/copyright
+-- Performing post-build validation
+Starting submission of miniupnpc:arm64-ios-aspia@2.3.2 to 1 binary cache(s) in the background
+Elapsed time to handle miniupnpc:arm64-ios-aspia: 1.7 s
+Completed submission of libyuv:arm64-ios-aspia@1916 to 2 binary cache(s) in 35 ms
+Installing 15/24 nayuki-qr-code-generator:arm64-ios-aspia@1.8.0#1...
+nayuki-qr-code-generator:arm64-ios-aspia@1.8.0#1 package ABI: 5bf57386df0ad9c6b056160c424e0873bf97b852fb2923c736b8782c40ad230b
+Building nayuki-qr-code-generator:arm64-ios-aspia@1.8.0#1...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/nayuki/QR-Code-generator/archive/v1.8.0.tar.gz -> nayuki-QR-Code-generator-v1.8.0.tar.gz
+Successfully downloaded nayuki-QR-Code-generator-v1.8.0.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/nayuki-QR-Code-generator-v1.8.0.tar.gz
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/nayuki-qr-code-generator/src/v1.8.0-bec4271269.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Performing post-build validation
+Starting submission of nayuki-qr-code-generator:arm64-ios-aspia@1.8.0#1 to 1 binary cache(s) in the background
+Elapsed time to handle nayuki-qr-code-generator:arm64-ios-aspia: 2.1 s
+Completed submission of miniupnpc:arm64-ios-aspia@2.3.2 to 2 binary cache(s) in 17 ms
+Installing 16/24 opus:arm64-ios-aspia@1.5.2#1...
+opus:arm64-ios-aspia@1.5.2#1 package ABI: 9ea1471279654fa5290e7f126fb9c836262c0f658976ccca717c9fa37f043aba
+Building opus:arm64-ios-aspia@1.5.2#1...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/xiph/opus/archive/v1.5.2.tar.gz -> xiph-opus-v1.5.2.tar.gz
+Successfully downloaded xiph-opus-v1.5.2.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/xiph-opus-v1.5.2.tar.gz
+-- Applying patch fix-pkgconfig-version.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/opus/src/v1.5.2-81ed242155.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/opus_arm64-ios-aspia/lib/pkgconfig/opus.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/opus_arm64-ios-aspia/share/opus/copyright
+-- Performing post-build validation
+Starting submission of opus:arm64-ios-aspia@1.5.2#1 to 1 binary cache(s) in the background
+Elapsed time to handle opus:arm64-ios-aspia: 8.2 s
+Completed submission of nayuki-qr-code-generator:arm64-ios-aspia@1.8.0#1 to 2 binary cache(s) in 15.2 ms
+Installing 17/24 abseil:arm64-ios-aspia@20260107.1#3...
+abseil:arm64-ios-aspia@20260107.1#3 package ABI: 5adaffcb1b78115a3ec0f9073406bbe59b4d447c821a354e374222cd1f0ec46a
+Building abseil:arm64-ios-aspia@20260107.1#3...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/abseil/abseil-cpp/archive/20260107.1.tar.gz -> abseil-abseil-cpp-20260107.1.tar.gz
+Successfully downloaded abseil-abseil-cpp-20260107.1.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/abseil-abseil-cpp-20260107.1.tar.gz
+-- Applying patch 003-force-cxx-17.patch
+-- Applying patch fix-heterogeneous_lookup_testing-target.patch
+-- Applying patch fix-mingw-dll.patch
+-- Applying patch fix-gcc13-constexpr-function-pointer.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/abseil/src/20260107.1-b1a4a53e9a.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_absl_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_absl_log.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_absl_vlog_is_on.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_algorithm.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_algorithm_container.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_any.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_any_invocable.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_atomic_hook.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_bad_any_cast.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_bad_optional_access.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_bad_variant_access.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_base.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_base_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_bind_front.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_bits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_borrowed_fixup_buffer.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_bounded_utf8_length_sequence.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_btree.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_charset.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_chunked_queue.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_city.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_civil_time.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cleanup.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cleanup_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_common_policy_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_compare.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_compressed_tuple.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_constexpr_testing_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_container_common.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_container_memory.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cord.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cord_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cordz_functions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cordz_handle.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cordz_info.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cordz_sample_token.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cordz_statistics.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cordz_update_scope.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_cordz_update_tracker.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_core_headers.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_crc32c.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_crc_cord_state.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_crc_cpu_detect.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_crc_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_debugging.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_debugging_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_decode_rust_punycode.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_demangle_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_demangle_rust.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_die_if_null.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_dynamic_annotations.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_endian.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_errno_saver.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_examine_stack.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_exponential_biased.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_failure_signal_handler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_fast_type_id.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_fixed_array.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_commandlineflag.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_commandlineflag_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_marshalling.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_parse.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_path_util.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_private_handle_accessor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_program_name.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_reflection.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_usage.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flags_usage_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flat_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_flat_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_function_ref.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_generic_printer_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_graphcycles_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_has_ostream_operator.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hash.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hash_container_defaults.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hash_function_defaults.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hash_policy_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hashtable_control_bytes.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hashtable_debug.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hashtable_debug_hooks.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hashtable_profiler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_hashtablez_sampler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_inlined_vector.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_inlined_vector_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_int128.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_iterator_traits_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_iterator_traits_test_helper_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_kernel_timeout_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_layout.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_leak_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_linked_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_linked_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_entry.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_globals.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_initialize.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_append_truncated.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_check_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_check_op.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_conditions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_container.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_fnmatch.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_format.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_globals.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_log_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_log_sink_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_message.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_nullguard.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_nullstream.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_proto.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_strip.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_structured.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_structured_proto.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_internal_voidify.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_severity.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_sink.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_sink_registry.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_streamer.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_log_structured.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_malloc_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_memory.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_meta.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_no_destructor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_node_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_node_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_node_slot_policy.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_non_temporal_arm_intrinsics.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_non_temporal_memcpy.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_nullability.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_nullability_traits_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_numeric.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_numeric_representation.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_optional.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_overload.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_periodic_sampler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_poison.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_prefetch.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_pretty_function.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_profile_builder.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_bit_gen_ref.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_distributions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_distribution_caller.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_distribution_test_util.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_entropy_pool.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_fast_uniform_bits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_fastmath.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_generate_real.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_iostream_state_saver.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_mock_helpers.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_nonsecure_base.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_pcg_engine.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_platform.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_randen.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_randen_engine.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_randen_hwaes.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_randen_hwaes_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_randen_slow.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_salted_seed_seq.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_seed_material.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_uniform_helper.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_internal_wide_multiply.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_random.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_seed_gen_exception.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_random_seed_sequences.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_raw_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_raw_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_raw_hash_set_resize_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_raw_logging_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_requires_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_sample_recorder.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_scoped_set_env.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_span.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_spinlock_wait.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_stacktrace.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_status.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_statusor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_str_format.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_str_format_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_strerror.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_string_view.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_strings.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_strings_append_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_strings_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_strings_resize_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_symbolize.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_synchronization.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_throw_delegate.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_time.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_time_zone.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_tracing_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_type_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_utf8_for_code_point.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_utility.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_variant.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_vlog_config_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_vlog_is_on.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/lib/pkgconfig/absl_weakly_mixed_integer.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-ios-aspia/share/abseil/copyright
+-- Performing post-build validation
+Starting submission of abseil:arm64-ios-aspia@20260107.1#3 to 1 binary cache(s) in the background
+Elapsed time to handle abseil:arm64-ios-aspia: 35 s
+Completed submission of opus:arm64-ios-aspia@1.5.2#1 to 2 binary cache(s) in 39.5 ms
+Installing 18/24 utf8-range:arm64-ios-aspia@6.33.4...
+utf8-range:arm64-ios-aspia@6.33.4 package ABI: c525c9b4d30f39029de3bd2ef55bf464d7f0301c0bf64e7aeb5ace4d2fd5f2b2
+Building utf8-range:arm64-ios-aspia@6.33.4...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/protocolbuffers/protobuf/archive/v33.4.tar.gz -> protocolbuffers-protobuf-v33.4.tar.gz
+Successfully downloaded protocolbuffers-protobuf-v33.4.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/protocolbuffers-protobuf-v33.4.tar.gz
+-- Applying patch fix-cmake.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/utf8-range/src/v33.4-7b17d08241.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-ios-aspia/lib/pkgconfig/utf8_range.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-ios-aspia/share/utf8-range/copyright
+-- Performing post-build validation
+Starting submission of utf8-range:arm64-ios-aspia@6.33.4 to 1 binary cache(s) in the background
+Elapsed time to handle utf8-range:arm64-ios-aspia: 2.1 s
+Completed submission of abseil:arm64-ios-aspia@20260107.1#3 to 2 binary cache(s) in 214 ms
+Installing 19/24 abseil:arm64-osx@20260107.1#3...
+abseil:arm64-osx@20260107.1#3 package ABI: c46b36fc14c7123084a0628ea34c89e1ec594fce32b32eca2fa75e0d460a5959
+Building abseil:arm64-osx@20260107.1#3...
+-- Using cached abseil-abseil-cpp-20260107.1.tar.gz
+-- Cleaning sources at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/abseil/src/20260107.1-b1a4a53e9a.clean. Use --editable to skip cleaning for the packages you specify.
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/abseil-abseil-cpp-20260107.1.tar.gz
+-- Applying patch 003-force-cxx-17.patch
+-- Applying patch fix-heterogeneous_lookup_testing-target.patch
+-- Applying patch fix-mingw-dll.patch
+-- Applying patch fix-gcc13-constexpr-function-pointer.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/abseil/src/20260107.1-b1a4a53e9a.clean
+-- Configuring arm64-osx
+-- Building arm64-osx-dbg
+-- Building arm64-osx-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_absl_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_absl_log.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_absl_vlog_is_on.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_algorithm.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_algorithm_container.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_any.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_any_invocable.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_atomic_hook.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_bad_any_cast.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_bad_optional_access.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_bad_variant_access.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_base.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_base_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_bind_front.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_bits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_borrowed_fixup_buffer.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_bounded_utf8_length_sequence.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_btree.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_charset.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_chunked_queue.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_city.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_civil_time.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cleanup.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cleanup_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_common_policy_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_compare.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_compressed_tuple.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_constexpr_testing_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_container_common.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_container_memory.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cord.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cord_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cordz_functions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cordz_handle.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cordz_info.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cordz_sample_token.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cordz_statistics.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cordz_update_scope.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_cordz_update_tracker.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_core_headers.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_crc32c.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_crc_cord_state.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_crc_cpu_detect.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_crc_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_debugging.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_debugging_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_decode_rust_punycode.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_demangle_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_demangle_rust.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_die_if_null.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_dynamic_annotations.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_endian.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_errno_saver.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_examine_stack.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_exponential_biased.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_failure_signal_handler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_fast_type_id.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_fixed_array.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_commandlineflag.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_commandlineflag_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_marshalling.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_parse.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_path_util.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_private_handle_accessor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_program_name.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_reflection.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_usage.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flags_usage_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flat_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_flat_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_function_ref.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_generic_printer_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_graphcycles_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_has_ostream_operator.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hash.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hash_container_defaults.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hash_function_defaults.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hash_policy_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hashtable_control_bytes.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hashtable_debug.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hashtable_debug_hooks.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hashtable_profiler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_hashtablez_sampler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_inlined_vector.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_inlined_vector_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_int128.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_iterator_traits_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_iterator_traits_test_helper_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_kernel_timeout_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_layout.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_leak_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_linked_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_linked_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_entry.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_globals.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_initialize.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_append_truncated.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_check_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_check_op.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_conditions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_container.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_fnmatch.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_format.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_globals.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_log_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_log_sink_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_message.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_nullguard.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_nullstream.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_proto.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_strip.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_structured.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_structured_proto.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_internal_voidify.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_severity.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_sink.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_sink_registry.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_streamer.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_log_structured.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_malloc_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_memory.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_meta.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_no_destructor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_node_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_node_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_node_slot_policy.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_non_temporal_arm_intrinsics.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_non_temporal_memcpy.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_nullability.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_nullability_traits_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_numeric.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_numeric_representation.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_optional.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_overload.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_periodic_sampler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_poison.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_prefetch.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_pretty_function.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_profile_builder.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_bit_gen_ref.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_distributions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_distribution_caller.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_distribution_test_util.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_entropy_pool.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_fast_uniform_bits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_fastmath.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_generate_real.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_iostream_state_saver.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_mock_helpers.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_nonsecure_base.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_pcg_engine.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_platform.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_randen.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_randen_engine.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_randen_hwaes.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_randen_hwaes_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_randen_slow.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_salted_seed_seq.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_seed_material.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_uniform_helper.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_internal_wide_multiply.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_random.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_seed_gen_exception.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_random_seed_sequences.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_raw_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_raw_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_raw_hash_set_resize_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_raw_logging_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_requires_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_sample_recorder.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_scoped_set_env.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_span.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_spinlock_wait.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_stacktrace.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_status.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_statusor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_str_format.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_str_format_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_strerror.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_string_view.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_strings.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_strings_append_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_strings_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_strings_resize_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_symbolize.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_synchronization.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_throw_delegate.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_time.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_time_zone.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_tracing_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_type_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_utf8_for_code_point.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_utility.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_variant.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_vlog_config_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_vlog_is_on.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/lib/pkgconfig/absl_weakly_mixed_integer.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_absl_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_absl_log.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_absl_vlog_is_on.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_algorithm.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_algorithm_container.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_any.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_any_invocable.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_atomic_hook.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_bad_any_cast.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_bad_optional_access.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_bad_variant_access.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_base.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_base_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_bind_front.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_bits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_borrowed_fixup_buffer.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_bounded_utf8_length_sequence.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_btree.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_charset.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_chunked_queue.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_city.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_civil_time.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cleanup.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cleanup_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_common_policy_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_compare.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_compressed_tuple.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_constexpr_testing_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_container_common.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_container_memory.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cord.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cord_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cordz_functions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cordz_handle.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cordz_info.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cordz_sample_token.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cordz_statistics.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cordz_update_scope.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_cordz_update_tracker.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_core_headers.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_crc32c.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_crc_cord_state.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_crc_cpu_detect.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_crc_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_debugging.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_debugging_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_decode_rust_punycode.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_demangle_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_demangle_rust.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_die_if_null.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_dynamic_annotations.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_endian.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_errno_saver.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_examine_stack.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_exponential_biased.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_failure_signal_handler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_fast_type_id.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_fixed_array.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_commandlineflag.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_commandlineflag_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_marshalling.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_parse.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_path_util.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_private_handle_accessor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_program_name.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_reflection.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_usage.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flags_usage_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flat_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_flat_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_function_ref.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_generic_printer_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_graphcycles_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_has_ostream_operator.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hash.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hash_container_defaults.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hash_function_defaults.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hash_policy_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hashtable_control_bytes.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hashtable_debug.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hashtable_debug_hooks.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hashtable_profiler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_hashtablez_sampler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_inlined_vector.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_inlined_vector_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_int128.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_iterator_traits_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_iterator_traits_test_helper_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_kernel_timeout_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_layout.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_leak_check.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_linked_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_linked_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_entry.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_globals.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_initialize.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_append_truncated.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_check_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_check_op.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_conditions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_config.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_container.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_flags.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_fnmatch.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_format.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_globals.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_log_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_log_sink_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_message.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_nullguard.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_nullstream.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_proto.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_strip.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_structured.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_structured_proto.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_internal_voidify.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_severity.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_sink.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_sink_registry.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_streamer.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_log_structured.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_malloc_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_memory.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_meta.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_no_destructor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_node_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_node_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_node_slot_policy.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_non_temporal_arm_intrinsics.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_non_temporal_memcpy.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_nullability.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_nullability_traits_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_numeric.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_numeric_representation.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_optional.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_overload.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_periodic_sampler.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_poison.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_prefetch.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_pretty_function.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_profile_builder.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_bit_gen_ref.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_distributions.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_distribution_caller.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_distribution_test_util.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_entropy_pool.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_fast_uniform_bits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_fastmath.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_generate_real.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_iostream_state_saver.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_mock_helpers.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_nonsecure_base.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_pcg_engine.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_platform.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_randen.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_randen_engine.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_randen_hwaes.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_randen_hwaes_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_randen_slow.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_salted_seed_seq.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_seed_material.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_uniform_helper.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_internal_wide_multiply.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_random.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_seed_gen_exception.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_random_seed_sequences.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_raw_hash_map.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_raw_hash_set.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_raw_hash_set_resize_impl.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_raw_logging_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_requires_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_sample_recorder.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_scoped_set_env.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_span.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_spinlock_wait.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_stacktrace.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_status.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_statusor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_str_format.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_str_format_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strerror.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_string_view.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings_append_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings_resize_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_symbolize.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_synchronization.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_throw_delegate.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_time.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_time_zone.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_tracing_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_type_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_utf8_for_code_point.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_utility.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_variant.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_vlog_config_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_vlog_is_on.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_weakly_mixed_integer.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/share/abseil/copyright
+-- Performing post-build validation
+Starting submission of abseil:arm64-osx@20260107.1#3 to 1 binary cache(s) in the background
+Elapsed time to handle abseil:arm64-osx: 1.3 min
+Completed submission of utf8-range:arm64-ios-aspia@6.33.4 to 2 binary cache(s) in 13.9 ms
+Installing 20/24 utf8-range:arm64-osx@6.33.4...
+utf8-range:arm64-osx@6.33.4 package ABI: 4167707860de8c98ec1528514df8768e09a4e254b063efb4656ab2632bb9383f
+Building utf8-range:arm64-osx@6.33.4...
+-- Using cached protocolbuffers-protobuf-v33.4.tar.gz
+-- Cleaning sources at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/utf8-range/src/v33.4-7b17d08241.clean. Use --editable to skip cleaning for the packages you specify.
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/protocolbuffers-protobuf-v33.4.tar.gz
+-- Applying patch fix-cmake.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/utf8-range/src/v33.4-7b17d08241.clean
+-- Configuring arm64-osx
+-- Building arm64-osx-dbg
+-- Building arm64-osx-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-osx/lib/pkgconfig/utf8_range.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-osx/debug/lib/pkgconfig/utf8_range.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-osx/share/utf8-range/copyright
+-- Performing post-build validation
+Starting submission of utf8-range:arm64-osx@6.33.4 to 1 binary cache(s) in the background
+Elapsed time to handle utf8-range:arm64-osx: 2.7 s
+Completed submission of abseil:arm64-osx@20260107.1#3 to 2 binary cache(s) in 1.7 s
+Installing 21/24 protobuf:arm64-osx@6.33.4#2...
+protobuf:arm64-osx@6.33.4#2 package ABI: 886dd916ebdf882fd1b0e32602416925298c92392c9c0afea038813b82d915c0
+Building protobuf:arm64-osx@6.33.4#2...
+-- Using cached protocolbuffers-protobuf-v33.4.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/protocolbuffers-protobuf-v33.4.tar.gz
+-- Applying patch fix-static-build.patch
+-- Applying patch fix-default-proto-file-path.patch
+-- Applying patch fix-utf8-range.patch
+-- Applying patch fix-install-dirs.patch
+-- Applying patch fix-constinit-with-clang-cl.patch
+-- Applying patch fix-upb.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/protobuf/src/v33.4-f8b43d71cd.clean
+-- Configuring arm64-osx
+CMake Warning at /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-osx/share/vcpkg-cmake/vcpkg_cmake_configure.cmake:344 (message):
+  The following variables are not used in CMakeLists.txt:
+
+      protobuf_BUILD_TARGET_LIBPROTOC
+
+  Please recheck them and remove the unnecessary options from the
+  `vcpkg_cmake_configure` call.
+
+  If these options should still be passed for whatever reason, please use the
+  `MAYBE_UNUSED_VARIABLES` argument.
+Call Stack (most recent call first):
+  ports/protobuf/portfile.cmake:51 (vcpkg_cmake_configure)
+  scripts/ports.cmake:206 (include)
+
+
+-- Building arm64-osx-dbg
+-- Building arm64-osx-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/lib/pkgconfig/protobuf-lite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/lib/pkgconfig/protobuf.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/lib/pkgconfig/upb.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/debug/lib/pkgconfig/protobuf-lite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/debug/lib/pkgconfig/protobuf.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/debug/lib/pkgconfig/upb.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/share/protobuf/copyright
+-- Adjusted RPATH of '/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/tools/protobuf/protoc-33.4.0' to '@loader_path/../../lib'
+-- Performing post-build validation
+Starting submission of protobuf:arm64-osx@6.33.4#2 to 1 binary cache(s) in the background
+Elapsed time to handle protobuf:arm64-osx: 7.6 min
+Completed submission of utf8-range:arm64-osx@6.33.4 to 2 binary cache(s) in 10.4 ms
+Installing 22/24 protobuf:arm64-ios-aspia@6.33.4#2...
+protobuf:arm64-ios-aspia@6.33.4#2 package ABI: a29dcef90685e231cb6832915fa66eeec69bfb70c9be9a4a4ee4f99746936aaf
+Building protobuf:arm64-ios-aspia@6.33.4#2...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+-- Using cached protocolbuffers-protobuf-v33.4.tar.gz
+-- Cleaning sources at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/protobuf/src/v33.4-f8b43d71cd.clean. Use --editable to skip cleaning for the packages you specify.
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/protocolbuffers-protobuf-v33.4.tar.gz
+-- Applying patch fix-static-build.patch
+-- Applying patch fix-default-proto-file-path.patch
+-- Applying patch fix-utf8-range.patch
+-- Applying patch fix-install-dirs.patch
+-- Applying patch fix-constinit-with-clang-cl.patch
+-- Applying patch fix-upb.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/protobuf/src/v33.4-f8b43d71cd.clean
+-- Configuring arm64-ios-aspia
+CMake Warning at /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-osx/share/vcpkg-cmake/vcpkg_cmake_configure.cmake:344 (message):
+  The following variables are not used in CMakeLists.txt:
+
+      protobuf_BUILD_TARGET_LIBPROTOC
+
+  Please recheck them and remove the unnecessary options from the
+  `vcpkg_cmake_configure` call.
+
+  If these options should still be passed for whatever reason, please use the
+  `MAYBE_UNUSED_VARIABLES` argument.
+Call Stack (most recent call first):
+  ports/protobuf/portfile.cmake:51 (vcpkg_cmake_configure)
+  scripts/ports.cmake:206 (include)
+
+
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-ios-aspia/lib/pkgconfig/protobuf-lite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-ios-aspia/lib/pkgconfig/protobuf.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-ios-aspia/share/protobuf/copyright
+-- Performing post-build validation
+Starting submission of protobuf:arm64-ios-aspia@6.33.4#2 to 1 binary cache(s) in the background
+Elapsed time to handle protobuf:arm64-ios-aspia: 1.1 min
+Completed submission of protobuf:arm64-osx@6.33.4#2 to 2 binary cache(s) in 28 s
+Installing 23/24 sqlite3[core,json1]:arm64-ios-aspia@3.53.3...
+sqlite3[core,json1]:arm64-ios-aspia@3.53.3 package ABI: 7bd1d25fb5b35ad6591570ea717c9eb4a6aec7f47272e807d49be2dbf2ac39ac
+Building sqlite3[core,json1]:arm64-ios-aspia@3.53.3...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://sqlite.org/2026/sqlite-autoconf-3530300.tar.gz -> sqlite-autoconf-3530300.tar.gz
+Successfully downloaded sqlite-autoconf-3530300.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/sqlite-autoconf-3530300.tar.gz
+-- Applying patch fix-arm-uwp.patch
+-- Applying patch add-config-include.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/sqlite3/src/nf-3530300-2586d521e3.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/sqlite3_arm64-ios-aspia/lib/pkgconfig/sqlite3.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/sqlite3_arm64-ios-aspia/share/sqlite3/usage
+-- Performing post-build validation
+Starting submission of sqlite3[core,json1]:arm64-ios-aspia@3.53.3 to 1 binary cache(s) in the background
+Elapsed time to handle sqlite3:arm64-ios-aspia: 16 s
+Completed submission of protobuf:arm64-ios-aspia@6.33.4#2 to 2 binary cache(s) in 567 ms
+Installing 24/24 zstd:arm64-ios-aspia@1.5.7...
+zstd:arm64-ios-aspia@1.5.7 package ABI: 74340df1d714c0e9b91ab1986aebc5996b671ab317c19b45a1a83e804fe89ad6
+Building zstd:arm64-ios-aspia@1.5.7...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/facebook/zstd/archive/v1.5.7.tar.gz -> facebook-zstd-v1.5.7.tar.gz
+Successfully downloaded facebook-zstd-v1.5.7.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/facebook-zstd-v1.5.7.tar.gz
+-- Applying patch no-static-suffix.patch
+-- Applying patch fix-emscripten-and-clang-cl.patch
+-- Applying patch fix-windows-rc-compile.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/zstd/src/v1.5.7-bb6cae2b2e.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/zstd_arm64-ios-aspia/lib/pkgconfig/libzstd.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/zstd_arm64-ios-aspia/share/zstd/usage
+-- Performing post-build validation
+Starting submission of zstd:arm64-ios-aspia@1.5.7 to 1 binary cache(s) in the background
+Elapsed time to handle zstd:arm64-ios-aspia: 8.6 s
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Some packages did not declare an SPDX license. Check the `copyright` file for each package for more information about their licensing.
+Packages installed in this vcpkg installation declare the following licenses:
+(BSD-3-Clause OR GPL-2.0-only)
+Apache-2.0
+BSD-3-Clause
+BSL-1.0
+ISC
+MIT
+Zlib
+blessing
+curl
+asio provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(asio CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE asio::asio)
+
+asio provides pkg-config modules:
+
+  # A cross-platform C++ library for network and low-level I/O programming that provides developers with a consistent asynchronous model using a modern C++ approach.
+  asio
+
+openssl is compatible with built-in CMake targets:
+
+  find_package(OpenSSL REQUIRED)
+  target_link_libraries(main PRIVATE OpenSSL::SSL)
+  target_link_libraries(main PRIVATE OpenSSL::Crypto)
+
+curl is compatible with built-in CMake targets:
+
+    find_package(CURL REQUIRED)
+    target_link_libraries(main PRIVATE CURL::libcurl)
+
+enet provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-enet CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::enet::enet)
+
+The package gtest is compatible with built-in CMake targets:
+
+    enable_testing()
+    
+    find_package(GTest CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+    
+    add_test(AllTestsInMain main)
+
+libjpeg-turbo is compatible with built-in implementation-agnostic CMake targets:
+
+    find_package(JPEG REQUIRED)
+    target_link_libraries(main PRIVATE JPEG::JPEG)
+
+libjpeg-turbo provides CMake targets for the TurboJPEG C API:
+
+    find_package(libjpeg-turbo CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE $<IF:$<TARGET_EXISTS:libjpeg-turbo::turbojpeg>,libjpeg-turbo::turbojpeg,libjpeg-turbo::turbojpeg-static>)
+
+libvpx provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-libvpx CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::libvpx::libvpx)
+
+libvpx provides pkg-config modules:
+
+  # WebM Project VPx codec implementation
+  vpx
+
+libwebm provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-libwebm CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::libwebm::libwebm)
+
+libyuv provides CMake targets:
+
+  # Unofficial config package and target from vcpkg
+  find_package(libyuv CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE yuv)
+
+miniupnpc provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(miniupnpc CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE miniupnpc::miniupnpc miniupnpc::miniupnpc-private)
+
+miniupnpc provides pkg-config modules:
+
+  # UPnP IGD client lightweight library
+  miniupnpc
+
+nayuki-qr-code-generator provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-nayuki-qr-code-generator CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::nayuki-qr-code-generator::nayuki-qr-code-generator)
+
+opus provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(Opus CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE Opus::opus)
+
+opus provides pkg-config modules:
+
+  # Opus IETF audio codec ( build)
+  opus
+
+protobuf provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(protobuf CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE protobuf::libprotobuf protobuf::libprotobuf-lite)
+
+protobuf provides pkg-config modules:
+
+  # Google's Data Interchange Format
+  protobuf-lite
+
+  # Google's Data Interchange Format
+  protobuf
+
+sqlite3 provides pkgconfig bindings.
+sqlite3 provides CMake targets:
+
+    find_package(unofficial-sqlite3 CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE unofficial::sqlite3::sqlite3)
+
+zstd provides CMake targets:
+
+  find_package(zstd CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE zstd::libzstd)
+
+Completed submission of sqlite3[core,json1]:arm64-ios-aspia@3.53.3 to 2 binary cache(s) in 127 ms
+Waiting for 1 remaining binary cache submissions...
+Completed submission of zstd:arm64-ios-aspia@1.5.7 to 2 binary cache(s) in 48.3 ms (1/1)
+All requested installations completed successfully in: 14 min
+-- Running vcpkg install - done
+-- The C compiler identification is AppleClang 17.0.0.17000013
+-- The CXX compiler identification is AppleClang 17.0.0.17000013
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- VCPKG_INSTALLED_DIR -> external: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed
+-- VCPKG_TARGET_TRIPLET: arm64-ios-aspia
+-- VCPKG_HOST_TRIPLET: arm64-osx
+-- iOS detected
+-- The OBJC compiler identification is AppleClang 17.0.0.17000013
+-- Detecting OBJC compiler ABI info
+-- Detecting OBJC compiler ABI info - done
+-- Check for working OBJC compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - skipped
+-- The OBJCXX compiler identification is AppleClang 17.0.0.17000013
+-- Detecting OBJCXX compiler ABI info
+-- Detecting OBJCXX compiler ABI info - done
+-- Check for working OBJCXX compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ - skipped
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found ZLIB: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libz.a (found version "1.3.2")
+-- Found WrapSystemZLIB: TRUE (found version "1.3.2")
+-- Using system ZLIB.
+-- Found WrapZLIB: TRUE (found version "1.3.2")
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Looking for backtrace
+-- Looking for backtrace - found
+-- backtrace facility detected in default set of libraries
+-- Found Backtrace: /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/usr/include
+-- Using Qt bundled PCRE2.
+-- Found WrapPCRE2: TRUE (found version "6.11.1")
+-- Performing Test HAVE_GETTIME
+-- Performing Test HAVE_GETTIME - Success
+-- Performing Test HAVE_SHM_OPEN_SHM_UNLINK
+-- Performing Test HAVE_SHM_OPEN_SHM_UNLINK - Success
+-- Found WrapRt: TRUE
+-- Performing Test HAVE_EGL
+-- Performing Test HAVE_EGL - Failed
+-- Could NOT find EGL (missing: EGL_INCLUDE_DIR HAVE_EGL EGL_LIBRARY) 
+-- Performing Test HAVE_GLESv2
+-- Performing Test HAVE_GLESv2 - Success
+-- Found GLESv2: /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework
+-- Using Qt bundled PNG.
+-- Found WrapPNG: TRUE (found version "6.11.1")
+-- Using Qt bundled Harfbuzz.
+-- Found WrapHarfbuzz: TRUE (found version "6.11.1")
+-- Using Qt bundled Freetype.
+-- Found WrapFreetype: TRUE (found version "6.11.1")
+-- Using Qt bundled Jpeg.
+-- Found WrapJpeg: TRUE (found version "6.11.1")
+-- Found OpenSSL: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libcrypto.a (found suitable version "3.6.3", minimum required is "3")
+-- Found ZLIB: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libz.a (found suitable version "1.3.2", minimum required is "1")
+-- Found JPEG: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libjpeg.a (found version "62")
+-- Found OpenSSL: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libcrypto.a (found version "3.6.3")
+-- Failed to find all ICU components (missing: ICU_LIBRARY uc i18n) (found version "76.1")
+-- CMAKE_OSX_DEPLOYMENT_TARGET: 17
+-- CMAKE_SYSTEM_PROCESSOR: 
+-- CMAKE_HOST_SYSTEM_PROCESSOR: arm64
+-- CMAKE_RUNTIME_OUTPUT_DIRECTORY: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios
+-- CMAKE_LIBRARY_OUTPUT_DIRECTORY: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios
+-- CMAKE_BINARY_DIR: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios
+-- CMAKE_SOURCE_DIR: /Users/runner/work/aspia-ios-client/aspia-ios-client
+-- CMAKE_COMMAND: /opt/homebrew/bin/cmake
+-- CMAKE_MAKE_PROGRAM: /usr/bin/xcodebuild
+-- CMAKE_GENERATOR: Xcode
+-- RELEASE build detected
+-- CXX compiller version: 17.0.0.17000013
+-- CXX flags (release): -O3 -DNDEBUG
+-- CXX flags (debug): -g
+-- C compiller version: 17.0.0.17000013
+-- C flags (release): -O3 -DNDEBUG
+-- C flags (debug): -g
+-- Linker flags (shared release): 
+-- Linker flags (shared debug): 
+-- Linker flags (static release): 
+-- Linker flags (static debug): 
+-- Linker flags (exe release): 
+-- Linker flags (exe debug): 
+-- Git branch: master
+-- Git commit: 6b61166d61d47b0d13c9e8859cd4d1cdbc4de296
+-- Git commit count: 1
+-- Source files: /Users/runner/work/aspia-ios-client/aspia-ios-client/source
+-- TS files: /Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_bg.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_cs.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_da.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_de.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_el.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_es.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_fa.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_fi.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_fr.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_he.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_hu.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_it.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_ja.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_ko.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_nl.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_no.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_pl.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_pt.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_pt_BR.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_ru.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_sv.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_tr.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_uk.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_zh_CN.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_zh_TW.ts
+-- QM files: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_bg.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_cs.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_da.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_de.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_el.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_es.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_fa.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_fi.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_fr.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_he.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_hu.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_it.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_ja.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_ko.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_nl.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_no.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_pl.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_pt.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_pt_BR.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_ru.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_sv.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_tr.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_uk.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_zh_CN.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_zh_TW.qm
+-- Configuring done (897.9s)
+-- Generating done (1.0s)
+-- Build files have been written to: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios

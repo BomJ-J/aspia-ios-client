@@ -1,0 +1,36 @@
+DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, COMMENT, ENGINESDIR, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
+DEBUG: LIBDIR = lib, libdir = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib => LIBDIR = lib
+No value given for COMMENT
+DEBUG: PREFIX = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia => PREFIX = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia
+DEBUG: libdir = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib => libdir = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib
+DEBUG: BINDIR = bin => BINDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/bin, BINDIR_REL_PREFIX = bin
+DEBUG: LIBDIR = lib => LIBDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib, LIBDIR_REL_PREFIX = lib
+DEBUG: INCLUDEDIR = include => INCLUDEDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/include, INCLUDEDIR_REL_PREFIX = include
+DEBUG: APPLINKDIR = include/openssl => APPLINKDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/include/openssl, APPLINKDIR_REL_PREFIX = include/openssl
+DEBUG: ENGINESDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/engines-3 => ENGINESDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/engines-3, ENGINESDIR_REL_LIBDIR = engines-3
+DEBUG: MODULESDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/ossl-modules => MODULESDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/ossl-modules, MODULESDIR_REL_LIBDIR = ossl-modules
+DEBUG: PKGCONFIGDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/pkgconfig => PKGCONFIGDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/pkgconfig, PKGCONFIGDIR_REL_LIBDIR = pkgconfig
+DEBUG: CMAKECONFIGDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/share/openssl => CMAKECONFIGDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/share/openssl, CMAKECONFIGDIR_REL_LIBDIR = ../share/openssl
+Use of uninitialized value in concatenation (.) or string at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 137.
+DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, COMMENT, ENGINESDIR, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
+Use of uninitialized value in concatenation (.) or string at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 55.
+DEBUG: LIBDIR = , libdir =  => Use of uninitialized value in concatenation (.) or string at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 57.
+LIBDIR = 
+No value given for CMAKECONFIGDIR
+No value given for PKGCONFIGDIR
+No value given for libdir
+DEBUG: PREFIX = . => PREFIX = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel
+Use of uninitialized value in concatenation (.) or string at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 72.
+DEBUG: libdir =  => Use of uninitialized value in concatenation (.) or string at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 75.
+libdir = 
+DEBUG: BINDIR = apps => BINDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel/apps, BINDIR_REL_PREFIX = apps
+DEBUG: LIBDIR = Use of uninitialized value in print at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 91.
+ => Use of uninitialized value in concatenation (.) or string at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 108.
+LIBDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel, LIBDIR_REL_PREFIX = 
+DEBUG: INCLUDEDIR = [ include, ../src/nssl-3.6.3-28a9d34a24.clean/include ] => INCLUDEDIR = [ /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel/include, /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel/../src/nssl-3.6.3-28a9d34a24.clean/include ], INCLUDEDIR_REL_PREFIX = [ include, ../src/nssl-3.6.3-28a9d34a24.clean/include ]
+DEBUG: APPLINKDIR = ms => APPLINKDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel/ms, APPLINKDIR_REL_PREFIX = ms
+DEBUG: ENGINESDIR = engines => ENGINESDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel/engines, ENGINESDIR_REL_LIBDIR = engines
+DEBUG: MODULESDIR = providers => MODULESDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel/providers, MODULESDIR_REL_LIBDIR = providers
+DEBUG: PKGCONFIGDIR = . => PKGCONFIGDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel, PKGCONFIGDIR_REL_LIBDIR = .
+DEBUG: CMAKECONFIGDIR = . => CMAKECONFIGDIR = /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/arm64-ios-aspia-rel, CMAKECONFIGDIR_REL_LIBDIR = .
+Use of uninitialized value in join or string at ../src/nssl-3.6.3-28a9d34a24.clean/util/mkinstallvars.pl line 157.

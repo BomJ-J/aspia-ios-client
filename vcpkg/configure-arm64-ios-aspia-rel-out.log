@@ -1,0 +1,19 @@
+  disabling examples
+  disabling tools
+  disabling docs
+  disabling unit_tests
+  enabling pic
+  disabling shared
+  enabling vp8_encoder
+  enabling vp8_decoder
+  enabling vp9_encoder
+  enabling vp9_decoder
+Configuring for target 'arm64-darwin-gcc'
+  enabling arm64
+  enabling runtime_cpu_detect
+  enabling neon
+  enabling neon_dotprod
+  enabling neon_i8mm
+  enabling sve
+  enabling sve2
+Creating makefiles for arm64-darwin-gcc libs

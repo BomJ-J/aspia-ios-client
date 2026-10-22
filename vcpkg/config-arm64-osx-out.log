@@ -1,0 +1,52 @@
+[1/2] "/opt/homebrew/bin/cmake" -E chdir ".." "/opt/homebrew/bin/cmake" "/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/abseil/src/20260107.1-b1a4a53e9a.clean" "-G" "Ninja" "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_INSTALL_PREFIX=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx" "-DFETCHCONTENT_FULLY_DISCONNECTED=ON" "-DABSL_PROPAGATE_CXX_STD=ON" "-DABSL_BUILD_TESTING=OFF" "-DABSL_BUILD_TEST_HELPERS=OFF" "-DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja" "-DCMAKE_SYSTEM_NAME=Darwin" "-DBUILD_SHARED_LIBS=OFF" "-DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/scripts/toolchains/osx.cmake" "-DVCPKG_TARGET_TRIPLET=arm64-osx" "-DVCPKG_SET_CHARSET_FLAG=ON" "-DVCPKG_PLATFORM_TOOLSET=external" "-DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=ON" "-DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=TRUE" "-DCMAKE_VERBOSE_MAKEFILE=ON" "-DVCPKG_APPLOCAL_DEPS=OFF" "-DCMAKE_TOOLCHAIN_FILE=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/scripts/buildsystems/vcpkg.cmake" "-DCMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION=ON" "-DVCPKG_CXX_FLAGS=" "-DVCPKG_CXX_FLAGS_RELEASE=" "-DVCPKG_CXX_FLAGS_DEBUG=" "-DVCPKG_C_FLAGS=" "-DVCPKG_C_FLAGS_RELEASE=" "-DVCPKG_C_FLAGS_DEBUG=" "-DVCPKG_CRT_LINKAGE=dynamic" "-DVCPKG_LINKER_FLAGS=" "-DVCPKG_LINKER_FLAGS_RELEASE=" "-DVCPKG_LINKER_FLAGS_DEBUG=" "-DVCPKG_TARGET_ARCHITECTURE=arm64" "-DCMAKE_INSTALL_LIBDIR:STRING=lib" "-DCMAKE_INSTALL_BINDIR:STRING=bin" "-D_VCPKG_ROOT_DIR=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia" "-D_VCPKG_INSTALLED_DIR=/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed" "-DVCPKG_MANIFEST_INSTALL=OFF" "-DCMAKE_OSX_DEPLOYMENT_TARGET=12" "-DCMAKE_OSX_ARCHITECTURES=arm64"
+-- The CXX compiler identification is AppleClang 17.0.0.17000013
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX17
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX17 - Failed
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX20
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX20 - Failed
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (1.2s)
+-- Generating done (0.2s)
+CMake Warning (unused-cli):
+  Manually-specified variables were not used by the project:
+
+    FETCHCONTENT_FULLY_DISCONNECTED
+    VCPKG_PLATFORM_TOOLSET
+    VCPKG_SET_CHARSET_FLAG
+    _VCPKG_ROOT_DIR
+
+
+-- Build files have been written to: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/abseil/arm64-osx-rel
+[2/2] "/opt/homebrew/bin/cmake" -E chdir "../../arm64-osx-dbg" "/opt/homebrew/bin/cmake" "/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/abseil/src/20260107.1-b1a4a53e9a.clean" "-G" "Ninja" "-DCMAKE_BUILD_TYPE=Debug" "-DCMAKE_INSTALL_PREFIX=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug" "-DFETCHCONTENT_FULLY_DISCONNECTED=ON" "-DABSL_PROPAGATE_CXX_STD=ON" "-DABSL_BUILD_TESTING=OFF" "-DABSL_BUILD_TEST_HELPERS=OFF" "-DCMAKE_MAKE_PROGRAM=/opt/homebrew/bin/ninja" "-DCMAKE_SYSTEM_NAME=Darwin" "-DBUILD_SHARED_LIBS=OFF" "-DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/scripts/toolchains/osx.cmake" "-DVCPKG_TARGET_TRIPLET=arm64-osx" "-DVCPKG_SET_CHARSET_FLAG=ON" "-DVCPKG_PLATFORM_TOOLSET=external" "-DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=ON" "-DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=TRUE" "-DCMAKE_VERBOSE_MAKEFILE=ON" "-DVCPKG_APPLOCAL_DEPS=OFF" "-DCMAKE_TOOLCHAIN_FILE=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/scripts/buildsystems/vcpkg.cmake" "-DCMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION=ON" "-DVCPKG_CXX_FLAGS=" "-DVCPKG_CXX_FLAGS_RELEASE=" "-DVCPKG_CXX_FLAGS_DEBUG=" "-DVCPKG_C_FLAGS=" "-DVCPKG_C_FLAGS_RELEASE=" "-DVCPKG_C_FLAGS_DEBUG=" "-DVCPKG_CRT_LINKAGE=dynamic" "-DVCPKG_LINKER_FLAGS=" "-DVCPKG_LINKER_FLAGS_RELEASE=" "-DVCPKG_LINKER_FLAGS_DEBUG=" "-DVCPKG_TARGET_ARCHITECTURE=arm64" "-DCMAKE_INSTALL_LIBDIR:STRING=lib" "-DCMAKE_INSTALL_BINDIR:STRING=bin" "-D_VCPKG_ROOT_DIR=/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia" "-D_VCPKG_INSTALLED_DIR=/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed" "-DVCPKG_MANIFEST_INSTALL=OFF" "-DCMAKE_OSX_DEPLOYMENT_TARGET=12" "-DCMAKE_OSX_ARCHITECTURES=arm64"
+-- The CXX compiler identification is AppleClang 17.0.0.17000013
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX17
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX17 - Failed
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX20
+-- Performing Test ABSL_INTERNAL_AT_LEAST_CXX20 - Failed
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (1.2s)
+-- Generating done (0.3s)
+CMake Warning (unused-cli):
+  Manually-specified variables were not used by the project:
+
+    FETCHCONTENT_FULLY_DISCONNECTED
+    VCPKG_PLATFORM_TOOLSET
+    VCPKG_SET_CHARSET_FLAG
+    _VCPKG_ROOT_DIR
+
+
+-- Build files have been written to: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/abseil/arm64-osx-dbg

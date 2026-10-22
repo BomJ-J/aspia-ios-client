@@ -1,0 +1,2 @@
++ /opt/homebrew/bin/perl /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/openssl/src/nssl-3.6.3-28a9d34a24.clean/Configure ios64-xcrun enable-static-engine enable-capieng no-tests no-docs enable-ec_nistp_64_gcc_128 no-shared no-module no-apps no-ui no-asm --openssldir=/etc/ssl --libdir=lib --prefix=/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia
+***** Deprecated options: no-ui

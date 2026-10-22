@@ -1,0 +1,400 @@
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_spinlock_wait.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_stacktrace.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_status.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_statusor.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_str_format.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_str_format_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strerror.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_string_view.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings_append_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_strings_resize_and_overwrite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_symbolize.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_synchronization.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_throw_delegate.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_time.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_time_zone.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_tracing_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_type_traits.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_utf8_for_code_point.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_utility.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_variant.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_vlog_config_internal.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_vlog_is_on.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/debug/lib/pkgconfig/absl_weakly_mixed_integer.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/abseil_arm64-osx/share/abseil/copyright
+-- Performing post-build validation
+Starting submission of abseil:arm64-osx@20260107.1#3 to 1 binary cache(s) in the background
+Elapsed time to handle abseil:arm64-osx: 1.3 min
+Completed submission of utf8-range:arm64-ios-aspia@6.33.4 to 2 binary cache(s) in 13.9 ms
+Installing 20/24 utf8-range:arm64-osx@6.33.4...
+utf8-range:arm64-osx@6.33.4 package ABI: 4167707860de8c98ec1528514df8768e09a4e254b063efb4656ab2632bb9383f
+Building utf8-range:arm64-osx@6.33.4...
+-- Using cached protocolbuffers-protobuf-v33.4.tar.gz
+-- Cleaning sources at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/utf8-range/src/v33.4-7b17d08241.clean. Use --editable to skip cleaning for the packages you specify.
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/protocolbuffers-protobuf-v33.4.tar.gz
+-- Applying patch fix-cmake.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/utf8-range/src/v33.4-7b17d08241.clean
+-- Configuring arm64-osx
+-- Building arm64-osx-dbg
+-- Building arm64-osx-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-osx/lib/pkgconfig/utf8_range.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-osx/debug/lib/pkgconfig/utf8_range.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/utf8-range_arm64-osx/share/utf8-range/copyright
+-- Performing post-build validation
+Starting submission of utf8-range:arm64-osx@6.33.4 to 1 binary cache(s) in the background
+Elapsed time to handle utf8-range:arm64-osx: 2.7 s
+Completed submission of abseil:arm64-osx@20260107.1#3 to 2 binary cache(s) in 1.7 s
+Installing 21/24 protobuf:arm64-osx@6.33.4#2...
+protobuf:arm64-osx@6.33.4#2 package ABI: 886dd916ebdf882fd1b0e32602416925298c92392c9c0afea038813b82d915c0
+Building protobuf:arm64-osx@6.33.4#2...
+-- Using cached protocolbuffers-protobuf-v33.4.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/protocolbuffers-protobuf-v33.4.tar.gz
+-- Applying patch fix-static-build.patch
+-- Applying patch fix-default-proto-file-path.patch
+-- Applying patch fix-utf8-range.patch
+-- Applying patch fix-install-dirs.patch
+-- Applying patch fix-constinit-with-clang-cl.patch
+-- Applying patch fix-upb.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/protobuf/src/v33.4-f8b43d71cd.clean
+-- Configuring arm64-osx
+CMake Warning at /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-osx/share/vcpkg-cmake/vcpkg_cmake_configure.cmake:344 (message):
+  The following variables are not used in CMakeLists.txt:
+
+      protobuf_BUILD_TARGET_LIBPROTOC
+
+  Please recheck them and remove the unnecessary options from the
+  `vcpkg_cmake_configure` call.
+
+  If these options should still be passed for whatever reason, please use the
+  `MAYBE_UNUSED_VARIABLES` argument.
+Call Stack (most recent call first):
+  ports/protobuf/portfile.cmake:51 (vcpkg_cmake_configure)
+  scripts/ports.cmake:206 (include)
+
+
+-- Building arm64-osx-dbg
+-- Building arm64-osx-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/lib/pkgconfig/protobuf-lite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/lib/pkgconfig/protobuf.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/lib/pkgconfig/upb.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/debug/lib/pkgconfig/protobuf-lite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/debug/lib/pkgconfig/protobuf.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/debug/lib/pkgconfig/upb.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/share/protobuf/copyright
+-- Adjusted RPATH of '/Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-osx/tools/protobuf/protoc-33.4.0' to '@loader_path/../../lib'
+-- Performing post-build validation
+Starting submission of protobuf:arm64-osx@6.33.4#2 to 1 binary cache(s) in the background
+Elapsed time to handle protobuf:arm64-osx: 7.6 min
+Completed submission of utf8-range:arm64-osx@6.33.4 to 2 binary cache(s) in 10.4 ms
+Installing 22/24 protobuf:arm64-ios-aspia@6.33.4#2...
+protobuf:arm64-ios-aspia@6.33.4#2 package ABI: a29dcef90685e231cb6832915fa66eeec69bfb70c9be9a4a4ee4f99746936aaf
+Building protobuf:arm64-ios-aspia@6.33.4#2...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+-- Using cached protocolbuffers-protobuf-v33.4.tar.gz
+-- Cleaning sources at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/protobuf/src/v33.4-f8b43d71cd.clean. Use --editable to skip cleaning for the packages you specify.
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/protocolbuffers-protobuf-v33.4.tar.gz
+-- Applying patch fix-static-build.patch
+-- Applying patch fix-default-proto-file-path.patch
+-- Applying patch fix-utf8-range.patch
+-- Applying patch fix-install-dirs.patch
+-- Applying patch fix-constinit-with-clang-cl.patch
+-- Applying patch fix-upb.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/protobuf/src/v33.4-f8b43d71cd.clean
+-- Configuring arm64-ios-aspia
+CMake Warning at /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-osx/share/vcpkg-cmake/vcpkg_cmake_configure.cmake:344 (message):
+  The following variables are not used in CMakeLists.txt:
+
+      protobuf_BUILD_TARGET_LIBPROTOC
+
+  Please recheck them and remove the unnecessary options from the
+  `vcpkg_cmake_configure` call.
+
+  If these options should still be passed for whatever reason, please use the
+  `MAYBE_UNUSED_VARIABLES` argument.
+Call Stack (most recent call first):
+  ports/protobuf/portfile.cmake:51 (vcpkg_cmake_configure)
+  scripts/ports.cmake:206 (include)
+
+
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-ios-aspia/lib/pkgconfig/protobuf-lite.pc
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-ios-aspia/lib/pkgconfig/protobuf.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/protobuf_arm64-ios-aspia/share/protobuf/copyright
+-- Performing post-build validation
+Starting submission of protobuf:arm64-ios-aspia@6.33.4#2 to 1 binary cache(s) in the background
+Elapsed time to handle protobuf:arm64-ios-aspia: 1.1 min
+Completed submission of protobuf:arm64-osx@6.33.4#2 to 2 binary cache(s) in 28 s
+Installing 23/24 sqlite3[core,json1]:arm64-ios-aspia@3.53.3...
+sqlite3[core,json1]:arm64-ios-aspia@3.53.3 package ABI: 7bd1d25fb5b35ad6591570ea717c9eb4a6aec7f47272e807d49be2dbf2ac39ac
+Building sqlite3[core,json1]:arm64-ios-aspia@3.53.3...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://sqlite.org/2026/sqlite-autoconf-3530300.tar.gz -> sqlite-autoconf-3530300.tar.gz
+Successfully downloaded sqlite-autoconf-3530300.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/sqlite-autoconf-3530300.tar.gz
+-- Applying patch fix-arm-uwp.patch
+-- Applying patch add-config-include.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/sqlite3/src/nf-3530300-2586d521e3.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/sqlite3_arm64-ios-aspia/lib/pkgconfig/sqlite3.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/sqlite3_arm64-ios-aspia/share/sqlite3/usage
+-- Performing post-build validation
+Starting submission of sqlite3[core,json1]:arm64-ios-aspia@3.53.3 to 1 binary cache(s) in the background
+Elapsed time to handle sqlite3:arm64-ios-aspia: 16 s
+Completed submission of protobuf:arm64-ios-aspia@6.33.4#2 to 2 binary cache(s) in 567 ms
+Installing 24/24 zstd:arm64-ios-aspia@1.5.7...
+zstd:arm64-ios-aspia@1.5.7 package ABI: 74340df1d714c0e9b91ab1986aebc5996b671ab317c19b45a1a83e804fe89ad6
+Building zstd:arm64-ios-aspia@1.5.7...
+/Users/runner/work/aspia-ios-client/aspia-ios-client/source/cmake/triplets/arm64-ios-aspia.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/facebook/zstd/archive/v1.5.7.tar.gz -> facebook-zstd-v1.5.7.tar.gz
+Successfully downloaded facebook-zstd-v1.5.7.tar.gz
+-- Extracting source /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/downloads/facebook-zstd-v1.5.7.tar.gz
+-- Applying patch no-static-suffix.patch
+-- Applying patch fix-emscripten-and-clang-cl.patch
+-- Applying patch fix-windows-rc-compile.patch
+-- Using source at /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/buildtrees/zstd/src/v1.5.7-bb6cae2b2e.clean
+-- Configuring arm64-ios-aspia
+-- Building arm64-ios-aspia-rel
+-- Fixing pkgconfig file: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/zstd_arm64-ios-aspia/lib/pkgconfig/libzstd.pc
+-- Installing: /Users/runner/work/aspia-ios-client/aspia-ios-client/vcpkg4aspia/packages/zstd_arm64-ios-aspia/share/zstd/usage
+-- Performing post-build validation
+Starting submission of zstd:arm64-ios-aspia@1.5.7 to 1 binary cache(s) in the background
+Elapsed time to handle zstd:arm64-ios-aspia: 8.6 s
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Some packages did not declare an SPDX license. Check the `copyright` file for each package for more information about their licensing.
+Packages installed in this vcpkg installation declare the following licenses:
+(BSD-3-Clause OR GPL-2.0-only)
+Apache-2.0
+BSD-3-Clause
+BSL-1.0
+ISC
+MIT
+Zlib
+blessing
+curl
+asio provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(asio CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE asio::asio)
+
+asio provides pkg-config modules:
+
+  # A cross-platform C++ library for network and low-level I/O programming that provides developers with a consistent asynchronous model using a modern C++ approach.
+  asio
+
+openssl is compatible with built-in CMake targets:
+
+  find_package(OpenSSL REQUIRED)
+  target_link_libraries(main PRIVATE OpenSSL::SSL)
+  target_link_libraries(main PRIVATE OpenSSL::Crypto)
+
+curl is compatible with built-in CMake targets:
+
+    find_package(CURL REQUIRED)
+    target_link_libraries(main PRIVATE CURL::libcurl)
+
+enet provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-enet CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::enet::enet)
+
+The package gtest is compatible with built-in CMake targets:
+
+    enable_testing()
+    
+    find_package(GTest CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+    
+    add_test(AllTestsInMain main)
+
+libjpeg-turbo is compatible with built-in implementation-agnostic CMake targets:
+
+    find_package(JPEG REQUIRED)
+    target_link_libraries(main PRIVATE JPEG::JPEG)
+
+libjpeg-turbo provides CMake targets for the TurboJPEG C API:
+
+    find_package(libjpeg-turbo CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE $<IF:$<TARGET_EXISTS:libjpeg-turbo::turbojpeg>,libjpeg-turbo::turbojpeg,libjpeg-turbo::turbojpeg-static>)
+
+libvpx provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-libvpx CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::libvpx::libvpx)
+
+libvpx provides pkg-config modules:
+
+  # WebM Project VPx codec implementation
+  vpx
+
+libwebm provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-libwebm CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::libwebm::libwebm)
+
+libyuv provides CMake targets:
+
+  # Unofficial config package and target from vcpkg
+  find_package(libyuv CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE yuv)
+
+miniupnpc provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(miniupnpc CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE miniupnpc::miniupnpc miniupnpc::miniupnpc-private)
+
+miniupnpc provides pkg-config modules:
+
+  # UPnP IGD client lightweight library
+  miniupnpc
+
+nayuki-qr-code-generator provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-nayuki-qr-code-generator CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::nayuki-qr-code-generator::nayuki-qr-code-generator)
+
+opus provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(Opus CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE Opus::opus)
+
+opus provides pkg-config modules:
+
+  # Opus IETF audio codec ( build)
+  opus
+
+protobuf provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(protobuf CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE protobuf::libprotobuf protobuf::libprotobuf-lite)
+
+protobuf provides pkg-config modules:
+
+  # Google's Data Interchange Format
+  protobuf-lite
+
+  # Google's Data Interchange Format
+  protobuf
+
+sqlite3 provides pkgconfig bindings.
+sqlite3 provides CMake targets:
+
+    find_package(unofficial-sqlite3 CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE unofficial::sqlite3::sqlite3)
+
+zstd provides CMake targets:
+
+  find_package(zstd CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE zstd::libzstd)
+
+Completed submission of sqlite3[core,json1]:arm64-ios-aspia@3.53.3 to 2 binary cache(s) in 127 ms
+Waiting for 1 remaining binary cache submissions...
+Completed submission of zstd:arm64-ios-aspia@1.5.7 to 2 binary cache(s) in 48.3 ms (1/1)
+All requested installations completed successfully in: 14 min
+-- Running vcpkg install - done
+-- The C compiler identification is AppleClang 17.0.0.17000013
+-- The CXX compiler identification is AppleClang 17.0.0.17000013
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- VCPKG_INSTALLED_DIR -> external: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed
+-- VCPKG_TARGET_TRIPLET: arm64-ios-aspia
+-- VCPKG_HOST_TRIPLET: arm64-osx
+-- iOS detected
+-- The OBJC compiler identification is AppleClang 17.0.0.17000013
+-- Detecting OBJC compiler ABI info
+-- Detecting OBJC compiler ABI info - done
+-- Check for working OBJC compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - skipped
+-- The OBJCXX compiler identification is AppleClang 17.0.0.17000013
+-- Detecting OBJCXX compiler ABI info
+-- Detecting OBJCXX compiler ABI info - done
+-- Check for working OBJCXX compiler: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ - skipped
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found ZLIB: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libz.a (found version "1.3.2")
+-- Found WrapSystemZLIB: TRUE (found version "1.3.2")
+-- Using system ZLIB.
+-- Found WrapZLIB: TRUE (found version "1.3.2")
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Looking for backtrace
+-- Looking for backtrace - found
+-- backtrace facility detected in default set of libraries
+-- Found Backtrace: /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/usr/include
+-- Using Qt bundled PCRE2.
+-- Found WrapPCRE2: TRUE (found version "6.11.1")
+-- Performing Test HAVE_GETTIME
+-- Performing Test HAVE_GETTIME - Success
+-- Performing Test HAVE_SHM_OPEN_SHM_UNLINK
+-- Performing Test HAVE_SHM_OPEN_SHM_UNLINK - Success
+-- Found WrapRt: TRUE
+-- Performing Test HAVE_EGL
+-- Performing Test HAVE_EGL - Failed
+-- Could NOT find EGL (missing: EGL_INCLUDE_DIR HAVE_EGL EGL_LIBRARY) 
+-- Performing Test HAVE_GLESv2
+-- Performing Test HAVE_GLESv2 - Success
+-- Found GLESv2: /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework
+-- Using Qt bundled PNG.
+-- Found WrapPNG: TRUE (found version "6.11.1")
+-- Using Qt bundled Harfbuzz.
+-- Found WrapHarfbuzz: TRUE (found version "6.11.1")
+-- Using Qt bundled Freetype.
+-- Found WrapFreetype: TRUE (found version "6.11.1")
+-- Using Qt bundled Jpeg.
+-- Found WrapJpeg: TRUE (found version "6.11.1")
+-- Found OpenSSL: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libcrypto.a (found suitable version "3.6.3", minimum required is "3")
+-- Found ZLIB: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libz.a (found suitable version "1.3.2", minimum required is "1")
+-- Found JPEG: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libjpeg.a (found version "62")
+-- Found OpenSSL: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/vcpkg_installed/arm64-ios-aspia/lib/libcrypto.a (found version "3.6.3")
+-- Failed to find all ICU components (missing: ICU_LIBRARY uc i18n) (found version "76.1")
+-- CMAKE_OSX_DEPLOYMENT_TARGET: 17
+-- CMAKE_SYSTEM_PROCESSOR: 
+-- CMAKE_HOST_SYSTEM_PROCESSOR: arm64
+-- CMAKE_RUNTIME_OUTPUT_DIRECTORY: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios
+-- CMAKE_LIBRARY_OUTPUT_DIRECTORY: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios
+-- CMAKE_BINARY_DIR: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios
+-- CMAKE_SOURCE_DIR: /Users/runner/work/aspia-ios-client/aspia-ios-client
+-- CMAKE_COMMAND: /opt/homebrew/bin/cmake
+-- CMAKE_MAKE_PROGRAM: /usr/bin/xcodebuild
+-- CMAKE_GENERATOR: Xcode
+-- RELEASE build detected
+-- CXX compiller version: 17.0.0.17000013
+-- CXX flags (release): -O3 -DNDEBUG
+-- CXX flags (debug): -g
+-- C compiller version: 17.0.0.17000013
+-- C flags (release): -O3 -DNDEBUG
+-- C flags (debug): -g
+-- Linker flags (shared release): 
+-- Linker flags (shared debug): 
+-- Linker flags (static release): 
+-- Linker flags (static debug): 
+-- Linker flags (exe release): 
+-- Linker flags (exe debug): 
+-- Git branch: master
+-- Git commit: 6b61166d61d47b0d13c9e8859cd4d1cdbc4de296
+-- Git commit count: 1
+-- Source files: /Users/runner/work/aspia-ios-client/aspia-ios-client/source
+-- TS files: /Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_bg.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_cs.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_da.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_de.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_el.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_es.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_fa.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_fi.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_fr.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_he.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_hu.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_it.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_ja.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_ko.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_nl.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_no.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_pl.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_pt.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_pt_BR.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_ru.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_sv.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_tr.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_uk.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_zh_CN.ts;/Users/runner/work/aspia-ios-client/aspia-ios-client/source/translations/translations_zh_TW.ts
+-- QM files: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_bg.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_cs.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_da.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_de.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_el.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_es.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_fa.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_fi.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_fr.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_he.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_hu.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_it.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_ja.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_ko.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_nl.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_no.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_pl.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_pt.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_pt_BR.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_ru.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_sv.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_tr.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_uk.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_zh_CN.qm;/Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios/translations_zh_TW.qm
+-- Configuring done (897.9s)
+-- Generating done (1.0s)
+-- Build files have been written to: /Users/runner/work/aspia-ios-client/aspia-ios-client/builds/ci-ios

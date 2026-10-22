@@ -1,0 +1,3 @@
+Checking patch src/google/protobuf/port_def.inc...
+Hunk #1 succeeded at 456 (offset -222 lines).
+Applied patch src/google/protobuf/port_def.inc cleanly.
