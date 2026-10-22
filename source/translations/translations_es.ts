@@ -9706,6 +9706,11 @@ Credenciales importadas: %5</translation>
 <context>
     <name>SysInfoView</name>
     <message>
+        <location filename="../client/android/sys_info_window.cc" line="378"/>
+        <source>Active Users</source>
+        <translation>Usuarios activos</translation>
+    </message>
+    <message>
         <location filename="../common/sys_info/sys_info_view.ui" line="102"/>
         <source>Save</source>
         <translation>Guardar</translation>
@@ -9904,6 +9909,24 @@ Credenciales importadas: %5</translation>
         <location filename="../common/sys_info/sys_info_view.cc" line="550"/>
         <source>User Groups</source>
         <translation>Grupos de usuarios</translation>
+    </message>
+</context>
+<context>
+    <name>SysInfoWidgetActiveUsers</name>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="63"/>
+        <source>User</source>
+        <translation>Usuario</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="145"/>
+        <source>signed in now</source>
+        <translation>con sesión iniciada</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="152"/>
+        <source>Last Signed In</source>
+        <translation>Último inicio de sesión</translation>
     </message>
 </context>
 <context>

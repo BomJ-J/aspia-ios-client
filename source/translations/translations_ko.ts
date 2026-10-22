@@ -9651,6 +9651,11 @@ Credentials imported: %5</source>
 <context>
     <name>SysInfoView</name>
     <message>
+        <location filename="../client/android/sys_info_window.cc" line="378"/>
+        <source>Active Users</source>
+        <translation>활성 사용자</translation>
+    </message>
+    <message>
         <location filename="../common/sys_info/sys_info_view.ui" line="102"/>
         <source>Save</source>
         <translation>저장</translation>
@@ -9849,6 +9854,24 @@ Credentials imported: %5</source>
         <location filename="../common/sys_info/sys_info_view.cc" line="550"/>
         <source>User Groups</source>
         <translation>사용자 그룹</translation>
+    </message>
+</context>
+<context>
+    <name>SysInfoWidgetActiveUsers</name>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="63"/>
+        <source>User</source>
+        <translation>사용자</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="145"/>
+        <source>signed in now</source>
+        <translation>현재 로그인됨</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="152"/>
+        <source>Last Signed In</source>
+        <translation>마지막 로그인</translation>
     </message>
 </context>
 <context>

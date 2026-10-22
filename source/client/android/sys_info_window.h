@@ -78,6 +78,9 @@ private slots:
     void onSystemInfoRequest(const proto::system_info::SystemInfoRequest& request);
 
 private:
+    // Whether |page| asks for the reports of |category| besides its own.
+    static bool asksFor(const SysInfoWidget* page, const std::string& category);
+
     void buildCategories();
     void showPage(SysInfoWidget* page, const QString& title);
     void showList();

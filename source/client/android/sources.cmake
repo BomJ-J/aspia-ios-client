@@ -81,6 +81,8 @@ collect_sources(SOURCE_CLIENT_ANDROID
     settings_widget.h
     statistics_dialog.cc
     statistics_dialog.h
+    sys_info_widget_active_users.cc
+    sys_info_widget_active_users.h
     sys_info_window.cc
     sys_info_window.h
     two_factor_dialog.cc

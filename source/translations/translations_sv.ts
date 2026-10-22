@@ -9706,6 +9706,11 @@ Importerade inloggningsuppgifter: %5</translation>
 <context>
     <name>SysInfoView</name>
     <message>
+        <location filename="../client/android/sys_info_window.cc" line="378"/>
+        <source>Active Users</source>
+        <translation>Aktiva användare</translation>
+    </message>
+    <message>
         <location filename="../common/sys_info/sys_info_view.ui" line="102"/>
         <source>Save</source>
         <translation>Spara</translation>
@@ -9904,6 +9909,24 @@ Importerade inloggningsuppgifter: %5</translation>
         <location filename="../common/sys_info/sys_info_view.cc" line="550"/>
         <source>User Groups</source>
         <translation>Användargrupper</translation>
+    </message>
+</context>
+<context>
+    <name>SysInfoWidgetActiveUsers</name>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="63"/>
+        <source>User</source>
+        <translation>Användare</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="145"/>
+        <source>signed in now</source>
+        <translation>inloggad nu</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="152"/>
+        <source>Last Signed In</source>
+        <translation>Senast inloggad</translation>
     </message>
 </context>
 <context>

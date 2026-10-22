@@ -9706,6 +9706,11 @@ Importerede legitimationsoplysninger: %5</translation>
 <context>
     <name>SysInfoView</name>
     <message>
+        <location filename="../client/android/sys_info_window.cc" line="378"/>
+        <source>Active Users</source>
+        <translation>Aktive brugere</translation>
+    </message>
+    <message>
         <location filename="../common/sys_info/sys_info_view.ui" line="102"/>
         <source>Save</source>
         <translation>Gem</translation>
@@ -9904,6 +9909,24 @@ Importerede legitimationsoplysninger: %5</translation>
         <location filename="../common/sys_info/sys_info_view.cc" line="550"/>
         <source>User Groups</source>
         <translation>Brugergrupper</translation>
+    </message>
+</context>
+<context>
+    <name>SysInfoWidgetActiveUsers</name>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="63"/>
+        <source>User</source>
+        <translation>Bruger</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="145"/>
+        <source>signed in now</source>
+        <translation>logget ind nu</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="152"/>
+        <source>Last Signed In</source>
+        <translation>Senest logget ind</translation>
     </message>
 </context>
 <context>

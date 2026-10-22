@@ -24,6 +24,8 @@
 #include <QTreeWidget>
 #include <QVBoxLayout>
 
+#include <algorithm>
+
 #include "base/logging.h"
 #include "base/serialization.h"
 #include "base/version_constants.h"
@@ -52,6 +54,7 @@
 #include "common/sys_info/sys_info_widget_event_logs.h"
 #include "common/sys_info/sys_info_widget_licenses.h"
 #include "common/sys_info/sys_info_widget_local_user_groups.h"
+#include "client/android/sys_info_widget_active_users.h"
 #include "common/sys_info/sys_info_widget_local_users.h"
 #include "common/sys_info/sys_info_widget_monitors.h"
 #include "common/sys_info/sys_info_widget_net_adapters.h"
@@ -234,9 +237,19 @@ void SysInfoWindow::onChannelMessage(const QByteArray& buffer)
     // from the report of their own category.
     for (SysInfoWidget* page : std::as_const(pages_))
     {
-        if (page == summary_ || page->category() == category)
+        if (page == summary_ || page->category() == category || asksFor(page, category))
             page->setSystemInfo(system_info);
     }
+}
+
+//--------------------------------------------------------------------------------------------------
+// static
+bool SysInfoWindow::asksFor(const SysInfoWidget* page, const std::string& category)
+{
+    // A page may be built from the reports of several categories (Active Users).
+    const std::vector<proto::system_info::SystemInfoRequest> requests = page->requests();
+    return std::any_of(requests.cbegin(), requests.cend(),
+                       [&category](const auto& request) { return request.category() == category; });
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -362,6 +375,7 @@ void SysInfoWindow::buildCategories()
         { new SysInfoWidgetEnvVars(p), SysInfoWidget::kDayViewIcon, QT_TRANSLATE_NOOP("SysInfoView", "Environment Variables") },
         { new SysInfoWidgetEventLogs(p), SysInfoWidget::kLogIcon, QT_TRANSLATE_NOOP("SysInfoView", "Event Logs") },
         { new SysInfoWidgetLocalUsers(p), SysInfoWidget::kUserIcon, QT_TRANSLATE_NOOP("SysInfoView", "Users") },
+        { new SysInfoWidgetActiveUsers(p), SysInfoWidget::kUserIcon, QT_TRANSLATE_NOOP("SysInfoView", "Active Users") },
         { new SysInfoWidgetLocalUserGroups(p), SysInfoWidget::kUserAccountIcon, QT_TRANSLATE_NOOP("SysInfoView", "User Groups") } });
 }
 

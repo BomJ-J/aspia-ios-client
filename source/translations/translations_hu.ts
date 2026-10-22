@@ -9651,6 +9651,11 @@ Importált hitelesítő adatok: %5</translation>
 <context>
     <name>SysInfoView</name>
     <message>
+        <location filename="../client/android/sys_info_window.cc" line="378"/>
+        <source>Active Users</source>
+        <translation>Aktív felhasználók</translation>
+    </message>
+    <message>
         <location filename="../common/sys_info/sys_info_view.ui" line="102"/>
         <source>Save</source>
         <translation>Mentés</translation>
@@ -9849,6 +9854,24 @@ Importált hitelesítő adatok: %5</translation>
         <location filename="../common/sys_info/sys_info_view.cc" line="550"/>
         <source>User Groups</source>
         <translation>Felhasználói csoportok</translation>
+    </message>
+</context>
+<context>
+    <name>SysInfoWidgetActiveUsers</name>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="63"/>
+        <source>User</source>
+        <translation>Felhasználó</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="145"/>
+        <source>signed in now</source>
+        <translation>jelenleg bejelentkezve</translation>
+    </message>
+    <message>
+        <location filename="../client/android/sys_info_widget_active_users.cc" line="152"/>
+        <source>Last Signed In</source>
+        <translation>Utoljára bejelentkezett</translation>
     </message>
 </context>
 <context>
